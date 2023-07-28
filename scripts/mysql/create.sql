@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `eventify`.`endereco` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `is_validado` TINYINT NULL,
   `logradouro` VARCHAR(64) NOT NULL,
-  `numero` INT NULL,
+  `numero` VARCHAR(16) NULL,
   `bairro` VARCHAR(32) NOT NULL,
   `cidade` VARCHAR(63) NULL,
   `uf` CHAR(2) NOT NULL,
