@@ -25,6 +25,7 @@ SELECT
 SELECT * FROM eventify.vw_kpi_conversao_de_reservas;
 
 
+SET GLOBAL log_bin_trust_function_creators = 1;
 
 DELIMITER //
 

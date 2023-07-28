@@ -6395,7 +6395,7 @@ INSERT INTO acesso (data_criacao, id_pagina) VALUES ('2023-05-04 03:00:00', 3);
 INSERT INTO acesso (data_criacao, id_pagina) VALUES ('2023-05-04 02:00:00', 3);
 INSERT INTO acesso (data_criacao, id_pagina) VALUES ('2023-05-04 01:00:00', 3);
 INSERT INTO acesso (data_criacao, id_pagina) VALUES ('2023-05-04 00:00:00', 3);
-INSERT INTO acesso (data_criacao, id_pagina) VALUES ('2023-05-03 23:00:00', 3);´]
+INSERT INTO acesso (data_criacao, id_pagina) VALUES ('2023-05-03 23:00:00', 3);
 INSERT INTO acesso (data_criacao, id_pagina) VALUES ('2023-05-03 22:00:00', 3);
 INSERT INTO acesso (data_criacao, id_pagina) VALUES ('2023-05-03 21:00:00', 3);
 INSERT INTO acesso (data_criacao, id_pagina) VALUES ('2023-05-03 14:00:00', 1);
