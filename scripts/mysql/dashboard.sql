@@ -1,3 +1,5 @@
+USE eventify;
+
 DELIMITER //
 
 CREATE PROCEDURE sp_kpi_conversao_de_visitantes(IN ultimos_meses INT)
@@ -449,6 +451,27 @@ FROM
 	eventify.evento
 GROUP BY id_buffet ORDER BY id_buffet;
 
+
+CREATE VIEW vw_orcamentos_usuario AS (
+SELECT
+	caminho, 
+	img.nome, 
+    tipo,  
+	buffet.nome `buffet_nome`, 
+	descricao, 
+	data, 
+	preco, 
+	status,
+    id_contratante
+FROM 
+	eventify.evento 
+JOIN buffet ON id_buffet = buffet.id 
+JOIN eventify.imagem img ON img.id_buffet = buffet.id 
+GROUP BY buffet.id
+);
+
+
+
 -- ------- VALIDAÇÕES ---------------
 CALL eventify.sp_avaliacoes_buffet(6, 1);
 CALL eventify.sp_churn(6);
@@ -468,7 +491,10 @@ SELECT eventify.haversine(-23.550520, -46.633308, -30.034632, -30.034632);
 SELECT * FROM eventify.vw_buffet_info WHERE tipos_evento LIKE '%casamento%';
 SELECT * FROM eventify.vw_buffet_pesquisa;
 SELECT * FROM eventify.vw_notas_buffet;
--- ------- VALIDAÇÕES ---------------
+SELECT * FROM eventify.vw_orcamentos_usuario WHERE id_contratante = 162;
+
+
+------- VALIDAÇÕES ---------------
 	SELECT descricao FROM tipo_evento ORDER BY descricao ASC;
 /*
 DROP PROCEDURE sp_avaliacoes_buffet;

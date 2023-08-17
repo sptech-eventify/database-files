@@ -246,7 +246,7 @@ END //
 DELIMITER ;
 
 
-CREATE VIEW vw_buffet_info AS (
+CREATE VIEW eventify.vw_buffet_info AS (
 SELECT 
 	buffet.id,
 	GROUP_CONCAT(DISTINCT tipo_evento.descricao SEPARATOR ",") tipos_evento,
@@ -268,7 +268,7 @@ GROUP BY buffet.nome
 );
 
 
-CREATE VIEW vw_buffet_pesquisa AS
+CREATE VIEW eventify.vw_buffet_pesquisa AS
 SELECT 
 	buffet.*, sub.nota nota 
 FROM
@@ -283,7 +283,18 @@ ON buffet.id = sub.id_buffet
 ORDER BY buffet.id;
 
 CREATE VIEW vw_notas_buffet AS
-SELECT id_buffet, ROUND(AVG(nota), 1) nota
+SELECT 
+	id_buffet, ROUND(AVG(nota), 1) nota
 FROM
 	eventify.evento
-GROUP BY id_buffet ORDER BY id_buffet;
+GROUP BY 
+	id_buffet 
+    ORDER BY id_buffet;
+
+CREATE VIEW eventify.vw_eventos_ontem AS 
+SELECT 
+	e.id, e.data, preco, e.id_buffet, e.id_contratante 
+FROM 
+	eventify.evento e
+WHERE 
+	DATE(data) = DATE_SUB(CURDATE(), INTERVAL 1 DAY) AND status = 6;
