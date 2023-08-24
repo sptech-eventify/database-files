@@ -1,4 +1,4 @@
-CREATE VIEW eventify.vw_kpi_conversao_de_visitantes AS
+CREATE OR REPLACE VIEW eventify.vw_kpi_conversao_de_visitantes AS
 SELECT 
     (SELECT COUNT(id) FROM eventify.usuario WHERE usuario.data_criacao >= CURDATE() - INTERVAL 240 MONTH) AS qtd_cadastrados,
     (SELECT COUNT(id) FROM eventify.acesso WHERE acesso.id_pagina = 1 AND acesso.data_criacao >= CURDATE() - INTERVAL 240 MONTH) AS qtd_visitantes;
@@ -7,7 +7,7 @@ SELECT * FROM eventify.vw_kpi_conversao_de_visitantes;
 
 
 
-CREATE VIEW eventify.vw_kpi_precisao_do_formulario AS
+CREATE OR REPLACE VIEW eventify.vw_kpi_precisao_do_formulario AS
 SELECT 
     (SELECT COUNT(id) FROM eventify.evento WHERE evento.is_formulario_dinamico AND (evento.status = 5 OR evento.status = 6) AND data >= CURDATE() - INTERVAL 240 MONTH) AS qtd_contratos_formulario_dinamico,
     COUNT(id) AS qtd_contratos_total
@@ -17,7 +17,7 @@ SELECT * FROM eventify.vw_kpi_precisao_do_formulario;
 
 
 
-CREATE VIEW eventify.vw_kpi_conversao_de_reservas AS
+CREATE OR REPLACE VIEW eventify.vw_kpi_conversao_de_reservas AS
 SELECT 
     (SELECT COUNT(id) FROM eventify.evento WHERE (evento.status = 5 OR evento.status = 6) AND data_criacao >= CURDATE() - INTERVAL 240 MONTH) AS qtd_orcamentos_fechados,
     (SELECT COUNT(id) FROM eventify.evento WHERE data_criacao >= CURDATE() - INTERVAL 240 MONTH) AS qtd_orcamentos_totais;
@@ -27,6 +27,7 @@ SELECT * FROM eventify.vw_kpi_conversao_de_reservas;
 
 SET GLOBAL log_bin_trust_function_creators = 1;
 
+DROP FUNCTION IF EXISTS eventify.traduz_mes;
 DELIMITER //
 
 CREATE FUNCTION eventify.traduz_mes(mes VARCHAR(63)) RETURNS VARCHAR(63)
@@ -52,7 +53,7 @@ DELIMITER ;
 
 
 
-CREATE VIEW eventify.vw_churn AS
+CREATE OR REPLACE VIEW eventify.vw_churn AS
 SELECT 
     traduz_mes(DATE_FORMAT(data_criacao, '%M')) AS mes,
     COUNT(CASE WHEN tipo_usuario = 2 THEN id END) AS prop_entraram,
@@ -74,7 +75,7 @@ SELECT * FROM eventify.vw_churn;
 
 
 
-CREATE VIEW vw_log_paginas AS
+CREATE OR REPLACE VIEW vw_log_paginas AS
 SELECT 
     id_pagina,
     traduz_mes(DATE_FORMAT(data_criacao, '%M')) AS mes,
@@ -92,7 +93,7 @@ SELECT * FROM eventify.vw_log_paginas;
 
 
 
-CREATE VIEW vw_retencao_usuarios_retidos AS
+CREATE OR REPLACE VIEW vw_retencao_usuarios_retidos AS
 SELECT 
     traduz_mes(DATE_FORMAT(data_criacao, '%M')) AS mes,
     COUNT(id) AS total_retidos
@@ -106,7 +107,7 @@ SELECT * FROM eventify.vw_retencao_usuarios_retidos;
 
 
 
-CREATE VIEW eventify.vw_retencao_buffets_retidos AS
+CREATE OR REPLACE VIEW eventify.vw_retencao_buffets_retidos AS
 SELECT 
     traduz_mes(DATE_FORMAT(data_criacao, '%M')) AS mes,
     COUNT(id) AS total_retidos
@@ -120,7 +121,7 @@ SELECT * FROM eventify.vw_retencao_buffets_retidos;
 
 
 
-CREATE VIEW eventify.vw_retencao_formularios_retidos AS
+CREATE OR REPLACE VIEW eventify.vw_retencao_formularios_retidos AS
 SELECT 
     traduz_mes(DATE_FORMAT(data_criacao, '%M')) AS mes,
     COUNT(id) AS total_retidos
@@ -136,7 +137,7 @@ SELECT * FROM eventify.vw_retencao_formularios_retidos;
 
 
 
-CREATE VIEW eventify.vw_kpi_abandono_reserva AS
+CREATE OR REPLACE VIEW eventify.vw_kpi_abandono_reserva AS
 SELECT 
     id_buffet,
     SUM(CASE WHEN status = 4 THEN 1 ELSE 0 END) AS abandonos,
@@ -150,7 +151,7 @@ SELECT * FROM eventify.vw_kpi_abandono_reserva;
 
 
 
-CREATE VIEW eventify.vw_kpi_satisfacao AS
+CREATE OR REPLACE VIEW eventify.vw_kpi_satisfacao AS
 SELECT 
     id_buffet,
     ROUND(AVG(CASE WHEN status = 6 THEN nota END), 1) * 2 AS media,
@@ -163,7 +164,7 @@ GROUP BY
 SELECT * FROM eventify.vw_kpi_satisfacao;
 
 
-CREATE VIEW eventify.vw_kpi_movimentacao_financeira AS
+CREATE OR REPLACE VIEW eventify.vw_kpi_movimentacao_financeira AS
 SELECT 
     id_buffet,
     ROUND(SUM(CASE WHEN status = 6 THEN preco END), 2) AS movimentacao,
@@ -177,7 +178,7 @@ SELECT * FROM eventify.vw_kpi_movimentacao_financeira;
 
 
 
-CREATE VIEW eventify.vw_avaliacoes_buffet AS
+CREATE OR REPLACE VIEW eventify.vw_avaliacoes_buffet AS
 SELECT 
     usuario.nome,
     evento.nota,
@@ -195,7 +196,7 @@ SELECT * FROM eventify.vw_avaliacoes_buffet;
 
 
 
-CREATE VIEW eventify.vw_dados_do_buffet AS
+CREATE OR REPLACE VIEW eventify.vw_dados_do_buffet AS
 SELECT 
     traduz_mes(DATE_FORMAT(data, '%M')) AS mes,
     COUNT(id) AS qtd_eventos, 
@@ -213,6 +214,7 @@ GROUP BY
 SELECT * FROM eventify.vw_dados_do_buffet;
 
 
+DROP FUNCTION IF EXISTS eventify.haversine;
 DELIMITER //
 
 CREATE FUNCTION eventify.haversine(
@@ -246,7 +248,7 @@ END //
 DELIMITER ;
 
 
-CREATE VIEW eventify.vw_buffet_info AS (
+CREATE OR REPLACE VIEW eventify.vw_buffet_info AS (
 SELECT 
 	buffet.id,
 	GROUP_CONCAT(DISTINCT tipo_evento.descricao SEPARATOR ",") tipos_evento,
@@ -268,7 +270,7 @@ GROUP BY buffet.nome
 );
 
 
-CREATE VIEW eventify.vw_buffet_pesquisa AS
+CREATE OR REPLACE VIEW eventify.vw_buffet_pesquisa AS
 SELECT 
 	buffet.*, sub.nota nota 
 FROM
@@ -282,7 +284,7 @@ INNER JOIN (
 ON buffet.id = sub.id_buffet
 ORDER BY buffet.id;
 
-CREATE VIEW vw_notas_buffet AS
+CREATE OR REPLACE VIEW vw_notas_buffet AS
 SELECT 
 	id_buffet, ROUND(AVG(nota), 1) nota
 FROM
@@ -291,7 +293,7 @@ GROUP BY
 	id_buffet 
     ORDER BY id_buffet;
 
-CREATE VIEW eventify.vw_eventos_ontem AS 
+CREATE OR REPLACE VIEW eventify.vw_eventos_ontem AS 
 SELECT 
 	e.id, e.data, preco, e.id_buffet, e.id_contratante 
 FROM 
