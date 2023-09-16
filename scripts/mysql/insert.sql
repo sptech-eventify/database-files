@@ -506,7 +506,6 @@ INSERT INTO eventify.pagina (nome, uri) VALUES
 ('cadastro de buffet', '/proprietario/adicionar-buffet'),
 ('formulário dinâmico', '/contratante');
 
-
 -- --------------------- BUFFET 1 ---------------------
 INSERT INTO `eventify`.`endereco` (is_validado, logradouro, numero, bairro, cidade, uf, cep, latitude, longitude, data_criacao) VALUES
 (1, 'Rua Augusta', 123, 'Consolação', 'São Paulo', 'SP', '01304001', -23.554279, -46.653040, '2023-03-02 16:30:49');

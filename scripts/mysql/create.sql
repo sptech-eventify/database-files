@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `eventify`.`usuario` (
   `email` VARCHAR(256) NOT NULL,
   `senha` VARCHAR(256) NOT NULL,
   `tipo_usuario` INT(3) UNSIGNED NOT NULL,
-  `is_ativo` TINYINT UNSIGNED NOT NULL,
+  `is_ativo` TINYINT UNSIGNED NOT NULL DEFAULT 1,
   `is_banido` TINYINT UNSIGNED NULL,
   `cpf` CHAR(11) NULL,
   `foto` VARCHAR(255) NULL,
@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS `eventify`.`endereco` (
   `latitude` DECIMAL(8,6) NOT NULL,
   `longitude` DECIMAL(8,6) NOT NULL,
   `data_criacao` DATETIME NULL,
+  `is_ativo` TINYINT UNSIGNED NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
 ENGINE = InnoDB;
@@ -113,6 +114,7 @@ CREATE TABLE IF NOT EXISTS `eventify`.`agenda` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `data` DATETIME NOT NULL,
   `id_buffet` INT NOT NULL,
+  `is_ativo` TINYINT UNSIGNED NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
   INDEX `fk_reserva_residencias1_idx` (`id_buffet` ASC) VISIBLE,
