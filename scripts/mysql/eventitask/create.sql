@@ -1,7 +1,6 @@
 DROP DATABASE IF EXISTS eventitask;
 
 CREATE DATABASE IF NOT EXISTS eventitask;
-
 USE eventitask;
 
 CREATE TABLE usuario (
@@ -38,7 +37,7 @@ CREATE TABLE task (
     CONSTRAINT ckFibonacci CHECK (fibonacci IN (1, 2, 3, 5, 8, 13, 21, 34)),
     status INT COMMENT '(0 - pendente) (1 - em desenvolvimento) (2 - concluido)',
     CONSTRAINT ckStatus CHECK (status IN (0, 1, 2)),
-    time INT,
+    time INT COMMENT 'Em horas',
     data_estimada DATE,
     FOREIGN KEY (section_id) REFERENCES section(id)
     ON DELETE CASCADE,

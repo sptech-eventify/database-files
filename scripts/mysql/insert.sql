@@ -629,7 +629,6 @@ INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUE
     ('https://moneyinc.com/wp-content/uploads/2019/08/', 'WP24-by-Wolfgang-Puck-750x500', 'jpg', 1, NOW(), 1),
     ('https://betterbankside.co.uk/wp-content/uploads/2019/03/', 'Bar_01', 'jpg', 1, NOW(), 1);
 -- --------------------------------------------------	
-SELECT * FROM eventify.imagem;
 
 -- OUTROS BUFFETS ------------------------------------------------
 
