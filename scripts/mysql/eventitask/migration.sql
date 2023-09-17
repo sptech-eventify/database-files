@@ -1,3 +1,5 @@
+-- Dados vindos do Planner
+
 INSERT INTO eventitask.board (name) VALUES 
     ('Front-end'),
     ('Teórico e Outros'),

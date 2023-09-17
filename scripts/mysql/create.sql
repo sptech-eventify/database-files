@@ -1,3 +1,14 @@
+-- ----------------------------------------------------
+-- User rest-api
+-- ----------------------------------------------------
+CREATE USER 'backend_eventify'@'%' IDENTIFIED BY 'evenCCD834E1tify';
+GRANT INSERT, SELECT, UPDATE, DELETE ON eventify.* TO 'backend_eventify'@'%';
+FLUSH PRIVILEGES;
+
+-- APENAS EXECUTE CASO VOCÊ TENHA UTILIZADO O SCRIPT COM AS PERMISSÕES ANTIGAS ALTER
+-- OU TENHA DELETADO / ADICIONADO NOVAS TABELAS
+-- REVOKE ALL PRIVILEGES ON eventify.* FROM 'backend_eventify'@'%';
+
 -- -----------------------------------------------------
 -- Schema eventify
 -- -----------------------------------------------------

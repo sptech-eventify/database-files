@@ -36,6 +36,7 @@ CREATE OR REPLACE VIEW eventitask.vw_sections_task_resp AS
 			LEFT JOIN
 		tag as tg on tg.id = tk.tag_id
     GROUP BY b.id, t.id, s.id order by s.id;
+
     
 CREATE OR REPLACE VIEW eventitask.vw_message_user AS
     SELECT 
@@ -53,7 +54,8 @@ CREATE OR REPLACE VIEW eventitask.vw_message_user AS
     GROUP BY m.id
     ORDER BY m.id;
 
-CREATE OR REPLACE VIEW avg_board_by_section AS
+
+CREATE OR REPLACE VIEW eventitask.avg_board_by_section AS
 SELECT
     b.name AS board_name,
     s.name AS section_name,
@@ -66,22 +68,9 @@ WHERE
     b.name IN ('Front-end', 'Back-end', 'Teórico e Outros')
 GROUP BY
     b.name, s.name;
+
     
 CREATE VIEW expected_time_to_conclusion AS
-SELECT
-    b.name AS board_name,
-    s.name AS section_name,
-    SUM(t.time) AS tempo_total_secao,
-    SUM(t.time) - IFNULL(SUM(CASE WHEN t.status = 2 THEN t.time ELSE 0 END), 0) AS tempo_faltante
-FROM
-    board b
-    LEFT JOIN section s ON s.board_id = b.id
-    LEFT JOIN task t ON t.section_id = s.id
-GROUP BY
-    b.name, s.name;
-    
-    
-CREATE VIEW tempo_faltante_para_conclusao AS
 SELECT
     b.name AS board_name,
     s.name AS section_name,
@@ -95,7 +84,7 @@ FROM
 GROUP BY
     b.name, s.name;
 
-SELECT * FROM expected_time_to_conclusion;
+
 
 
 -- CREATE VIEW log_tarefas AS
