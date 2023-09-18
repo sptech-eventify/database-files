@@ -85,21 +85,47 @@ GROUP BY
     b.name, s.name;
 
 
+CREATE OR REPLACE VIEW eventitask.kpi_distribution_tasks AS
+	SELECT u.name user, COUNT(ut.task_id) 'qtd_tasks'
+FROM usuario u
+	LEFT JOIN user_task ut ON u.id = ut.user_id
+	LEFT JOIN task t ON ut.task_id = t.id
+	LEFT JOIN section s ON t.section_id = s.id
+GROUP BY u.name;
+
+CREATE OR REPLACE VIEW user_task_summary AS
+SELECT
+    u.name user,
+    COUNT(ut.task_id) task_count,
+    IFNULL(AVG(t.time), 0) AS avg_time_hours,
+    MAX(t.data_estimada) estimated_completion_date
+FROM usuario u
+LEFT JOIN user_task ut ON u.id = ut.user_id
+LEFT JOIN task t ON ut.task_id = t.id
+GROUP BY u.id;
+
+SELECT
+	b.name board,
+    s.name section,
+    IFNULL(
+        (COUNT(t.id) / NULLIF(SUM(t.status = 2), 0)) * 100,
+        0
+    ) conclusion
+FROM board b JOIN section s ON s.fk_board = b.id
+LEFT JOIN task t ON s.id = t.section_id
+GROUP BY s.id;
+
+
+
+
+
+
+
+
+
+
+
 
 
 -- CREATE VIEW log_tarefas AS
-SELECT
-    t.id AS task_id,
-    t.name AS nome_tarefa,
-    t.description AS descricao_tarefa,
-    CASE
-        WHEN t.status = 2 THEN 'Concluída'
-        ELSE 'Não Concluída'
-    END AS status_tarefa,
-    t.data_estimada AS data_estimada_conclusao,
-    u.name AS responsavel
-FROM
-    task t
-    LEFT JOIN usuario u ON t.task_id = u.id
-    JOIN user_task ut ON ut.task_id = t.task_id;
 
