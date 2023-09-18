@@ -1,3 +1,5 @@
+USE eventitask;
+
 CREATE OR REPLACE VIEW eventitask.vw_sections_task_resp AS
     SELECT 
         b.id,
@@ -30,7 +32,7 @@ CREATE OR REPLACE VIEW eventitask.vw_sections_task_resp AS
             LEFT JOIN
         user_task AS ut ON ut.task_id = t.id
             LEFT JOIN
-        usuario AS u ON u.id = ut.user_id
+        user AS u ON u.id = ut.user_id
 			LEFT JOIN
 		tag_task as tk on tk.task_id = t.id
 			LEFT JOIN
@@ -50,12 +52,12 @@ CREATE OR REPLACE VIEW eventitask.vw_message_user AS
     FROM
         comment AS m
             LEFT JOIN
-        usuario AS u ON u.id = m.user_id
+        user AS u ON u.id = m.user_id
     GROUP BY m.id
     ORDER BY m.id;
 
 
-CREATE OR REPLACE VIEW eventitask.avg_board_by_section AS
+CREATE OR REPLACE VIEW eventitask.vw_avg_board_by_section AS
 SELECT
     b.name AS board_name,
     s.name AS section_name,
@@ -70,7 +72,7 @@ GROUP BY
     b.name, s.name;
 
     
-CREATE VIEW expected_time_to_conclusion AS
+CREATE OR REPLACE VIEW eventitask.vw_expected_time_to_conclusion AS
 SELECT
     b.name AS board_name,
     s.name AS section_name,
@@ -85,41 +87,87 @@ GROUP BY
     b.name, s.name;
 
 
-CREATE OR REPLACE VIEW eventitask.kpi_distribution_tasks AS
+CREATE OR REPLACE VIEW eventitask.vw_kpi_distribution_tasks AS
 	SELECT u.name user, COUNT(ut.task_id) 'qtd_tasks'
-FROM usuario u
+FROM user u
 	LEFT JOIN user_task ut ON u.id = ut.user_id
 	LEFT JOIN task t ON ut.task_id = t.id
 	LEFT JOIN section s ON t.section_id = s.id
 GROUP BY u.name;
 
-CREATE OR REPLACE VIEW user_task_summary AS
+
+CREATE OR REPLACE VIEW eventitask.vw_user_task_summary AS
 SELECT
-    u.name user,
+    u.name 'user',
     COUNT(ut.task_id) task_count,
     IFNULL(AVG(t.time), 0) AS avg_time_hours,
     MAX(t.data_estimada) estimated_completion_date
-FROM usuario u
+FROM user u
 LEFT JOIN user_task ut ON u.id = ut.user_id
 LEFT JOIN task t ON ut.task_id = t.id
 GROUP BY u.id;
 
+
+CREATE OR REPLACE VIEW eventitask.vw_task_logs AS
 SELECT
-	b.name board,
-    s.name section,
-    IFNULL(
-        (COUNT(t.id) / NULLIF(SUM(t.status = 2), 0)) * 100,
-        0
-    ) conclusion
-FROM board b JOIN section s ON s.fk_board = b.id
-LEFT JOIN task t ON s.id = t.section_id
-GROUP BY s.id;
+    a.id log_id,
+    t.name task_name,
+    u.name changed_by_user,
+    a.type_change change_type,
+    a.old_value old_task_value,
+    a.new_value new_task_value,
+    a.change_time change_time
+FROM
+    eventitask.audit AS a
+JOIN
+    eventitask.task AS t ON a.table_name = 'task' AND a.column_name = 'status' AND CAST(a.old_value AS SIGNED) <> CAST(a.new_value AS SIGNED)
+JOIN
+    eventitask.user AS u ON a.changed_by = u.id
+ORDER BY
+    a.change_time DESC;
 
 
+CREATE OR REPLACE VIEW eventitask.vw_sections_progress AS
+SELECT
+    b.name board,
+    s.name name,
+    IFNULL((SUM(t.status = 2) / NULLIF(COUNT(t.id), 0)) * 100, 0) percent
+FROM
+    eventitask.board AS b
+LEFT JOIN
+    eventitask.section AS s ON b.id = s.board_id
+LEFT JOIN
+    eventitask.task AS t ON s.id = t.section_id
+GROUP BY
+    b.id, s.id
+ORDER BY
+    b.name, s.name;
 
 
+CREATE OR REPLACE VIEW eventitask.area_progress AS
+SELECT
+	t.name,
+    DATE(t.data_estimada) day,
+    CASE
+        WHEN t.status = 0 THEN 'pendente'
+        WHEN t.status = 1 THEN 'em desenvolvimento'
+        WHEN t.status = 2 THEN 'concluído'
+        ELSE 'desconhecido'
+    END AS 'status',
+    u.name
+FROM
+    eventitask.task t
+JOIN eventitask.user_task ut ON t.id = ut.task_id
+JOIN eventitask.user u ON u.id = ut.user_id
+WHERE
+    t.status = 2
+    AND DATE(t.data_estimada) BETWEEN CURDATE() - INTERVAL 6 DAY AND CURDATE()
+GROUP BY
+    day
+ORDER BY
+    day;
 
-
+SELECT * FROM task ORDER BY data_estimada DESC;
 
 
 
