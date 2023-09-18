@@ -144,9 +144,11 @@ ORDER BY
     b.name, s.name;
 
 
-CREATE OR REPLACE VIEW eventitask.area_progress AS
+CREATE OR REPLACE VIEW eventitask.vw_area_progress AS
 SELECT
-	t.name,
+	b.name board,
+    sc.name section,
+	t.name task,
     DATE(t.data_estimada) day,
     CASE
         WHEN t.status = 0 THEN 'pendente'
@@ -159,6 +161,8 @@ FROM
     eventitask.task t
 JOIN eventitask.user_task ut ON t.id = ut.task_id
 JOIN eventitask.user u ON u.id = ut.user_id
+JOIN eventitask.section sc ON t.section_id = sc.id
+JOIN eventitask.board b ON sc.board_id = b.id
 WHERE
     t.status = 2
     AND DATE(t.data_estimada) BETWEEN CURDATE() - INTERVAL 6 DAY AND CURDATE()
@@ -167,13 +171,49 @@ GROUP BY
 ORDER BY
     day;
 
-SELECT * FROM task ORDER BY data_estimada DESC;
 
-
-
-
-
-
-
--- CREATE VIEW log_tarefas AS
-
+CREATE VIEW eventitask.tarefas_gerais AS
+SELECT
+    t.id AS task_id,
+    t.name AS task_name,
+    t.description AS task_description,
+    t.priority AS task_priority,
+    t.fibonacci AS task_fibonacci,
+    CASE
+        WHEN t.status = 0 THEN 'pendente'
+        WHEN t.status = 1 THEN 'em desenvolvimento'
+        WHEN t.status = 2 THEN 'concluído'
+        ELSE 'desconhecido'
+    END AS task_status,
+    t.time AS task_time,
+    t.data_estimada AS task_data_estimada,
+    s.id AS section_id,
+    s.name AS section_name,
+    b.id AS board_id,
+    b.name AS board_name,
+    u.id AS created_by_user_id,
+    u.name AS created_by_user_name,
+    ut.user_id AS allocated_to_user_id,
+    cu.name AS allocated_to_user_name,
+    c.id AS comment_id,
+    c.message AS comment_message,
+    c.time AS comment_time,
+    tc.name AS tag_name
+FROM
+    eventitask.task AS t
+LEFT JOIN
+    eventitask.section AS s ON t.section_id = s.id
+LEFT JOIN
+    eventitask.board AS b ON s.board_id = b.id
+LEFT JOIN
+    eventitask.user AS u ON t.created_by = u.id
+LEFT JOIN
+    eventitask.user_task AS ut ON t.id = ut.task_id
+LEFT JOIN
+    eventitask.user AS cu ON ut.user_id = cu.id
+LEFT JOIN
+    eventitask.comment AS c ON t.id = c.task_id
+LEFT JOIN
+    eventitask.tag_task AS tt ON t.id = tt.task_id
+LEFT JOIN
+    eventitask.tag AS tc ON tt.tag_id = tc.id;
