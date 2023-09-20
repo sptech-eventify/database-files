@@ -39,7 +39,7 @@ CREATE TABLE eventitask.task (
     section_id INT,
     task_id INT,
 	name VARCHAR(128),
-    description VARCHAR(1028),
+    description VARCHAR(512),
     priority INT COMMENT '(0 - desejavel) (1 - importante) (2 - essencial)',
     CONSTRAINT ckPriority CHECK (priority IN (0, 1, 2)),
     fibonacci INT COMMENT '1, 2, 3, 5, 8, 13, 21, 34',
