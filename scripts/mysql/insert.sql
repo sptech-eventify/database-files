@@ -1,5 +1,5 @@
 -- Proprietários de Dezembro
-INSERT INTO `eventify`.`usuario` (nome, email, senha, tipo_usuario, is_ativo, is_banido, cpf, data_criacao, ultimo_login, foto) VALUE
+INSERT INTO `eventify`.`usuario` (nome, email, senha, tipo_usuario, is_ativo, is_banido, cpf, data_criacao, ultimo_login, imagem) VALUE
 ('João Silva', 'joao.silva@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 2, 1, 0, '12345678901', '2022-12-01 09:15:00', '2023-01-15 18:30:00', 
 'https://sm.askmen.com/askmen_in/article/f/facebook-p/facebook-profile-picture-affects-chances-of-gettin_fr3n.jpg');
 
@@ -128,7 +128,7 @@ INSERT INTO `eventify`.`usuario` (nome, email, senha, tipo_usuario, is_ativo, is
 
 
 -- Contratantes de Dezembro
-INSERT INTO `eventify`.`usuario` (nome, email, senha, tipo_usuario, is_ativo, is_banido, cpf, data_criacao, ultimo_login, foto) VALUE
+INSERT INTO `eventify`.`usuario` (nome, email, senha, tipo_usuario, is_ativo, is_banido, cpf, data_criacao, ultimo_login, imagem) VALUE
 ('Isabela Martins', 'isabela.martins@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 1, 1, 0, '43210987654', '2022-12-23 12:30:00', '2023-01-16 09:00:00',
 'https://t4.ftcdn.net/jpg/03/30/25/97/360_F_330259751_tGPEAq5F5bjxkkliGrb97X2HhtXBDc9x.jpg');
 
@@ -462,7 +462,7 @@ INSERT INTO `eventify`.`usuario` (nome, email, senha, tipo_usuario, is_ativo, is
 ('Mariana Silva', 'mariana.silva8943012@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 1, 1, 0, '89012345678', '2023-05-01 16:45:00', '2023-05-31 15:45:00');
 
 
-INSERT INTO eventify.usuario (nome, email, senha, tipo_usuario, is_ativo, is_banido, cpf, data_criacao, ultimo_login, foto) VALUE
+INSERT INTO eventify.usuario (nome, email, senha, tipo_usuario, is_ativo, is_banido, cpf, data_criacao, ultimo_login, imagem) VALUE
 ('Administrador', 'admin@eventify.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 3, 1, 0, '09876543210', '2022-12-01 10:40:00', '2023-05-20 17:45:00',
 'https://avatars.githubusercontent.com/u/125686648?s=400&u=a59fc408f866db42661576c2fdc4e3fbac915a41&v=4');
 
@@ -1337,7 +1337,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua São Paulo', 200, 'Centro', 'São Paulo', 'SP', '01001000', -23.550520, -46.633308, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Aromas e Sabores', 'Deliciosas opções de comida para todos os gostos!', 400, 2500.00, 300, '', 1, 1, '2023-06-04 12:00:00', 21, 21);
+('Buffet Aromas e Sabores', 'Deliciosas opções de comida para todos os gostos!', 400, 2500.00, 300, 'caminho/comprovante21.jpg', 1, 1, '2023-06-04 12:00:00', 21, 21);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (21, 5),
@@ -1374,7 +1374,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Avenida Paulista', 1500, 'Bela Vista', 'São Paulo', 'SP', '01310000', -23.564830, -46.652640, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Sabores da Terra', 'Comida típica e regional para eventos especiais!', 600, 3500.00, 500, '', 1, 1, '2023-06-04 12:00:00', 22, 22);
+('Buffet Sabores da Terra', 'Comida típica e regional para eventos especiais!', 600, 3500.00, 500, 'caminho/comprovante22.jpg', 1, 1, '2023-06-04 12:00:00', 22, 22);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (22, 2),
@@ -1410,7 +1410,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua da Paz', 150, 'Centro', 'Curitiba', 'PR', '80060000', -25.429720, -49.267150, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Delícias da Terra', 'Sabores autênticos para momentos especiais!', 400, 3200.00, 250, '', 1, 1, '2023-06-04 12:00:00', 23, 23);
+('Buffet Delícias da Terra', 'Sabores autênticos para momentos especiais!', 400, 3200.00, 250, 'caminho/comprovante23.jpg', 1, 1, '2023-06-04 12:00:00', 23, 23);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (23, 4),
@@ -1446,7 +1446,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Avenida Central', 500, 'Centro', 'Fortaleza', 'CE', '60000000', -3.731862, -38.526670, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Mar Azul', 'Uma explosão de sabores para seu evento!', 300, 2800.00, 200, '', 1, 1, '2023-06-04 12:00:00', 24, 24);
+('Buffet Mar Azul', 'Uma explosão de sabores para seu evento!', 300, 2800.00, 200, 'caminho/comprovante24.jpg', 1, 1, '2023-06-04 12:00:00', 24, 24);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (24, 3),
@@ -1482,7 +1482,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua das Flores', 200, 'Centro', 'Salvador', 'BA', '40000000', -12.978490, -38.499220, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Tropical', 'Sabores exóticos para seu evento!', 400, 3000.00, 250, '', 1, 1, '2023-06-04 12:00:00', 25, 25);
+('Buffet Tropical', 'Sabores exóticos para seu evento!', 400, 3000.00, 250, 'caminho/comprovante25.jpg', 1, 1, '2023-06-04 12:00:00', 25, 25);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (25, 4),
@@ -1518,7 +1518,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Avenida Paulista', 1000, 'Bela Vista', 'São Paulo', 'SP', '01310000', -23.563370, -46.654830, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Glamour', 'Experiência única para seu evento especial!', 600, 4000.00, 300, '', 1, 1, '2023-06-04 12:00:00', 26, 26);
+('Buffet Glamour', 'Experiência única para seu evento especial!', 600, 4000.00, 300, 'caminho/comprovante26.jpg', 1, 1, '2023-06-04 12:00:00', 26, 26);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (26, 5),
@@ -1554,7 +1554,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua Barão do Rio Branco', 500, 'Centro', 'Belo Horizonte', 'MG', '30140010', -19.922330, -43.940230, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Elegância', 'O toque de requinte que seu evento merece!', 400, 3500.00, 200, '', 1, 1, '2023-06-04 12:00:00', 27, 27);
+('Buffet Elegância', 'O toque de requinte que seu evento merece!', 400, 3500.00, 200, 'caminho/comprovante27.jpg', 1, 1, '2023-06-04 12:00:00', 27, 27);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (27, 3),
@@ -1590,7 +1590,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Avenida Paulista', 1234, 'Bela Vista', 'São Paulo', 'SP', '01310000', -23.563370, -46.654830, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Dourado', 'Um toque de elegância e sofisticação para seu evento!', 800, 5000.00, 500, '', 1, 1, '2023-06-04 12:00:00', 28, 28);
+('Buffet Dourado', 'Um toque de elegância e sofisticação para seu evento!', 800, 5000.00, 500, 'caminho/comprovante28.jpg', 1, 1, '2023-06-04 12:00:00', 28, 28);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (28, 6),
@@ -1626,7 +1626,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Avenida Brigadeiro Faria Lima', 1500, 'Jardim Paulistano', 'São Paulo', 'SP', '01451000', -23.581360, -46.686810, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Charme', 'Um toque de charme para tornar seu evento inesquecível!', 300, 2500.00, 150, '', 1, 1, '2023-06-04 12:00:00', 29, 29);
+('Buffet Charme', 'Um toque de charme para tornar seu evento inesquecível!', 300, 2500.00, 150, 'caminho/comprovante29.jpg', 1, 1, '2023-06-04 12:00:00', 29, 29);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (29, 1),
@@ -1662,7 +1662,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua da Praia', 500, 'Centro', 'Florianópolis', 'SC', '88010970', -27.596911, -48.549176, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Praia Dourada', 'Sinta o clima praiano em seu evento!', 200, 1800.00, 100, '', 1, 1, '2023-06-04 12:00:00', 30, 30);
+('Buffet Praia Dourada', 'Sinta o clima praiano em seu evento!', 200, 1800.00, 100, 'caminho/comprovante30.jpg', 1, 1, '2023-06-04 12:00:00', 30, 30);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (30, 3),
@@ -1699,7 +1699,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Avenida Paulista', 1500, 'Bela Vista', 'São Paulo', 'SP', '01310200', -23.562754, -46.654590, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Paulista Eventos', 'A sofisticação da Avenida Paulista em seu evento!', 300, 2500.00, 200, '', 1, 1, '2023-06-04 12:00:00', 31, 31);
+('Buffet Paulista Eventos', 'A sofisticação da Avenida Paulista em seu evento!', 300, 2500.00, 200, 'caminho/comprovante31.jpg', 1, 1, '2023-06-04 12:00:00', 31, 31);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (31, 5),
@@ -1735,7 +1735,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Avenida Boa Viagem', 1000, 'Boa Viagem', 'Recife', 'PE', '51011000', -8.120838, -34.901586, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Recife Mar', 'O sabor do Nordeste em seu evento!', 250, 2000.00, 150, '', 1, 1, '2023-06-04 12:00:00', 32, 32);
+('Buffet Recife Mar', 'O sabor do Nordeste em seu evento!', 250, 2000.00, 150, 'caminho/comprovante32.jpg', 1, 1, '2023-06-04 12:00:00', 32, 32);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (32, 6),
@@ -1771,7 +1771,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua das Flores', 300, 'Centro', 'Curitiba', 'PR', '80010140', -25.428954, -49.271662, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Flores Fest', 'Alegria e sabor em seu evento!', 150, 1500.00, 80, '', 1, 1, '2023-06-04 12:00:00', 33, 33);
+('Buffet Flores Fest', 'Alegria e sabor em seu evento!', 150, 1500.00, 80, 'caminho/comprovante33.jpg', 1, 1, '2023-06-04 12:00:00', 33, 33);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (33, 1),
@@ -1807,7 +1807,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua das Palmeiras', 500, 'Jardim Botânico', 'Brasília', 'DF', '70000000', -15.797176, -47.877074, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Brasília Palace', 'Sofisticação e sabor na capital do Brasil!', 200, 1800.00, 120, '', 1, 1, '2023-06-04 12:00:00', 34, 34);
+('Buffet Brasília Palace', 'Sofisticação e sabor na capital do Brasil!', 200, 1800.00, 120, 'caminho/comprovante34.jpg', 1, 1, '2023-06-04 12:00:00', 34, 34);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (34, 5),
@@ -1843,7 +1843,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Avenida das Palmas', 800, 'Centro', 'Palmas', 'TO', '77000000', -10.1689, -48.3327, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Palmas Fest', 'Sabores que encantam, momentos que marcam!', 250, 2500.00, 150, '', 1, 1, '2023-06-04 12:00:00', 35, 35);
+('Buffet Palmas Fest', 'Sabores que encantam, momentos que marcam!', 250, 2500.00, 150, 'caminho/comprovante35.jpg', 1, 1, '2023-06-04 12:00:00', 35, 35);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (35, 3),
@@ -1879,7 +1879,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua das Gaivotas', 600, 'Praia da Costa', 'Vila Velha', 'ES', '29101050', -20.337230, -40.290299, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Costa Gastronômica', 'Experiência incrível para o seu paladar!', 180, 1700.00, 100, '', 1, 1, '2023-06-04 12:00:00', 36, 36);
+('Buffet Costa Gastronômica', 'Experiência incrível para o seu paladar!', 180, 1700.00, 100, 'caminho/comprovante36.jpg', 1, 1, '2023-06-04 12:00:00', 36, 36);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (36, 2),
@@ -1915,7 +1915,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua das Flores', 200, 'Centro', 'Campinas', 'SP', '13010080', -22.908622, -47.062912, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Flor de Sabor', 'Uma explosão de sabores para encantar seu paladar!', 250, 2500.00, 150, '', 1, 1, '2023-06-04 12:00:00', 37, 37);
+('Buffet Flor de Sabor', 'Uma explosão de sabores para encantar seu paladar!', 250, 2500.00, 150, 'caminho/comprovante37.jpg', 1, 1, '2023-06-04 12:00:00', 37, 37);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (37, 3),
@@ -1951,7 +1951,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Avenida Central', 500, 'Centro', 'Curitiba', 'PR', '80060100', -25.432607, -49.274746, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Central Festas', 'Celebre momentos especiais com requinte e sofisticação!', 400, 3500.00, 250, '', 1, 1, '2023-06-04 12:00:00', 38, 38);
+('Buffet Central Festas', 'Celebre momentos especiais com requinte e sofisticação!', 400, 3500.00, 250, 'caminho/comprovante38.jpg', 1, 1, '2023-06-04 12:00:00', 38, 38);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (38, 4),
@@ -1987,7 +1987,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua Principal', 300, 'Centro', 'Salvador', 'BA', '40020040', -12.970718, -38.504643, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Tropical', 'Sabores tropicais para surpreender seus convidados!', 300, 3000.00, 200, '', 1, 1, '2023-06-04 12:00:00', 39, 39);
+('Buffet Tropical', 'Sabores tropicais para surpreender seus convidados!', 300, 3000.00, 200, 'caminho/comprovante39.jpg', 1, 1, '2023-06-04 12:00:00', 39, 39);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (39, 3),
@@ -2023,7 +2023,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Avenida dos Sabores', 100, 'Jardim', 'Belo Horizonte', 'MG', '30140050', -19.924987, -43.940248, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Jardim dos Sabores', 'Uma explosão de sabores para encantar seu paladar!', 400, 3500.00, 250, '', 1, 1, '2023-06-04 12:00:00', 40, 40);
+('Buffet Jardim dos Sabores', 'Uma explosão de sabores para encantar seu paladar!', 400, 3500.00, 250, 'caminho/comprovante40.jpg', 1, 1, '2023-06-04 12:00:00', 40, 40);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (40, 4),
@@ -2059,7 +2059,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua das Delícias', 100, 'Centro', 'São Paulo', 'SP', '01001000', -23.550520, -46.633308, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Delícias Paulistas', 'Sabores autênticos da culinária paulista para sua festa!', 300, 2500.00, 150, '', 1, 1, '2023-06-04 12:00:00', 41, 41);
+('Buffet Delícias Paulistas', 'Sabores autênticos da culinária paulista para sua festa!', 300, 2500.00, 150, 'caminho/comprovante41.jpg', 1, 1, '2023-06-04 12:00:00', 41, 41);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (41, 1),
@@ -2095,7 +2095,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua dos Sabores', 200, 'Jardim Botânico', 'Curitiba', 'PR', '80060000', -25.433835, -49.287244, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Curitiba Gourmet', 'Sabor e requinte para eventos especiais!', 400, 3500.00, 200, '', 1, 1, '2023-06-04 12:00:00', 42, 42);
+('Buffet Curitiba Gourmet', 'Sabor e requinte para eventos especiais!', 400, 3500.00, 200, 'caminho/comprovante42.jpg', 1, 1, '2023-06-04 12:00:00', 42, 42);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (42, 3),
@@ -2131,7 +2131,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Avenida dos Sabores', 300, 'Boa Viagem', 'Recife', 'PE', '51021000', -8.127114, -34.899980, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Recife Encantado', 'Sabor e encanto em cada detalhe!', 350, 2800.00, 180, '', 1, 1, '2023-06-04 12:00:00', 43, 43);
+('Buffet Recife Encantado', 'Sabor e encanto em cada detalhe!', 350, 2800.00, 180, 'caminho/comprovante43.jpg', 1, 1, '2023-06-04 12:00:00', 43, 43);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (43, 1),
@@ -2167,7 +2167,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua dos Sabores', 400, 'Centro', 'Belo Horizonte', 'MG', '30170110', -19.925717, -43.948622, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Mineirinho Gourmet', 'Sabores autênticos da culinária mineira!', 450, 3200.00, 250, '', 1, 1, '2023-06-04 12:00:00', 44, 44);
+('Buffet Mineirinho Gourmet', 'Sabores autênticos da culinária mineira!', 450, 3200.00, 250, 'caminho/comprovante44.jpg', 1, 1, '2023-06-04 12:00:00', 44, 44);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (44, 2),
@@ -2203,7 +2203,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Avenida das Flores', 150, 'Jardim das Rosas', 'São Paulo', 'SP', '04505040', -23.582581, -46.682126, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Floral Garden', 'Uma explosão de sabores em meio a um belo jardim!', 400, 2800.00, 200, '', 1, 1, '2023-06-04 12:00:00', 45, 45);
+('Buffet Floral Garden', 'Uma explosão de sabores em meio a um belo jardim!', 400, 2800.00, 200, 'caminho/comprovante45.jpg', 1, 1, '2023-06-04 12:00:00', 45, 45);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (45, 1),
@@ -2239,7 +2239,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua dos Sabores', 100, 'Centro', 'Salvador', 'BA', '40060055', -12.971598, -38.501853, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Sabor Bahia', 'A culinária baiana em um buffet de dar água na boca!', 300, 2500.00, 150, '', 1, 1, '2023-06-04 12:00:00', 46, 46);
+('Buffet Sabor Bahia', 'A culinária baiana em um buffet de dar água na boca!', 300, 2500.00, 150, 'caminho/comprovante46.jpg', 1, 1, '2023-06-04 12:00:00', 46, 46);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (46, 2),
@@ -2275,7 +2275,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua dos Vinhos', 200, 'Vila Gastronômica', 'Bento Gonçalves', 'RS', '95700000', -29.165771, -51.516347, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Vinhos e Sabores', 'A harmonização perfeita entre vinhos e deliciosas iguarias!', 500, 3000.00, 250, '', 1, 1, '2023-06-04 12:00:00', 47, 47);
+('Buffet Vinhos e Sabores', 'A harmonização perfeita entre vinhos e deliciosas iguarias!', 500, 3000.00, 250, 'caminho/comprovante47.jpg', 1, 1, '2023-06-04 12:00:00', 47, 47);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (47, 1),
@@ -2311,7 +2311,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Avenida das Estrelas', 500, 'Centro', 'Florianópolis', 'SC', '88020000', -27.594900, -48.551199, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Estrelas do Mar', 'Sabores maravilhosos em um buffet com vista para o mar!', 350, 2200.00, 180, '', 1, 1, '2023-06-04 12:00:00', 48, 48);
+('Buffet Estrelas do Mar', 'Sabores maravilhosos em um buffet com vista para o mar!', 350, 2200.00, 180, 'caminho/comprovante48.jpg', 1, 1, '2023-06-04 12:00:00', 48, 48);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (48, 2),
@@ -2347,7 +2347,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua dos Sabores', 150, 'Centro', 'Brasília', 'DF', '70000000', -15.799830, -47.864560, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Sabores da Capital', 'Descubra os melhores sabores da cidade em nosso buffet!', 300, 1800.00, 150, '', 1, 1, '2023-06-04 12:00:00', 49, 49);
+('Buffet Sabores da Capital', 'Descubra os melhores sabores da cidade em nosso buffet!', 300, 1800.00, 150, 'caminho/comprovante49.jpg', 1, 1, '2023-06-04 12:00:00', 49, 49);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (49, 1),
@@ -2383,7 +2383,7 @@ INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, 
 (1, 'Rua das Flores', 100, 'Centro', 'Florianópolis', 'SC', '88000000', -27.595377, -48.548849, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
-('Buffet Flor de Lis', 'Opções requintadas e saborosas para eventos especiais!', 300, 2800.00, 200, '', 1, 1, '2023-06-04 12:00:00', 50, 50);
+('Buffet Flor de Lis', 'Opções requintadas e saborosas para eventos especiais!', 300, 2800.00, 200, 'caminho/comprovante50.jpg', 1, 1, '2023-06-04 12:00:00', 50, 50);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
 (50, 3),
