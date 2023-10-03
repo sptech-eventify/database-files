@@ -539,9 +539,10 @@ INSERT INTO `eventify`.`buffet_tipo_evento` (`id_buffet`, `id_tipo_evento`) VALU
 
 INSERT INTO `eventify`.`buffet_servico` (`id_buffet`, `id_servico`) VALUES
 (1, 1),
+(1, 2),
 (1, 3),
-(1, 4),
-(1, 5);
+(1, 5),
+(1, 6);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUES 
 (1, '2023-01-18 00:00:00', 1),
