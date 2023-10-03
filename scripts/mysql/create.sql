@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS eventify;
+
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
@@ -6,7 +8,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- Schema eventify
 -- -----------------------------------------------------
 
--- -----------------------------------------------------
+-- -------------------------------------------------a----
 -- Schema eventify
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `eventify` DEFAULT CHARACTER SET utf8 ;
@@ -40,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `eventify`.`endereco` (
   `logradouro` VARCHAR(64) NOT NULL,
   `numero` INT NULL,
   `bairro` VARCHAR(32) NOT NULL,
-  `cidade` VARCHAR(63) NULL,
+  `cidade` VARCHAR(64) NULL,
   `uf` CHAR(2) NOT NULL,
   `cep` CHAR(8) NOT NULL,
   `latitude` DECIMAL(8,6) NOT NULL,
@@ -179,8 +181,6 @@ CREATE TABLE IF NOT EXISTS `eventify`.`pagamento` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_pagamento1_idx` ON `eventify`.`pagamento` (`id` ASC) VISIBLE;
-
 
 -- -----------------------------------------------------
 -- Table `eventify`.`evento`
@@ -188,19 +188,17 @@ CREATE INDEX `fk_pagamento1_idx` ON `eventify`.`pagamento` (`id` ASC) VISIBLE;
 CREATE TABLE IF NOT EXISTS `eventify`.`evento` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `data` DATETIME NULL,
-  `preco` DECIMAL(8,2) NULL,
-  `avaliacao` VARCHAR(511) NULL,
+  `preco` DECIMAL(6,2) NULL,
+  `avaliacao` TEXT(512) NULL,
   `nota` DOUBLE(2,1) NULL,
   `status` INT(8) NULL,
-  `motivo_nao_aceito` VARCHAR(511) NULL,
+  `motivo_nao_aceito` TEXT(512) NULL,
   `is_formulario_dinamico` BIT NULL,
   `data_criacao` DATETIME NULL,
   `id_buffet` INT NOT NULL,
   `id_contratante` INT NOT NULL,
   `id_pagamento` INT NULL,
-  INDEX `fk_evento_buffet1_idx` (`id_buffet` ASC) VISIBLE,
-  UNIQUE INDEX `fk_evento_pagamento1_idx` (`id`, `id_pagamento`) VISIBLE,
-  INDEX `fk_evento_usuario1_idx` (`id_contratante` ASC) VISIBLE,
+  PRIMARY KEY (`id`),
   CONSTRAINT `fk_evento_buffet1`
     FOREIGN KEY (`id_buffet`)
     REFERENCES `eventify`.`buffet` (`id`)
@@ -215,8 +213,14 @@ CREATE TABLE IF NOT EXISTS `eventify`.`evento` (
     FOREIGN KEY (`id_pagamento`)
     REFERENCES `eventify`.`pagamento` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-) ENGINE = InnoDB;
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_evento_buffet1_idx` ON `eventify`.`evento` (`id_buffet` ASC) VISIBLE;
+
+CREATE INDEX `fk_evento_usuario1_idx` ON `eventify`.`evento` (`id_contratante` ASC) VISIBLE;
+
+CREATE INDEX `fk_evento_pagamento1_idx` ON `eventify`.`evento` (`id_pagamento` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -271,9 +275,10 @@ CREATE INDEX `fk_buffet_has_tipo_evento_buffet1_idx` ON `eventify`.`buffet_tipo_
 -- Table `eventify`.`buffet_servico`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eventify`.`buffet_servico` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `id_buffet` INT NOT NULL,
   `id_servico` INT NOT NULL,
-  PRIMARY KEY (`id_buffet`, `id_servico`),
+  PRIMARY KEY (`id`, `id_buffet`, `id_servico`),
   CONSTRAINT `fk_buffet_has_servico_buffet1`
     FOREIGN KEY (`id_buffet`)
     REFERENCES `eventify`.`buffet` (`id`)
@@ -297,7 +302,7 @@ CREATE INDEX `fk_buffet_has_servico_buffet1_idx` ON `eventify`.`buffet_servico` 
 CREATE TABLE IF NOT EXISTS `eventify`.`imagem` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `caminho` VARCHAR(256) NULL,
-  `nome` VARCHAR(256) NULL,
+  `nome` VARCHAR(128) NULL,
   `tipo` VARCHAR(4) NULL,
   `is_ativo` TINYINT NULL,
   `data_upload` DATETIME NULL,
@@ -338,7 +343,7 @@ CREATE INDEX `fk_notificacao_usuario1_idx` ON `eventify`.`notificacao` (`id_usua
 CREATE TABLE IF NOT EXISTS `eventify`.`imagem_chat` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `caminho` VARCHAR(256) NOT NULL,
-  `nome` VARCHAR(32) NOT NULL,
+  `nome` VARCHAR(128) NOT NULL,
   `tipo` VARCHAR(4) NOT NULL,
   `is_ativo` TINYINT NOT NULL,
   `data_upload` DATETIME NOT NULL,
@@ -392,25 +397,6 @@ CREATE INDEX `fk_log_de_acesso_pagina1_idx` ON `eventify`.`acesso` (`id_pagina` 
 
 
 -- -----------------------------------------------------
--- Table `eventify`.`bucket`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `eventify`.`bucket` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(64) NULL,
-  `id_buffet` INT NOT NULL,
-  `id_servico` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `fk_bucket_buffet_servico1`
-    FOREIGN KEY (`id_buffet` , `id_servico`)
-    REFERENCES `eventify`.`buffet_servico` (`id_buffet` , `id_servico`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-CREATE INDEX `fk_bucket_buffet_servico1_idx` ON `eventify`.`bucket` (`id_buffet` ASC, `id_servico` ASC) VISIBLE;
-
-
--- -----------------------------------------------------
 -- Table `eventify`.`tarefa`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eventify`.`tarefa` (
@@ -423,15 +409,18 @@ CREATE TABLE IF NOT EXISTS `eventify`.`tarefa` (
   `data_estimada` DATE NULL,
   `data_criacao` DATE NULL,
   `id_bucket` INT NOT NULL,
+  `buffet_servico_id` INT NOT NULL,
+  `buffet_servico_id_buffet` INT NOT NULL,
+  `buffet_servico_id_servico` INT NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `fk_tarefa_bucket1`
-    FOREIGN KEY (`id_bucket`)
-    REFERENCES `eventify`.`bucket` (`id`)
+  CONSTRAINT `fk_tarefa_buffet_servico1`
+    FOREIGN KEY (`buffet_servico_id` , `buffet_servico_id_buffet` , `buffet_servico_id_servico`)
+    REFERENCES `eventify`.`buffet_servico` (`id` , `id_buffet` , `id_servico`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_tarefa_bucket1_idx` ON `eventify`.`tarefa` (`id_bucket` ASC) VISIBLE;
+CREATE INDEX `fk_tarefa_buffet_servico1_idx` ON `eventify`.`tarefa` (`buffet_servico_id` ASC, `buffet_servico_id_buffet` ASC, `buffet_servico_id_servico` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
