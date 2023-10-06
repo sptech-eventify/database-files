@@ -1,3 +1,5 @@
+use eventify;
+
 -- Proprietários de Dezembro
 INSERT INTO `eventify`.`usuario` (nome, email, senha, tipo_usuario, is_ativo, is_banido, cpf, data_criacao, ultimo_login, imagem) VALUE
 ('João Silva', 'joao.silva@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 2, 1, 0, '12345678901', '2022-12-01 09:15:00', '2023-01-15 18:30:00', 
@@ -597,7 +599,7 @@ INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_na
 ('2023-06-20 00:00:00', 1800.50, NULL, NULL, 5, NULL, 1, 1, '2023-04-17 18:45:00', 233, 20),
 ('2023-06-30 00:00:00', 1500.00, NULL, NULL, 5, NULL, 1, 1, '2023-05-01 09:00:00', 236, 21);
 
-INSERT INTO agenda (data, id_buffet) VALUES
+INSERT INTO `eventify`.`agenda` (data, id_buffet) VALUES
 ('2023-01-18 00:00:00', 1),
 ('2023-01-28 00:00:00', 1),
 ('2023-02-11 00:00:00', 1),
@@ -625,7 +627,7 @@ INSERT INTO agenda (data, id_buffet) VALUES
 ('2023-06-20 00:00:00', 1),
 ('2023-06-30 00:00:00', 1);
 
-INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
+INSERT INTO `eventify`.`imagem` (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://focusgreece.com/wp-content/uploads/2018/08/', 'Matsuhisa-Mykonos-2', 'jpg', 1, NOW(), 1),
     ('https://moneyinc.com/wp-content/uploads/2019/08/', 'WP24-by-Wolfgang-Puck-750x500', 'jpg', 1, NOW(), 1),
     ('https://betterbankside.co.uk/wp-content/uploads/2019/03/', 'Bar_01', 'jpg', 1, NOW(), 1);
@@ -1087,7 +1089,7 @@ VALUES
         ('2023-09-21 13:00:00', NULL, NULL, NULL, 4, 'Problemas com a limpeza do local', 1, 17, '2023-04-21 13:00:00', 247, NULL);
 
 
-INSERT INTO evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento)
+INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento)
 VALUES
         ('2023-09-01 10:00:00', NULL, NULL, NULL, 1, NULL, 0, 19, '2023-06-01 10:00:00', 228, NULL),
         ('2023-09-02 15:30:00', NULL, NULL, NULL, 1, NULL, 0, 2, '2023-06-02 15:30:00', 229, NULL),
@@ -1101,7 +1103,7 @@ VALUES
         ('2023-09-10 10:15:00', NULL, NULL, NULL, 1, NULL, 0, 10, '2023-06-10 10:15:00', 103, NULL);
         
 
-INSERT INTO evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento)
+INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento)
 VALUES
         ('2023-09-11 15:45:00', NULL, NULL, NULL, 3, NULL, 0, 11, '2023-06-11 15:45:00', 138, NULL),
         ('2023-09-12 11:00:00', NULL, NULL, NULL, 3, NULL, 0, 12, '2023-06-12 11:00:00', 139, NULL),
@@ -1115,7 +1117,7 @@ VALUES
         ('2023-09-21 13:00:00', 1454.00, NULL, NULL, 3, NULL, 0, 19, '2023-06-21 13:00:00', 103, NULL);
 
 
-INSERT INTO evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento)
+INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento)
 VALUES
     ('2023-09-01 10:00:00', NULL, NULL, NULL, 7, NULL, 0, 19, '2023-06-01 10:00:00', 165, NULL),
     ('2023-09-02 15:30:00', NULL, NULL, NULL, 7, NULL, 0, 2, '2023-06-02 15:30:00', 166, NULL),
@@ -1129,7 +1131,7 @@ VALUES
     ('2023-09-10 10:15:00', NULL, NULL, NULL, 7, NULL, 0, 10, '2023-06-10 10:15:00', 103, NULL);
     
 
-INSERT INTO agenda (data, id_buffet)
+INSERT INTO `eventify`.`agenda` (data, id_buffet)
 VALUES
     ('2023-02-01 09:00:00', 5),
     ('2023-02-02 14:30:00', 10),
@@ -1233,7 +1235,7 @@ VALUES
     ('2024-08-30 11:45:00', 15);
 
 
-INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet)
+INSERT INTO `eventify`.`imagem` (caminho, nome, tipo, is_ativo, data_upload, id_buffet)
 VALUES
 ('http://www.majer.com.br/empreendimentos/comercial/playland/images/', 'foto1_salvador', 'jpg', 1, '2023-05-19 10:00:00', 19),
 
@@ -1291,7 +1293,7 @@ VALUES
 
 
 -- Buffet 20 ----------------------
-INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, uf, cep, latitude, longitude, data_criacao) VALUES
+INSERT INTO `eventify`.`endereco` (is_validado, logradouro, numero, bairro, cidade, uf, cep, latitude, longitude, data_criacao) VALUES
 (1, 'Avenida Goethe', 100, 'Rio Branco', 'Porto Alegre', 'RS', '90430001', -30.023100, -51.203790, '2023-03-02 16:30:49');
 
 INSERT INTO `eventify`.`buffet` (`nome`, `descricao`, `tamanho`, `preco_medio_diaria`, `qtd_pessoas`, `caminho_comprovante`, `residencia_comprovada`, `is_visivel`, `data_criacao`, `id_usuario`, `id_endereco`) VALUES
@@ -1329,44 +1331,44 @@ INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_na
 ('2023-01-18 00:00:00', 1500.00, 'Maravilho! Minha filha adorou o aniversário..', 5, 6, NULL, 1, 20, '2022-12-01 09:00:00', 163, 122),
 ('2023-01-28 00:00:00', 2000.00, 'A melhor casa de culinária do Rio Grande do Sul!', 4.8, 6, NULL, 0, 20, '2022-12-02 14:30:00', 164, 123);
 
-INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
+INSERT INTO `eventify`.`imagem` (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://www.bastidoresdatv.com.br/wp-content/uploads/2015/11/', 'Cozinha-sob-press%C3%A3o', 'jpg', 1, NOW(), 20);
 
 
 -- Buffet 21 ----------------------
-INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, uf, cep, latitude, longitude, data_criacao) VALUES
+INSERT INTO `eventify`.`endereco` (is_validado, logradouro, numero, bairro, cidade, uf, cep, latitude, longitude, data_criacao) VALUES
 (1, 'Rua São Paulo', 200, 'Centro', 'São Paulo', 'SP', '01001000', -23.550520, -46.633308, '2023-06-04 12:00:00');
 
-INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
+INSERT INTO `eventify`.`buffet` (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
 ('Buffet Aromas e Sabores', 'Deliciosas opções de comida para todos os gostos!', 400, 2500.00, 300, 'caminho/comprovante21.jpg', 1, 1, '2023-06-04 12:00:00', 21, 21);
 
-INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
+INSERT INTO `eventify`.`buffet_faixa_etaria` (id_buffet, id_faixa_etaria) VALUES
 (21, 5),
 (21, 7),
 (21, 8),
 (21, 9);
 
-INSERT INTO eventify.buffet_tipo_evento (id_buffet, id_tipo_evento) VALUES
+INSERT INTO `eventify`.`buffet_tipo_evento` (id_buffet, id_tipo_evento) VALUES
 (21, 1),
 (21, 2),
 (21, 4),
 (21, 6);
 
-INSERT INTO eventify.buffet_servico (id_buffet, id_servico) VALUES
+INSERT INTO `eventify`.`buffet_servico` (id_buffet, id_servico) VALUES
 (21, 1),
 (21, 3),
 (21, 4),
 (21, 7);
 
-INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VALUES
+INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUES
 (1, '2023-06-04 12:00:00', 1),
 (1, '2023-06-04 12:00:00', 1);
 
-INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
+INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
 ('2023-06-04 12:00:00', 1800.00, 'Ótimo atendimento e comida deliciosa!', 4.5, 6, NULL, 1, 21, '2023-06-04 12:00:00', 163, 122),
 ('2023-06-04 12:00:00', 2200.00, 'Festa incrível, todos os convidados adoraram!', 4.9, 6, NULL, 0, 21, '2023-06-04 12:00:00', 164, 123);
 
-INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
+INSERT INTO eventify.imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/3469/3_2/640/jpg/', '4m3a8990_13_103469-166904524573338', 'webp', 1, NOW(), 21);
 
 
@@ -1403,7 +1405,7 @@ INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_ac
 ('2023-06-04 12:00:00', 2000.00, 'Excelente serviço e decoração impecável!', 4.7, 6, NULL, 1, 22, '2023-06-04 12:00:00', 163, 122),
 ('2023-06-04 12:00:00', 2800.00, 'Festa perfeita, tudo saiu como planejado!', 5, 6, NULL, 0, 22, '2023-06-04 12:00:00', 164, 123);
 
-INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
+INSERT INTO eventify.imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://www.afrikanhouse.com.br/images/palavras-chaves/', 'melhor-buffet-casamento-sao-paulo', 'jpg', 1, NOW(), 22);
 
 -- Buffet 23 ----------------------
@@ -1439,7 +1441,7 @@ INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_ac
 ('2023-06-04 12:00:00', 2800.00, 'Serviço de alta qualidade, recomendo!', 4.8, 6, NULL, 1, 23, '2023-06-04 12:00:00', 163, 122),
 ('2023-06-04 12:00:00', 3500.00, 'Tudo perfeito, os convidados adoraram!', 5, 6, NULL, 0, 23, '2023-06-04 12:00:00', 164, 123);
 
-INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
+INSERT INTO eventify.imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://lejour.com.br/wp-content/uploads/2021/11/', 'cedrom-casamento-intimista', 'jpg', 1, NOW(), 23);
     
 -- Buffet 24 ----------------------
@@ -1475,14 +1477,14 @@ INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_ac
 ('2023-06-04 12:00:00', 2400.00, 'Comida deliciosa e equipe super atenciosa!', 4.9, 6, NULL, 1, 24, '2023-06-04 12:00:00', 163, 122),
 ('2023-06-04 12:00:00', 3200.00, 'Festa incrível, todos os convidados elogiaram!', 5, 6, NULL, 0, 24, '2023-06-04 12:00:00', 164, 123);
 
-INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
+INSERT INTO eventify.imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://lejour.com.br/wp-content/uploads/2021/10/', 'espaco-jardim-leopoldina', 'jpg', 1, NOW(), 24);
     
 -- Buffet 25 ----------------------
-INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, uf, cep, latitude, longitude, data_criacao) VALUES
+INSERT INTO `eventify`.`endereco` (is_validado, logradouro, numero, bairro, cidade, uf, cep, latitude, longitude, data_criacao) VALUES
 (1, 'Rua das Flores', 200, 'Centro', 'Salvador', 'BA', '40000000', -12.978490, -38.499220, '2023-06-04 12:00:00');
 
-INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
+INSERT INTO `eventify`.`buffet` (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
 ('Buffet Tropical', 'Sabores exóticos para seu evento!', 400, 3000.00, 250, 'caminho/comprovante25.jpg', 1, 1, '2023-06-04 12:00:00', 25, 25);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES
@@ -1518,7 +1520,7 @@ INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUE
 INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, uf, cep, latitude, longitude, data_criacao) VALUES
 (1, 'Avenida Paulista', 1000, 'Bela Vista', 'São Paulo', 'SP', '01310000', -23.563370, -46.654830, '2023-06-04 12:00:00');
 
-INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
+INSERT INTO `eventify`.`buffet` (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
 ('Buffet Glamour', 'Experiência única para seu evento especial!', 600, 4000.00, 300, 'caminho/comprovante26.jpg', 1, 1, '2023-06-04 12:00:00', 26, 26);
 
 INSERT INTO eventify.buffet_faixa_etaria (id_buffet, id_faixa_etaria) VALUES

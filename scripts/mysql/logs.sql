@@ -1,3 +1,5 @@
+use eventify;
+
 INSERT INTO eventify.acesso (data_criacao, id_pagina) VALUES
 ('2022-11-30 23:00:00', 1),
 ('2022-11-30 22:00:00', 1),

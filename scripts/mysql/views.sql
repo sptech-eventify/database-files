@@ -1,3 +1,4 @@
+use eventify;
 SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 
 CREATE OR REPLACE VIEW eventify.vw_kpi_conversao_de_visitantes AS
@@ -43,7 +44,7 @@ END //
 DELIMITER ;
 
 
-
+use eventify;
 CREATE OR REPLACE VIEW eventify.vw_churn AS
 SELECT 
     traduz_mes(DATE_FORMAT(data_criacao, '%M')) AS mes,
