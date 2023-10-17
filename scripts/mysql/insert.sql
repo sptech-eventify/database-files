@@ -2538,17 +2538,17 @@ INSERT INTO eventify.nivel_acesso (descricao) VALUES
 ('Acesso à visualização de funcionários.'),
 ('Acesso à criação e edição de funcionários.');
 
-INSERT INTO funcionario (nome, cpf, email, senha, telefone, salario, is_visivel, id_nivel_acesso, id_empregador, imagem) VALUES 
-('Leandro Mertillo', '49387081944', 'leandro.mertillo@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '11987654321', 7500.00, 1, 5, 1, 'https://cdn.pixabay.com/photo/2020/04/09/13/27/man-5021469_1280.jpg'),
-('Maria Santos', '98765432109', 'maria.santos@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '21999998888', 6200.50, 1, 4, 1, 'https://cdn.mindminers.com/blog/uploads/2021/05/Dani-Almeida_auto_x1.png'),
-('Carlos Souza', '23456789012', 'carlos.souza@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '3155554444', 4900.75, 1, 3, 1, 'https://i.pinimg.com/550x/86/9f/1d/869f1d6441dbe9b146d9341c85bfcdbc.jpg'),
-('Fernanda Oliveira', '87654321098', 'fernanda.oliveira@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '4133337777', 3800.25, 1, 2, 1, 'https://mulherlider.com.br/blog/wp-content/uploads/2016/05/foto-perfil-quadrara.png'),
-('Ricardo Pereira', '34567890123', 'ricardo.pereira@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '5177778888', 3200.00, 1, 1, 1, 'https://i.pinimg.com/1200x/0e/69/de/0e69deb2cad588a17e4c12cdd688c230.jpg'),
-('Ana Costa', '76543210987', 'ana.costa@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '6122223333', 4500.50, 1, 2, 1, 'https://i.pinimg.com/1200x/39/0e/4a/390e4aa2c02a1614a143256fa1b9df89.jpg'),
-('Eduardo Almeida', '45678901234', 'eduardo.almeida@email.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '7144445555', 3100.75, 1, 1, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_AR5gcMA8cjXtgUQdGjA981Zy0O0sDhJUiA&usqp=CAU'),
-('Carla Ferreira', '65432109876', 'carla.ferreira@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '8166667777', 4000.25, 1, 2, 1, 'https://i.pinimg.com/1200x/55/91/80/5591809ff56c527ff1897828d2fb3290.jpg'),
-('Paulo Rodrigues', '54321098765', 'paulo.rodrigues@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '9188889999', 2800.00, 1, 1, 1, 'https://assets-br.wemystic.com.br/20191113010255/homem-peixes-850x640.jpg'),
-('Sandra Lima', '43210987654', 'sandra.lima@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '10177778888', 3900.50, 1, 2, 1, 'https://media.istockphoto.com/id/1368424494/pt/foto/studio-portrait-of-a-cheerful-woman.jpg?b=1&s=612x612&w=0&k=20&c=wAl_RDHNCYhlvN28N1IsgrzO-rqGKPMXe5-cuRfDdd4=');
+INSERT INTO funcionario (nome, cpf, email, senha, telefone, salario, dia_pagamento, is_visivel, id_nivel_acesso, id_empregador, imagem, data_criacao) VALUES 
+('Leandro Mertillo', '49387081944', 'leandro.mertillo@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '11987654321', 7500.00, 5, 1, 5, 1, 'https://cdn.pixabay.com/photo/2020/04/09/13/27/man-5021469_1280.jpg', '2022-11-01 00:00:00'),
+('Maria Santos', '98765432109', 'maria.santos@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '21999998888', 6200.50, 5, 1, 4, 1, 'https://cdn.mindminers.com/blog/uploads/2021/05/Dani-Almeida_auto_x1.png', '2022-11-01 00:00:00'),
+('Carlos Souza', '23456789012', 'carlos.souza@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '3155554444', 4900.75, 5, 1, 3, 1, 'https://i.pinimg.com/550x/86/9f/1d/869f1d6441dbe9b146d9341c85bfcdbc.jpg', '2022-11-01 00:00:00'),
+('Fernanda Oliveira', '87654321098', 'fernanda.oliveira@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '4133337777', 3800.25, 5, 1, 2, 1, 'https://mulherlider.com.br/blog/wp-content/uploads/2016/05/foto-perfil-quadrara.png', '2022-11-01 00:00:00'),
+('Ricardo Pereira', '34567890123', 'ricardo.pereira@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '5177778888', 3200.00, 5, 1, 1, 1, 'https://i.pinimg.com/1200x/0e/69/de/0e69deb2cad588a17e4c12cdd688c230.jpg', '2022-11-01 00:00:00'),
+('Ana Costa', '76543210987', 'ana.costa@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '6122223333', 4500.50, 5, 1, 2, 1, 'https://i.pinimg.com/1200x/39/0e/4a/390e4aa2c02a1614a143256fa1b9df89.jpg', '2022-11-01 00:00:00'),
+('Eduardo Almeida', '45678901234', 'eduardo.almeida@email.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '7144445555', 3100.75, 5, 1, 1, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_AR5gcMA8cjXtgUQdGjA981Zy0O0sDhJUiA&usqp=CAU', '2022-11-01 00:00:00'),
+('Carla Ferreira', '65432109876', 'carla.ferreira@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '8166667777', 4000.25, 5, 1, 2, 1, 'https://i.pinimg.com/1200x/55/91/80/5591809ff56c527ff1897828d2fb3290.jpg', '2022-11-01 00:00:00'),
+('Paulo Rodrigues', '54321098765', 'paulo.rodrigues@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '9188889999', 2800.00, 5, 1, 1, 1, 'https://assets-br.wemystic.com.br/20191113010255/homem-peixes-850x640.jpg', '2022-11-01 00:00:00'),
+('Sandra Lima', '43210987654', 'sandra.lima@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '10177778888', 3900.50, 5, 1, 2, 1, 'https://media.istockphoto.com/id/1368424494/pt/foto/studio-portrait-of-a-cheerful-woman.jpg?b=1&s=612x612&w=0&k=20&c=wAl_RDHNCYhlvN28N1IsgrzO-rqGKPMXe5-cuRfDdd4=', '2022-11-01 00:00:00');
 
 INSERT INTO eventify.transacao (valor, referente, is_visivel, data_criacao, is_gasto, id_buffet) VALUES
 (870.50, 'Compra de alimentos', 1, '2023-10-01 08:30:00', 1, 1),
@@ -2950,3 +2950,6 @@ INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
 (49, '2023-11-09 14:15:00', NOW(), 0, 3, NULL),
 (49, '2023-11-09 15:30:00', NOW(), 0, 4, NULL);
+
+-- 52
+SELECT * FROM eventify.evento e JOIN pagamento p ON p.id = e.id_pagamento WHERE id_buffet = 1;

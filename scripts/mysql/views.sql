@@ -265,3 +265,61 @@ FROM
 	eventify.evento e
 WHERE 
 	DATE(data) = DATE_SUB(CURDATE(), INTERVAL 1 DAY) AND status = 6;
+    
+
+
+
+DELIMITER //
+CREATE PROCEDURE eventify.sp_transacoes(IN buffet_id INT)
+BEGIN
+    SELECT
+        t.valor valor,
+        t.is_gasto is_gasto,
+        IFNULL(t.referente, 'Não Registrada') AS motivo,
+        IFNULL(t.data_criacao, 'Não Registrada') AS data
+    FROM
+        transacao t
+    WHERE
+        t.id_buffet = buffet_id
+    UNION ALL
+    SELECT
+        f.salario AS valor,
+        1 AS is_gasto,
+        CONCAT('Salário do funcionário (', f.nome, ')') motivo,
+        DATE_FORMAT(DATE_ADD(DATE_FORMAT(f.data_criacao, CONCAT('%Y-%m-0', f.dia_pagamento)), INTERVAL m.months MONTH), '%Y-%m-%d 00:00:00') AS data
+    FROM
+        eventify.funcionario f
+    CROSS JOIN (
+        SELECT 0 AS months
+        UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4
+        UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8
+        UNION SELECT 9 UNION SELECT 10 UNION SELECT 11 UNION SELECT 12
+    ) AS m
+    JOIN eventify.usuario u ON u.id = f.id_empregador
+    JOIN eventify.buffet b ON b.id_usuario = u.id
+    WHERE
+        f.is_visivel = 1
+        AND f.data_criacao <= CURDATE()
+        AND DATE_ADD(DATE_FORMAT(f.data_criacao, '%Y-%m-01'), INTERVAL m.months MONTH) <= CURDATE()
+        AND b.id = buffet_id
+    UNION ALL
+    SELECT
+        e.preco AS valor,
+        0 AS is_gasto,
+        CONCAT('Pagamento do Evento (', c.nome, ')') motivo,
+        p.data_pago data
+    FROM
+        pagamento p
+    JOIN
+        evento e ON p.id = e.id_pagamento
+	JOIN
+		usuario c ON c.id = e.id_contratante
+    WHERE
+        e.id_buffet = buffet_id
+        AND e.status = 6
+    ORDER BY data;
+END //
+DELIMITER ;
+
+CALL sp_transacoes(1);
+DROP PROCEDURE sp_transacoes;
