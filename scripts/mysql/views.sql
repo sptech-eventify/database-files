@@ -267,22 +267,28 @@ WHERE
 	DATE(data) = DATE_SUB(CURDATE(), INTERVAL 1 DAY) AND status = 6;
     
 
-
-
 DELIMITER //
 CREATE PROCEDURE eventify.sp_transacoes(IN buffet_id INT)
 BEGIN
     SELECT
+		u.nome pagante,
+        u.cpf cpf,
+        u.email email,
         t.valor valor,
         t.is_gasto is_gasto,
         IFNULL(t.referente, 'Não Registrada') AS motivo,
         IFNULL(t.data_criacao, 'Não Registrada') AS data
     FROM
         transacao t
+	JOIN buffet b ON b.id = t.id_buffet
+    JOIN usuario u ON u.id = b.id_usuario
     WHERE
         t.id_buffet = buffet_id
     UNION ALL
     SELECT
+		u.nome pagante,
+        u.cpf cpf,
+        u.email email,
         f.salario AS valor,
         1 AS is_gasto,
         CONCAT('Salário do funcionário (', f.nome, ')') motivo,
@@ -304,6 +310,9 @@ BEGIN
         AND b.id = buffet_id
     UNION ALL
     SELECT
+		c.nome pagante,
+        c.cpf cpf,
+        c.email email,
         e.preco AS valor,
         0 AS is_gasto,
         CONCAT('Pagamento do Evento (', c.nome, ')') motivo,
@@ -320,6 +329,3 @@ BEGIN
     ORDER BY data;
 END //
 DELIMITER ;
-
-CALL sp_transacoes(1);
-DROP PROCEDURE sp_transacoes;
