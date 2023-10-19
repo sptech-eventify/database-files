@@ -2420,7 +2420,6 @@ INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_ac
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/6791/3_2/320/jpeg/', 'img-9396_13_376791-167649419675723', 'webp', 1, NOW(), 50);
     
-
 -- EVENTOS SPRINTS FINAIS
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-07-02 00:00:00', 1);
@@ -2435,102 +2434,102 @@ INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_na
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-07-09 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-07-09 00:00:00', 2500.00, 'Uma noite mágica de celebração no buffet!', 4.4, 6, NULL, 0, 1, '2023-06-02 14:30:00', 165, 186);
+('2023-07-09 00:00:00', 2500.00, 'Uma noite mágica de celebração no buffet!', 4.4, 6, NULL, 0, 1, '2023-06-02 14:30:00', 187, 186);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-07-16 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-07-16 00:00:00', 12700.00, 'Uma noite mágica de celebração no buffet.', 4.5, 6, NULL, 1, 1, '2023-04-02 14:30:00', 165, 187);
+('2023-07-16 00:00:00', 12700.00, 'Uma noite mágica de celebração no buffet.', 4.5, 6, NULL, 1, 1, '2023-04-02 14:30:00', 194, 187);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-07-21 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-07-21 00:00:00', 12800.00, 'O buffet ofereceu uma variedade impressionante de opções culinárias.', 4.8, 6, NULL, 0, 1, '2023-02-01 14:30:00', 165, 188);
+('2023-07-21 00:00:00', 12800.00, 'O buffet ofereceu uma variedade impressionante de opções culinárias.', 4.8, 6, NULL, 0, 1, '2023-02-01 14:30:00', 258, 188);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-07-29 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-07-29 00:00:00', 14100.00, 'Uma experiência gastronômica que surpreendeu a todos os convidados.', 4.9, 6, NULL, 0, 1, '2023-05-01 14:30:00', 165, 189);
+('2023-07-29 00:00:00', 14100.00, 'Uma experiência gastronômica que surpreendeu a todos os convidados.', 4.9, 6, NULL, 0, 1, '2023-05-01 14:30:00', 398, 189);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-07-30 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-07-30 00:00:00', 13200.00, 'Vinhos premiados e petiscos gourmet tornaram o evento inesquecível.', 4.6, 6, NULL, 1, 1, '2023-06-15 14:30:00', 165, 190);
+('2023-07-30 00:00:00', 13200.00, 'Vinhos premiados e petiscos gourmet tornaram o evento inesquecível.', 4.6, 6, NULL, 1, 1, '2023-06-15 14:30:00', 401, 190);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-08-05 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-08-05 00:00:00', 15010.00, 'O buffet criou uma atmosfera acolhedora e sofisticada.', 4.2, 6, NULL, 1, 1, '2023-06-10 14:30:00', 165, 191);
+('2023-08-05 00:00:00', 15010.00, 'O buffet criou uma atmosfera acolhedora e sofisticada.', 4.2, 6, NULL, 1, 1, '2023-06-10 14:30:00', 147, 191);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-08-11 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-08-11 00:00:00', 20100.00, 'Os pratos servidos no evento foram verdadeiras obras de arte culinárias.', 4.8, 6, NULL, 0, 1, '2023-05-16 14:30:00', 165, 192);
+('2023-08-11 00:00:00', 20100.00, 'Os pratos servidos no evento foram verdadeiras obras de arte culinárias.', 4.8, 6, NULL, 0, 1, '2023-05-16 14:30:00', 141, 192);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-08-13 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-08-13 00:00:00', 10340.00, 'A noite no buffet foi uma festa de sabores e aromas.', 4.7, 6, NULL, 1, 1, '2023-05-19 14:30:00', 165, 193);
+('2023-08-13 00:00:00', 10340.00, 'A noite no buffet foi uma festa de sabores e aromas.', 4.7, 6, NULL, 1, 1, '2023-05-19 14:30:00', 154, 193);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-08-20 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-08-20 00:00:00', 2400.00, 'Os convidados ficaram encantados com a variedade de pratos oferecidos.', 4.7, 6, NULL, 0, 1, '2023-07-01 14:30:00', 165, 194);
+('2023-08-20 00:00:00', 2400.00, 'Os convidados ficaram encantados com a variedade de pratos oferecidos.', 4.7, 6, NULL, 0, 1, '2023-07-01 14:30:00', 164, 194);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-09-02 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-09-02 00:00:00', 12000.00, 'Uma seleção de vinhos harmonizados perfeitamente com cada prato.', 5, 6, NULL, 1, 1, '2023-06-01 14:30:00', 165, 195);
+('2023-09-02 00:00:00', 12000.00, 'Uma seleção de vinhos harmonizados perfeitamente com cada prato.', 5, 6, NULL, 1, 1, '2023-06-01 14:30:00', 187, 195);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-09-03 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-09-03 00:00:00', 13400.00, 'O buffet proporcionou uma experiência culinária que ultrapassou as expectativas.', 5, 6, NULL, 0, 1, '2023-08-06 14:30:00', 165, 196);
+('2023-09-03 00:00:00', 13400.00, 'O buffet proporcionou uma experiência culinária que ultrapassou as expectativas.', 5, 6, NULL, 0, 1, '2023-08-06 14:30:00', 107, 196);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-09-09 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-09-09 00:00:00', 3600.00, 'O evento foi uma celebração de sabores e amizades.', 5, 6, NULL, 0, 1, '2023-08-22 14:30:00', 165, 197);
+('2023-09-09 00:00:00', 3600.00, 'O evento foi uma celebração de sabores e amizades.', 5, 6, NULL, 0, 1, '2023-08-22 14:30:00', 124, 197);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-09-10 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-09-10 00:00:00', 7000.00, 'O buffet ofereceu um cardápio diversificado que agradou a todos.', 4.8, 6, NULL, 1, 1, '2023-10-02 14:30:00', 165, 198);
+('2023-09-10 00:00:00', 7000.00, 'O buffet ofereceu um cardápio diversificado que agradou a todos.', 4.8, 6, NULL, 1, 1, '2023-10-02 14:30:00', 181, 198);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-09-22 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-09-22 00:00:00', 15000.00, 'Uma festa gourmet que ficará para sempre na memória.', 5, 6, NULL, 0, 1, '2023-05-14 14:30:00', 165, 199);
+('2023-09-22 00:00:00', 15000.00, 'Uma festa gourmet que ficará para sempre na memória.', 5, 6, NULL, 0, 1, '2023-05-14 14:30:00', 214, 199);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-09-24 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-09-24 00:00:00', 3230.00, 'Os pratos preparados pelos chefs foram verdadeiras obras-primas.', 4.9, 6, NULL, 0, 1, '2023-06-30 14:30:00', 165, 200);
+('2023-09-24 00:00:00', 3230.00, 'Os pratos preparados pelos chefs foram verdadeiras obras-primas.', 4.9, 6, NULL, 0, 1, '2023-06-30 14:30:00', 405, 200);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-10-09 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-10-09 00:00:00', 9000.00, 'O evento no buffet foi uma jornada culinária emocionante.', 4.6, 6, NULL, 0, 1, '2023-07-01 14:30:00', 165, 201);
+('2023-10-09 00:00:00', 9000.00, 'O evento no buffet foi uma jornada culinária emocionante.', 4.6, 6, NULL, 0, 1, '2023-07-01 14:30:00', 367, 201);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-10-13 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-10-13 00:00:00', 13400.00, 'Os convidados se deliciaram com cada mordida e gole.', 5, 1, NULL, 0, 1, '2023-08-24 14:30:00', 165, 202);
+('2023-10-13 00:00:00', 13400.00, 'Os convidados se deliciaram com cada mordida e gole.', 5, 1, NULL, 0, 1, '2023-08-24 14:30:00', 361, 202);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-10-15 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-10-15 00:00:00', 12000.00, 'Uma noite de requinte e sabor no buffet.', 4.8, 6, NULL, 0, 1, '2023-09-06 14:30:00', 165, 203);
+('2023-10-15 00:00:00', 12000.00, 'Uma noite de requinte e sabor no buffet.', 4.8, 6, NULL, 0, 1, '2023-09-06 14:30:00', 328, 203);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-10-22 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-10-22 00:00:00', 13400.00, 'O evento foi uma explosão de sabores e cores.', 4.9, 6, NULL, 1, 1, '2023-09-30 14:30:00', 165, 204);
+('2023-10-22 00:00:00', 13400.00, 'O evento foi uma explosão de sabores e cores.', 4.9, 6, NULL, 1, 1, '2023-09-30 14:30:00', 191, 204);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-10-29 00:00:00', 0);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-10-29 00:00:00', 14100.00, NULL, NULL, 5, NULL, 0, 1, '2023-07-15 14:30:00', 115, 205);
+('2023-10-29 00:00:00', 14100.00, NULL, NULL, 5, NULL, 0, 1, '2023-07-15 14:30:00', 193, 205);
 
 -- INSERINDO DADOS DO SMART SYNC
 INSERT INTO eventify.nivel_acesso (descricao) VALUES
@@ -2540,17 +2539,17 @@ INSERT INTO eventify.nivel_acesso (descricao) VALUES
 ('Acesso à visualização de funcionários.'),
 ('Acesso à criação e edição de funcionários.');
 
-INSERT INTO funcionario (nome, cpf, email, senha, telefone, salario, is_visivel, id_nivel_acesso, id_empregador, imagem) VALUES 
-('Leandro Mertillo', '49387081944', 'leandro.mertillo@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '11987654321', 7500.00, 1, 5, 1, 'https://cdn.pixabay.com/photo/2020/04/09/13/27/man-5021469_1280.jpg'),
-('Maria Santos', '98765432109', 'maria.santos@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '21999998888', 6200.50, 1, 4, 1, 'https://cdn.mindminers.com/blog/uploads/2021/05/Dani-Almeida_auto_x1.png'),
-('Carlos Souza', '23456789012', 'carlos.souza@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '3155554444', 4900.75, 1, 3, 1, 'https://i.pinimg.com/550x/86/9f/1d/869f1d6441dbe9b146d9341c85bfcdbc.jpg'),
-('Fernanda Oliveira', '87654321098', 'fernanda.oliveira@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '4133337777', 3800.25, 1, 2, 1, 'https://mulherlider.com.br/blog/wp-content/uploads/2016/05/foto-perfil-quadrara.png'),
-('Ricardo Pereira', '34567890123', 'ricardo.pereira@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '5177778888', 3200.00, 1, 1, 1, 'https://i.pinimg.com/1200x/0e/69/de/0e69deb2cad588a17e4c12cdd688c230.jpg'),
-('Ana Costa', '76543210987', 'ana.costa@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '6122223333', 4500.50, 1, 2, 1, 'https://i.pinimg.com/1200x/39/0e/4a/390e4aa2c02a1614a143256fa1b9df89.jpg'),
-('Eduardo Almeida', '45678901234', 'eduardo.almeida@email.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '7144445555', 3100.75, 1, 1, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_AR5gcMA8cjXtgUQdGjA981Zy0O0sDhJUiA&usqp=CAU'),
-('Carla Ferreira', '65432109876', 'carla.ferreira@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '8166667777', 4000.25, 1, 2, 1, 'https://i.pinimg.com/1200x/55/91/80/5591809ff56c527ff1897828d2fb3290.jpg'),
-('Paulo Rodrigues', '54321098765', 'paulo.rodrigues@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '9188889999', 2800.00, 1, 1, 1, 'https://assets-br.wemystic.com.br/20191113010255/homem-peixes-850x640.jpg'),
-('Sandra Lima', '43210987654', 'sandra.lima@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '10177778888', 3900.50, 1, 2, 1, 'https://media.istockphoto.com/id/1368424494/pt/foto/studio-portrait-of-a-cheerful-woman.jpg?b=1&s=612x612&w=0&k=20&c=wAl_RDHNCYhlvN28N1IsgrzO-rqGKPMXe5-cuRfDdd4=');
+INSERT INTO funcionario (nome, cpf, email, senha, telefone, salario, dia_pagamento, is_visivel, id_nivel_acesso, id_empregador, imagem, data_criacao) VALUES 
+('Leandro Mertillo', '49387081944', 'leandro.mertillo@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '11987654321', 7500.00, 5, 1, 5, 1, 'https://cdn.pixabay.com/photo/2020/04/09/13/27/man-5021469_1280.jpg', '2022-11-01 00:00:00'),
+('Maria Santos', '98765432109', 'maria.santos@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '21999998888', 6200.50, 5, 1, 4, 1, 'https://cdn.mindminers.com/blog/uploads/2021/05/Dani-Almeida_auto_x1.png', '2022-11-01 00:00:00'),
+('Carlos Souza', '23456789012', 'carlos.souza@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '3155554444', 4900.75, 5, 1, 3, 1, 'https://i.pinimg.com/550x/86/9f/1d/869f1d6441dbe9b146d9341c85bfcdbc.jpg', '2022-11-01 00:00:00'),
+('Fernanda Oliveira', '87654321098', 'fernanda.oliveira@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '4133337777', 3800.25, 5, 1, 2, 1, 'https://mulherlider.com.br/blog/wp-content/uploads/2016/05/foto-perfil-quadrara.png', '2022-11-01 00:00:00'),
+('Ricardo Pereira', '34567890123', 'ricardo.pereira@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '5177778888', 3200.00, 5, 1, 1, 1, 'https://i.pinimg.com/1200x/0e/69/de/0e69deb2cad588a17e4c12cdd688c230.jpg', '2022-11-01 00:00:00'),
+('Ana Costa', '76543210987', 'ana.costa@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '6122223333', 4500.50, 5, 1, 2, 1, 'https://i.pinimg.com/1200x/39/0e/4a/390e4aa2c02a1614a143256fa1b9df89.jpg', '2022-11-01 00:00:00'),
+('Eduardo Almeida', '45678901234', 'eduardo.almeida@email.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '7144445555', 3100.75, 5, 1, 1, 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_AR5gcMA8cjXtgUQdGjA981Zy0O0sDhJUiA&usqp=CAU', '2022-11-01 00:00:00'),
+('Carla Ferreira', '65432109876', 'carla.ferreira@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '8166667777', 4000.25, 5, 1, 2, 1, 'https://i.pinimg.com/1200x/55/91/80/5591809ff56c527ff1897828d2fb3290.jpg', '2022-11-01 00:00:00'),
+('Paulo Rodrigues', '54321098765', 'paulo.rodrigues@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '9188889999', 2800.00, 5, 1, 1, 1, 'https://assets-br.wemystic.com.br/20191113010255/homem-peixes-850x640.jpg', '2022-11-01 00:00:00'),
+('Sandra Lima', '43210987654', 'sandra.lima@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '10177778888', 3900.50, 5, 1, 2, 1, 'https://media.istockphoto.com/id/1368424494/pt/foto/studio-portrait-of-a-cheerful-woman.jpg?b=1&s=612x612&w=0&k=20&c=wAl_RDHNCYhlvN28N1IsgrzO-rqGKPMXe5-cuRfDdd4=', '2022-11-01 00:00:00');
 
 INSERT INTO eventify.transacao (valor, referente, is_visivel, data_criacao, is_gasto, id_buffet) VALUES
 (870.50, 'Compra de alimentos', 1, '2023-10-01 08:30:00', 1, 1),
@@ -2572,7 +2571,99 @@ INSERT INTO eventify.transacao (valor, referente, is_visivel, data_criacao, is_g
 (170.60, 'Segurança e vigilância', 1, '2023-10-17 11:20:00', 1, 1),
 (40.25, 'Despesas de viagem', 1, '2023-10-18 15:55:00', 1, 1),
 (240.00, 'Investimento em tecnologia', 1, '2023-10-19 09:10:00', 1, 1),
-(1150.75, 'Compra de mobiliário', 1, '2023-10-20 12:35:00', 1, 1);
+(1150.75, 'Compra de mobiliário', 1, '2023-10-20 12:35:00', 1, 1),
+(325.75, 'Compra de utensílios de cozinha', 1, '2022-12-15 09:45:00', 1, 1),
+(90.20, 'Manutenção de mesas e cadeiras', 1, '2023-01-20 14:30:00', 1, 1),
+(150.45, 'Compra de flores para decoração', 1, '2023-03-05 11:15:00', 1, 1),
+(80.60, 'Despesas com limpeza', 1, '2023-04-10 08:20:00', 1, 1),
+(210.30, 'Compra de bebidas alcoólicas', 1, '2023-06-15 13:55:00', 1, 1),
+(65.75, 'Despesas de publicidade', 1, '2023-07-20 10:40:00', 1, 1),
+(95.90, 'Pagamento de fornecedor de entretenimento', 1, '2023-08-25 12:25:00', 1, 1),
+(180.40, 'Compra de material de escritório', 1, '2023-09-30 16:10:00', 1, 1),
+(110.25, 'Manutenção de equipamento de som', 1, '2023-10-16 07:45:00', 1, 1),
+(210.50, 'Manutenção de equipamento de iluminação', 1, '2022-12-22 10:30:00', 1, 1),
+(75.25, 'Compra de suprimentos de escritório', 1, '2022-12-29 14:15:00', 1, 1),
+(160.00, 'Decoração para festa de Natal', 1, '2023-01-05 08:45:00', 1, 1),
+(50.75, 'Taxas administrativas', 1, '2023-02-11 16:20:00', 1, 1),
+(95.90, 'Compra de equipamento de som', 1, '2023-03-19 09:55:00', 1, 1),
+(120.25, 'Pagamento de pessoal extra', 1, '2023-04-26 12:10:00', 1, 1),
+(80.60, 'Compra de bebidas para evento', 1, '2023-05-03 17:40:00', 1, 1),
+(190.00, 'Manutenção de cozinha industrial', 1, '2023-06-10 07:25:00', 1, 1),
+(85.75, 'Despesas de marketing online', 1, '2023-07-17 11:30:00', 1, 1),
+(200.50, 'Aquisição de mobiliário para salão', 1, '2023-08-24 15:05:00', 1, 1),
+(110.30, 'Taxas legais', 1, '2023-09-01 08:50:00', 1, 1),
+(95.75, 'Manutenção de instalações', 1, '2023-09-08 13:15:00', 1, 1),
+(60.40, 'Despesas operacionais gerais', 1, '2023-09-15 16:50:00', 1, 1),
+(130.25, 'Compra de suprimentos de limpeza', 1, '2023-09-22 10:05:00', 1, 1),
+(70.90, 'Energia elétrica', 1, '2023-09-29 14:30:00', 1, 1),
+(55.75, 'Material de escritório', 1, '2023-10-06 07:45:00', 1, 1),
+(170.60, 'Segurança e vigilância', 1, '2023-10-13 11:20:00', 1, 1),
+(40.25, 'Despesas de viagem de negócios', 1, '2023-10-14 15:55:00', 1, 1),
+(240.00, 'Investimento em tecnologia', 1, '2023-10-17 09:10:00', 1, 1),
+(115.75, 'Compra de móveis de escritório', 1, '2023-10-18 12:35:00', 1, 1),
+(180.25, 'Compra de suprimentos de cozinha', 1, '2023-10-20 08:30:00', 1, 1),
+(95.40, 'Manutenção de equipamento de iluminação', 1, '2023-10-21 14:15:00', 1, 1),
+(200.60, 'Despesas de marketing digital', 1, '2023-10-22 10:45:00', 1, 1),
+(60.75, 'Taxas administrativas', 1, '2023-10-23 16:20:00', 1, 1),
+(130.90, 'Compra de equipamento de som', 1, '2023-10-24 09:55:00', 1, 1),
+(70.25, 'Pagamento de pessoal extra', 1, '2023-10-25 12:10:00', 1, 1),
+(155.30, 'Despesas de transporte', 1, '2023-10-26 17:40:00', 1, 1),
+(85.75, 'Compra de utensílios de cozinha', 1, '2023-10-27 07:25:00', 1, 1),
+(140.50, 'Manutenção de mesas e cadeiras', 1, '2023-10-28 11:30:00', 1, 1),
+(110.60, 'Compra de flores para decoração', 1, '2023-10-29 15:05:00', 1, 1),
+(75.90, 'Despesas com limpeza', 1, '2023-10-30 08:50:00', 1, 1),
+(220.25, 'Compra de bebidas alcoólicas', 1, '2023-11-01 13:15:00', 1, 1),
+(45.40, 'Despesas de publicidade', 1, '2023-11-02 16:50:00', 1, 1),
+(170.75, 'Pagamento de fornecedor de entretenimento', 1, '2023-11-03 10:05:00', 1, 1),
+(120.90, 'Compra de material de escritório', 1, '2023-11-04 14:30:00', 1, 1),
+(200.30, 'Manutenção de cozinha industrial', 1, '2023-11-05 07:45:00', 1, 1),
+(95.60, 'Despesas de marketing online', 1, '2023-11-06 11:20:00', 1, 1),
+(60.25, 'Aquisição de mobiliário para salão', 1, '2023-11-07 15:55:00', 1, 1),
+(135.75, 'Taxas legais', 1, '2023-11-08 09:10:00', 1, 1),
+(190.40, 'Manutenção de instalações', 1, '2023-11-09 12:35:00', 1, 1),
+(80.25, 'Despesas operacionais gerais', 1, '2023-11-10 10:30:00', 1, 1),
+(100.60, 'Compra de suprimentos de limpeza', 1, '2023-11-11 14:15:00', 1, 1),
+(65.90, 'Energia elétrica', 1, '2023-11-12 08:45:00', 1, 1),
+(220.75, 'Material de escritório', 1, '2023-11-13 16:20:00', 1, 1),
+(115.30, 'Segurança e vigilância', 1, '2023-11-14 09:55:00', 1, 1),
+(40.50, 'Despesas de viagem de negócios', 1, '2023-11-15 12:10:00', 1, 1),
+(90.25, 'Investimento em tecnologia', 1, '2023-11-16 17:40:00', 1, 1),
+(180.60, 'Compra de móveis de escritório', 1, '2023-11-17 07:25:00', 1, 1),
+(150.75, 'Manutenção de equipamento de som', 1, '2023-11-18 11:30:00', 1, 1),
+(95.40, 'Compra de utensílios de cozinha', 1, '2023-11-19 13:15:00', 1, 1),
+(180.60, 'Manutenção de equipamento de iluminação', 1, '2023-11-20 09:55:00', 1, 1),
+(60.25, 'Despesas de marketing digital', 1, '2023-11-21 12:10:00', 1, 1),
+(110.90, 'Taxas administrativas', 1, '2023-11-22 16:20:00', 1, 1),
+(200.30, 'Compra de equipamento de som', 1, '2023-11-23 08:45:00', 1, 1),
+(75.75, 'Pagamento de pessoal extra', 1, '2023-11-24 14:30:00', 1, 1),
+(220.50, 'Despesas de transporte', 1, '2023-11-25 10:05:00', 1, 1),
+(130.25, 'Compra de bebidas alcoólicas', 1, '2023-11-26 07:25:00', 1, 1),
+(45.60, 'Manutenção de mesas e cadeiras', 1, '2023-11-27 11:20:00', 1, 1),
+(85.90, 'Compra de flores para decoração', 1, '2023-11-28 15:55:00', 1, 1),
+(170.40, 'Despesas com limpeza', 1, '2023-11-29 09:10:00', 1, 1),
+(120.75, 'Compra de suprimentos de cozinha', 1, '2023-11-30 12:35:00', 1, 1),
+(160.30, 'Manutenção de equipamento de som', 1, '2023-12-01 08:30:00', 1, 1),
+(100.60, 'Despesas de marketing online', 1, '2023-12-02 14:15:00', 1, 1),
+(95.25, 'Pagamento de fornecedor de entretenimento', 1, '2023-12-03 10:45:00', 1, 1),
+(55.75, 'Compra de material de escritório', 1, '2023-12-04 16:50:00', 1, 1),
+(180.90, 'Manutenção de cozinha industrial', 1, '2023-12-05 09:55:00', 1, 1),
+(75.40, 'Despesas de marketing digital', 1, '2023-12-06 12:10:00', 1, 1),
+(220.25, 'Compra de bebidas para evento', 1, '2023-12-07 08:30:00', 1, 1),
+(110.60, 'Despesas de transporte', 1, '2023-12-08 14:15:00', 1, 1),
+(130.75, 'Taxas administrativas', 1, '2023-12-09 10:45:00', 1, 1),
+(90.30, 'Compra de equipamento de iluminação', 1, '2023-12-10 16:50:00', 1, 1),
+(200.50, 'Aquisição de mobiliário para salão', 1, '2023-12-11 09:55:00', 1, 1),
+(85.25, 'Material de escritório', 1, '2023-12-12 12:10:00', 1, 1),
+(170.60, 'Segurança e vigilância', 1, '2023-12-13 08:30:00', 1, 1),
+(60.90, 'Manutenção de equipamento de som', 1, '2023-12-14 14:15:00', 1, 1),
+(150.40, 'Compra de suprimentos de limpeza', 1, '2023-12-15 10:45:00', 1, 1),
+(110.25, 'Energia elétrica', 1, '2023-12-16 16:20:00', 1, 1),
+(40.75, 'Despesas de viagem de negócios', 1, '2023-12-17 09:55:00', 1, 1),
+(190.60, 'Investimento em tecnologia', 1, '2023-12-18 12:10:00', 1, 1);
+
+UPDATE eventify.transacao
+SET data_criacao = DATE_SUB(data_criacao, INTERVAL 2 MONTH)
+WHERE data_criacao > '2023-10-18';
 
 INSERT INTO eventify.bucket (nome, is_visivel, id_buffet_servico, id_evento) VALUES
 ('Entrada', 1, 1, 261),
@@ -2670,11 +2761,11 @@ VALUES
 ('Configurar equipamento de som', 'Configurar o equipamento de som', 8, 1, 4, '2023-10-29', '2023-10-12 15:45:00', 1, 11);
 
 -- Bucket 12: Música Palco
-INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
+INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket, data_conclusao)
 VALUES
-('Montar palco para a banda', 'Montar o palco para a apresentação da banda de música', 5, 1, 5, '2023-10-28', '2023-10-09 18:30:00', 1, 12),
-('Verificar iluminação do palco', 'Verificar a iluminação do palco', 3, 2, 4, '2023-10-29', '2023-10-11 15:05:00', 1, 12),
-('Ajustar som do palco', 'Ajustar o som do palco para a banda de música', 8, 1, 6, '2023-10-29', '2023-10-12 16:55:00', 1, 12);
+('Montar palco para a banda', 'Montar o palco para a apresentação da banda de música', 5, 3, 5, '2023-10-28', '2023-10-09 18:30:00', 1, 12, '2023-10-22 15:34:56'),
+('Verificar iluminação do palco', 'Verificar a iluminação do palco', 3, 2, 4, '2023-10-29', '2023-10-11 15:05:00', 1, 12, NULL),
+('Ajustar som do palco', 'Ajustar o som do palco para a banda de música', 8, 1, 6, '2023-10-29', '2023-10-12 16:55:00', 1, 12, NULL);
 
 -- Bucket 13: Segurança Empresa Lima
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)

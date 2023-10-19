@@ -266,3 +266,182 @@ FROM
 	eventify.evento e
 WHERE 
 	DATE(data) = DATE_SUB(CURDATE(), INTERVAL 1 DAY) AND status = 6;
+    
+
+DELIMITER //
+CREATE PROCEDURE eventify.sp_transacoes(IN buffet_id INT)
+BEGIN
+    SELECT
+		u.nome pagante,
+        u.cpf cpf,
+        u.email email,
+        t.valor valor,
+        t.is_gasto is_gasto,
+        IFNULL(t.referente, 'Não Registrada') AS motivo,
+        IFNULL(t.data_criacao, 'Não Registrada') AS data
+    FROM
+        transacao t
+	JOIN buffet b ON b.id = t.id_buffet
+    JOIN usuario u ON u.id = b.id_usuario
+    WHERE
+        t.id_buffet = buffet_id
+    UNION ALL
+    SELECT
+		u.nome pagante,
+        u.cpf cpf,
+        u.email email,
+        f.salario AS valor,
+        1 AS is_gasto,
+        CONCAT('Salário do funcionário (', f.nome, ')') motivo,
+        DATE_FORMAT(DATE_ADD(DATE_FORMAT(f.data_criacao, CONCAT('%Y-%m-0', f.dia_pagamento)), INTERVAL m.months MONTH), '%Y-%m-%d 00:00:00') AS data
+    FROM
+        eventify.funcionario f
+    CROSS JOIN (
+        SELECT 0 AS months
+        UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4
+        UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8
+        UNION SELECT 9 UNION SELECT 10 UNION SELECT 11 UNION SELECT 12
+    ) AS m
+    JOIN eventify.usuario u ON u.id = f.id_empregador
+    JOIN eventify.buffet b ON b.id_usuario = u.id
+    WHERE
+        f.is_visivel = 1
+        AND f.data_criacao <= CURDATE()
+        AND DATE_ADD(DATE_FORMAT(f.data_criacao, '%Y-%m-01'), INTERVAL m.months MONTH) <= CURDATE()
+        AND b.id = buffet_id
+    UNION ALL
+    SELECT
+		c.nome pagante,
+        c.cpf cpf,
+        c.email email,
+        e.preco AS valor,
+        0 AS is_gasto,
+        CONCAT('Pagamento do Evento (', c.nome, ')') motivo,
+        p.data_pago data
+    FROM
+        pagamento p
+    JOIN
+        evento e ON p.id = e.id_pagamento
+	JOIN
+		usuario c ON c.id = e.id_contratante
+    WHERE
+        e.id_buffet = buffet_id
+        AND e.status = 6
+    ORDER BY data;
+END //
+DELIMITER ;
+
+
+
+
+
+
+
+
+
+DELIMITER //
+CREATE PROCEDURE eventify.sp_atividades(IN buffet_id INT)
+BEGIN
+	SELECT
+		'1' id,
+		'Pagamento' nome,
+        t.referente descricao,
+        t.data_criacao data
+    FROM
+        transacao t
+	JOIN buffet b ON b.id = t.id_buffet
+    JOIN usuario u ON u.id = b.id_usuario
+    WHERE
+        t.id_buffet = buffet_id
+    UNION ALL
+    SELECT
+		'1' id,
+		'Pagamento' nome,
+        CONCAT('Salário do funcionário (', f.nome, ')') descricao,
+        DATE_FORMAT(DATE_ADD(DATE_FORMAT(f.data_criacao, CONCAT('%Y-%m-0', f.dia_pagamento)), INTERVAL m.months MONTH), '%Y-%m-%d 00:00:00') data
+    FROM
+        eventify.funcionario f
+    CROSS JOIN (
+        SELECT 0 AS months
+        UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4
+        UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8
+        UNION SELECT 9 UNION SELECT 10 UNION SELECT 11 UNION SELECT 12
+    ) AS m
+    JOIN eventify.usuario u ON u.id = f.id_empregador
+    JOIN eventify.buffet b ON b.id_usuario = u.id
+    WHERE
+        f.is_visivel = 1
+        AND f.data_criacao <= CURDATE()
+        AND DATE_ADD(DATE_FORMAT(f.data_criacao, '%Y-%m-01'), INTERVAL m.months MONTH) <= CURDATE()
+        AND b.id = buffet_id
+    UNION ALL
+    SELECT
+		'1' id,
+		'Pagamento' nome,
+        CONCAT('Pagamento do Evento (', c.nome, ')') descricao,
+        p.data_pago data
+    FROM
+        pagamento p
+    JOIN
+        evento e ON e.id_pagamento = p.id 
+	JOIN
+		usuario c ON c.id = e.id_contratante
+    WHERE
+        e.id_buffet = buffet_id
+        AND e.status = 6
+	UNION ALL
+    SELECT
+		'3' id,
+        'Tarefa Concluída' nome,
+        CONCAT(t.nome, ': ', t.descricao) descricao,
+        t.data_conclusao data
+    FROM
+        tarefa t
+	JOIN
+		bucket b ON b.id = t.id_bucket
+	JOIN
+		buffet_servico bs ON bs.id = b.id_buffet_servico
+	JOIN
+		buffet bf ON bf.id = bs.id_buffet
+    WHERE
+        bf.id = buffet_id
+        AND t.status = 3
+	UNION ALL
+    SELECT
+		'4' id,
+        'Tarefa Atrasada' nome,
+        CONCAT(t.nome, ': ', t.descricao) descricao,
+        CONCAT(t.data_estimada, ' 00:00:00') data
+    FROM
+        tarefa t
+	JOIN
+		bucket b ON b.id = t.id_bucket
+	JOIN
+		buffet_servico bs ON bs.id = b.id_buffet_servico
+	JOIN
+		buffet bf ON bf.id = bs.id_buffet
+    WHERE
+        bf.id = 1
+        AND NOW() > data_estimada
+	UNION ALL
+    SELECT
+		'5' id,
+        'Mensagem' nome,
+        CONCAT(u.nome, ': ', m.mensagem) descricao,
+        m.data
+    FROM
+        mensagem m
+	JOIN
+		usuario u
+    WHERE
+        m.mandado_por = 0
+        AND m.id_buffet = buffet_id
+    ORDER BY data DESC;
+END //
+DELIMITER ;
+
+CALL sp_atividades(1);
+DROP PROCEDURE sp_atividades;
+
+select * from evento where id_buffet = 1 AND status = 6;
+select * from usuario where id = 191;
