@@ -2759,11 +2759,11 @@ VALUES
 ('Configurar equipamento de som', 'Configurar o equipamento de som', 8, 1, 4, '2023-10-29', '2023-10-12 15:45:00', 1, 11);
 
 -- Bucket 12: Música Palco
-INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
+INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket, data_conclusao)
 VALUES
-('Montar palco para a banda', 'Montar o palco para a apresentação da banda de música', 5, 1, 5, '2023-10-28', '2023-10-09 18:30:00', 1, 12),
-('Verificar iluminação do palco', 'Verificar a iluminação do palco', 3, 2, 4, '2023-10-29', '2023-10-11 15:05:00', 1, 12),
-('Ajustar som do palco', 'Ajustar o som do palco para a banda de música', 8, 1, 6, '2023-10-29', '2023-10-12 16:55:00', 1, 12);
+('Montar palco para a banda', 'Montar o palco para a apresentação da banda de música', 5, 3, 5, '2023-10-28', '2023-10-09 18:30:00', 1, 12, '2023-10-22 15:34:56'),
+('Verificar iluminação do palco', 'Verificar a iluminação do palco', 3, 2, 4, '2023-10-29', '2023-10-11 15:05:00', 1, 12, NULL),
+('Ajustar som do palco', 'Ajustar o som do palco para a banda de música', 8, 1, 6, '2023-10-29', '2023-10-12 16:55:00', 1, 12, NULL);
 
 -- Bucket 13: Segurança Empresa Lima
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
