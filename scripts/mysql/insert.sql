@@ -2423,111 +2423,133 @@ INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet)
 (1, '2023-07-02 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-07-02 00:00:00', 13000.00, 'O evento foi incrível! Está marcado na memória!.', 5, 6, NULL, 1, 1, '2023-05-01 14:30:00', 189, 184);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-07-02 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-07-07 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-07-07 00:00:00', 2000.00, 'Buffet incrível com opções de vinhos de alta qualidade!', 4.3, 6, NULL, 1, 1, '2023-06-22 14:30:00', 165, 185);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-07-07 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-07-09 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-07-09 00:00:00', 2500.00, 'Uma noite mágica de celebração no buffet!', 4.4, 6, NULL, 0, 1, '2023-06-02 14:30:00', 187, 186);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-07-09 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-07-16 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-07-16 00:00:00', 12700.00, 'Uma noite mágica de celebração no buffet.', 4.5, 6, NULL, 1, 1, '2023-04-02 14:30:00', 194, 187);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-07-16 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-07-21 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-07-21 00:00:00', 12800.00, 'O buffet ofereceu uma variedade impressionante de opções culinárias.', 4.8, 6, NULL, 0, 1, '2023-02-01 14:30:00', 258, 188);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-07-21 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-07-29 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-07-29 00:00:00', 14100.00, 'Uma experiência gastronômica que surpreendeu a todos os convidados.', 4.9, 6, NULL, 0, 1, '2023-05-01 14:30:00', 398, 189);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-07-29 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-07-30 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-07-30 00:00:00', 13200.00, 'Vinhos premiados e petiscos gourmet tornaram o evento inesquecível.', 4.6, 6, NULL, 1, 1, '2023-06-15 14:30:00', 401, 190);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-07-30 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-08-05 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-08-05 00:00:00', 15010.00, 'O buffet criou uma atmosfera acolhedora e sofisticada.', 4.2, 6, NULL, 1, 1, '2023-06-10 14:30:00', 147, 191);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-08-05 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-08-11 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-08-11 00:00:00', 20100.00, 'Os pratos servidos no evento foram verdadeiras obras de arte culinárias.', 4.8, 6, NULL, 0, 1, '2023-05-16 14:30:00', 141, 192);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-08-11 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-08-13 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-08-13 00:00:00', 10340.00, 'A noite no buffet foi uma festa de sabores e aromas.', 4.7, 6, NULL, 1, 1, '2023-05-19 14:30:00', 154, 193);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-08-13 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-08-20 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-08-20 00:00:00', 2400.00, 'Os convidados ficaram encantados com a variedade de pratos oferecidos.', 4.7, 6, NULL, 0, 1, '2023-07-01 14:30:00', 164, 194);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-08-20 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-09-02 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-09-02 00:00:00', 12000.00, 'Uma seleção de vinhos harmonizados perfeitamente com cada prato.', 5, 6, NULL, 1, 1, '2023-06-01 14:30:00', 187, 195);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-09-02 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-09-03 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-09-03 00:00:00', 13400.00, 'O buffet proporcionou uma experiência culinária que ultrapassou as expectativas.', 5, 6, NULL, 0, 1, '2023-08-06 14:30:00', 107, 196);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-09-03 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-09-09 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-09-09 00:00:00', 3600.00, 'O evento foi uma celebração de sabores e amizades.', 5, 6, NULL, 0, 1, '2023-08-22 14:30:00', 124, 197);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-09-09 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-09-10 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-09-10 00:00:00', 7000.00, 'O buffet ofereceu um cardápio diversificado que agradou a todos.', 4.8, 6, NULL, 1, 1, '2023-10-02 14:30:00', 181, 198);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-09-10 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-09-22 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-09-22 00:00:00', 15000.00, 'Uma festa gourmet que ficará para sempre na memória.', 5, 6, NULL, 0, 1, '2023-05-14 14:30:00', 214, 199);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-09-22 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-09-24 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-09-24 00:00:00', 3230.00, 'Os pratos preparados pelos chefs foram verdadeiras obras-primas.', 4.9, 6, NULL, 0, 1, '2023-06-30 14:30:00', 405, 200);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-09-24 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-10-09 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-10-09 00:00:00', 9000.00, 'O evento no buffet foi uma jornada culinária emocionante.', 4.6, 6, NULL, 0, 1, '2023-07-01 14:30:00', 367, 201);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-10-09 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-10-13 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-10-13 00:00:00', 13400.00, 'Os convidados se deliciaram com cada mordida e gole.', 5, 1, NULL, 0, 1, '2023-08-24 14:30:00', 361, 202);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-10-13 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-10-15 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-10-15 00:00:00', 12000.00, 'Uma noite de requinte e sabor no buffet.', 4.8, 6, NULL, 0, 1, '2023-09-06 14:30:00', 328, 203);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-10-15 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-10-22 00:00:00', 1);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-10-22 00:00:00', 13400.00, 'O evento foi uma explosão de sabores e cores.', 4.9, 6, NULL, 1, 1, '2023-09-30 14:30:00', 191, 204);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-10-22 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-10-29 00:00:00', 0);
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-10-29 00:00:00', 14100.00, NULL, NULL, 5, NULL, 0, 1, '2023-07-15 14:30:00', 193, 205);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-10-29 00:00:00', 1, 1);
 
 -- INSERINDO DADOS DO SMART SYNC
 INSERT INTO eventify.nivel_acesso (descricao) VALUES

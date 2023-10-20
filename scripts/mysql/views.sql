@@ -525,5 +525,3 @@ GROUP BY
 ORDER BY
 	id_buffet, ano, mes_n
 );
-
-SELECT * FROM vw_visualizacoes_buffet;
