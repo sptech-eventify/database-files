@@ -428,7 +428,8 @@ BEGIN
     WHERE
         m.mandado_por = 0
         AND m.id_buffet = buffet_id
-    ORDER BY data ASC;
+    ORDER BY data ASC
+    LIMIT 20;
 END //
 DELIMITER ;
 
@@ -451,3 +452,78 @@ BEGIN
     LIMIT 1;
 END //
 DELIMITER ;
+
+
+
+
+CREATE OR REPLACE VIEW eventify.vw_acessos_buffet AS (
+SELECT
+    id_buffet,
+    ano,
+    mes,
+    mes_n,
+    COUNT(id) qtd_acesso
+FROM (
+    SELECT
+        p.id_buffet,
+        DATE_FORMAT(a.data_criacao, '%Y') ano,
+        TRADUZ_MES(DATE_FORMAT(a.data_criacao, '%M')) mes,
+        DATE_FORMAT(a.data_criacao, '%m') mes_n,
+        a.id
+    FROM 
+        eventify.pagina p
+    JOIN 
+        eventify.acesso a ON a.id_pagina = p.id
+    JOIN
+        eventify.buffet b ON p.id_buffet = b.id
+    WHERE
+        a.data_criacao >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
+) subquery
+GROUP BY
+    id_buffet, ano, mes, mes_n
+ORDER BY
+    id_buffet, ano, mes_n ASC
+);
+
+
+CREATE OR REPLACE VIEW eventify.vw_visualizacoes_buffet AS (
+SELECT
+    v.id_buffet,
+    DATE_FORMAT(v.data_criacao, '%Y') AS ano,
+    TRADUZ_MES(DATE_FORMAT(v.data_criacao, '%M')) AS mes,
+    DATE_FORMAT(v.data_criacao, '%m') AS mes_n,
+    COUNT(v.id) AS qtd_visualizacoes
+FROM
+	eventify.visualizacao v
+JOIN
+	eventify.buffet b ON b.id = v.id_buffet
+WHERE
+	v.data_criacao >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
+GROUP BY
+	v.id_buffet, ano, mes, mes_n
+ORDER BY
+	v.id_buffet, ano, mes_n
+);
+
+
+
+CREATE OR REPLACE VIEW eventify.vw_avaliacoes_buffet AS (
+SELECT 
+	e.id_buffet,
+    DATE_FORMAT(e.data, '%Y') AS ano,
+    TRADUZ_MES(DATE_FORMAT(e.data, '%M')) AS mes,
+    DATE_FORMAT(e.data, '%m') AS mes_n,
+    COUNT(id) AS qtd_avaliacoes
+FROM 
+	eventify.evento e 
+WHERE 
+	status = 6
+AND
+	e.data >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
+GROUP BY
+	id_buffet, ano, mes, mes_n
+ORDER BY
+	id_buffet, ano, mes_n
+);
+
+SELECT * FROM vw_visualizacoes_buffet;

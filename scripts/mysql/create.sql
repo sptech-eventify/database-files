@@ -600,9 +600,8 @@ CREATE INDEX `fk_transacoes_buffet1_idx` ON `eventify`.`transacao` (`id_buffet` 
 -- Table `eventify`.`funcionalidade`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eventify`.`funcionalidade` (
-  `id` INT NOT NULL,
-  `nome` VARCHAR(64) NOT NULL,
-  PRIMARY KEY (`id`))
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `nome` VARCHAR(64) NOT NULL)
 ENGINE = InnoDB;
 
 
@@ -610,11 +609,10 @@ ENGINE = InnoDB;
 -- Table `eventify`.`visualizacao`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eventify`.`visualizacao` (
-  `id` INT NOT NULL,
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
   `data_criacao` DATETIME NULL,
   `id_funcionalidade` INT NOT NULL,
   `id_buffet` INT NOT NULL,
-  PRIMARY KEY (`id`),
   CONSTRAINT `fk_visualizacao_funcionalidade1`
     FOREIGN KEY (`id_funcionalidade`)
     REFERENCES `eventify`.`funcionalidade` (`id`)
