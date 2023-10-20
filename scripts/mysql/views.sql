@@ -331,13 +331,6 @@ END //
 DELIMITER ;
 
 
-
-
-
-
-
-
-
 DELIMITER //
 CREATE PROCEDURE eventify.sp_atividades(IN buffet_id INT)
 BEGIN
@@ -435,12 +428,26 @@ BEGIN
     WHERE
         m.mandado_por = 0
         AND m.id_buffet = buffet_id
-    ORDER BY data DESC;
+    ORDER BY data ASC;
 END //
 DELIMITER ;
 
-CALL sp_atividades(1);
-DROP PROCEDURE sp_atividades;
 
-select * from evento where id_buffet = 1 AND status = 6;
-select * from usuario where id = 191;
+
+DELIMITER //
+CREATE PROCEDURE eventify.sp_proximo_evento(IN buffet_id INT)
+BEGIN
+	SELECT 
+		u.nome, e.data
+	FROM 
+		buffet b 
+    JOIN
+		evento e ON e.id_buffet = b.id
+	JOIN
+		usuario u ON u.id = e.id_contratante
+	WHERE b.id = buffet_id
+    AND e.data >= NOW()
+    ORDER BY data ASC
+    LIMIT 1;
+END //
+DELIMITER ;
