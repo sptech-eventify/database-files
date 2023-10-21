@@ -506,22 +506,30 @@ ORDER BY
 );
 
 
-
-CREATE OR REPLACE VIEW eventify.vw_avaliacoes_buffet AS (
-SELECT 
-	e.id_buffet,
-    DATE_FORMAT(e.data, '%Y') AS ano,
-    TRADUZ_MES(DATE_FORMAT(e.data, '%M')) AS mes,
-    DATE_FORMAT(e.data, '%m') AS mes_n,
-    COUNT(id) AS qtd_avaliacoes
-FROM 
-	eventify.evento e 
-WHERE 
-	status = 6
-AND
-	e.data >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
-GROUP BY
-	id_buffet, ano, mes, mes_n
-ORDER BY
-	id_buffet, ano, mes_n
+CREATE OR REPLACE VIEW eventify.vw_info_eventos AS (
+	SELECT 
+		b.id id_buffet,
+		c.nome,
+		c.cpf,
+		c.email,
+		e.data,	
+        CASE
+			WHEN e.status = 1 THEN 'Orçando'
+			WHEN e.status = 2 THEN 'Recusado pelo Buffet'
+			WHEN e.status = 3 THEN 'Orçado'
+			WHEN e.status = 4 THEN 'Recusado pelo Contratante'
+			WHEN e.status = 5 THEN 'Reservado'
+			WHEN e.status = 6 THEN 'Realizado'
+			WHEN e.status = 7 THEN 'Cancelado'
+			ELSE 'Status Desconhecido'
+		END AS status,
+		e.data_criacao data_pedido
+	FROM 
+		eventify.buffet b
+	JOIN
+		eventify.evento e ON e.id_buffet = b.id
+	JOIN
+		eventify.usuario c ON c.id = e.id_contratante
+	ORDER BY
+		e.data_criacao DESC
 );
