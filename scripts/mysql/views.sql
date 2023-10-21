@@ -533,3 +533,63 @@ CREATE OR REPLACE VIEW eventify.vw_info_eventos AS (
 	ORDER BY
 		e.data_criacao DESC
 );
+
+
+CREATE OR REPLACE VIEW eventify.vw_tarefas_proximas AS (
+SELECT 
+	t.id id_tarefa,
+    b.id id_buffet,
+	t.nome nome_tarefa,
+    t.descricao descricao_tarefa,
+    t.data_estimada data_estimada_tarefa,
+    e.data data_evento,
+    c.nome nome_contratante
+FROM 
+	tarefa t
+JOIN
+	bucket bu ON bu.id = t.id_bucket
+JOIN
+	buffet_servico bs ON bs.id = bu.id_buffet_servico
+JOIN
+	buffet b ON b.id = bs.id_buffet
+JOIN
+	evento e ON e.id = bu.id_evento
+JOIN
+	usuario c ON c.id = e.id_contratante
+WHERE
+	e.status = 5
+ORDER BY data_estimada ASC LIMIT 3
+);
+
+CREATE OR REPLACE VIEW eventify.vw_tarefas_proximas_responsaveis AS (
+SELECT 
+	t.id id_tarefa,
+    b.id id_buffet,
+	t.nome nome_tarefa,
+    t.descricao descricao_tarefa,
+    t.data_estimada data_estimada_tarefa,
+    e.data data_evento,
+    c.nome nome_contratante,
+    COALESCE(f.nome, executor_prop.nome) nome_executor
+FROM 
+	tarefa t
+JOIN
+	bucket bu ON bu.id = t.id_bucket
+JOIN
+	buffet_servico bs ON bs.id = bu.id_buffet_servico
+JOIN
+	buffet b ON b.id = bs.id_buffet
+JOIN
+	evento e ON e.id = bu.id_evento
+JOIN
+	usuario c ON c.id = e.id_contratante
+JOIN
+	executor_tarefa et ON et.id_tarefa = t.id
+JOIN
+	usuario executor_prop ON executor_prop.id = et.id_executor_funcionario
+JOIN
+	funcionario f ON et.id_executor_funcionario = f.id
+WHERE
+	e.status = 5
+ORDER BY data_estimada
+);
