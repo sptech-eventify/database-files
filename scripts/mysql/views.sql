@@ -439,7 +439,9 @@ DELIMITER //
 CREATE PROCEDURE eventify.sp_proximo_evento(IN buffet_id INT)
 BEGIN
 	SELECT 
-		u.nome, e.data
+		e.id,
+        u.nome, 
+        e.data
 	FROM 
 		buffet b 
     JOIN
