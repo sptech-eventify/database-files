@@ -2417,7 +2417,11 @@ INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_ac
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/6791/3_2/320/jpeg/', 'img-9396_13_376791-167649419675723', 'webp', 1, NOW(), 50);
-    
+
+UPDATE evento
+SET status = 6
+WHERE status = 5 AND id_buffet = 1;
+
 -- EVENTOS SPRINTS FINAIS
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-07-02 00:00:00', 1);

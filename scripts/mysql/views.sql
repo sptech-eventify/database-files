@@ -593,3 +593,39 @@ WHERE
 	e.status = 5
 ORDER BY data_estimada
 );
+
+
+DELIMITER //
+CREATE PROCEDURE eventify.sp_info_status(IN buffet_id INT)
+BEGIN
+    SELECT 
+        subquery.status,
+        subquery.quantidade,
+        CASE
+            WHEN subquery.status = 1 THEN 'Orçando'
+            WHEN subquery.status = 2 THEN 'Recusado pelo Buffet'
+            WHEN subquery.status = 3 THEN 'Orçado'
+            WHEN subquery.status = 4 THEN 'Recusado pelo Contratante'
+            WHEN subquery.status = 5 THEN 'Reservado'
+            WHEN subquery.status = 6 THEN 'Realizado'
+            WHEN subquery.status = 7 THEN 'Cancelado'
+            ELSE 'Status Desconhecido'
+        END AS status_traduzido,
+        buffet.id AS id_buffet
+    FROM 
+        (SELECT 
+            e.status,
+            COUNT(e.id) AS quantidade
+        FROM 
+            eventify.buffet b
+        JOIN
+            eventify.evento e ON e.id_buffet = b.id
+        WHERE 
+            b.id = buffet_id
+        GROUP BY
+            e.status) AS subquery
+    LEFT JOIN
+        eventify.buffet buffet ON buffet.id = buffet_id
+	ORDER BY status;
+END //
+DELIMITER ;
