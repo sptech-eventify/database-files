@@ -436,12 +436,18 @@ CREATE TABLE IF NOT EXISTS `eventify`.`tarefa` (
   `data_criacao` DATETIME NULL,
   `data_conclusao` DATETIME NULL,
   `is_visivel` TINYINT NULL,
+  `id_tarefa` INT NULL,
   `id_bucket` INT NOT NULL,
   PRIMARY KEY (`id`),
+  CONSTRAINT `fk_tarefa_tarefa1`
+	FOREIGN KEY (`id_tarefa`)
+	REFERENCES `eventify`.`tarefa`(`id`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION,
   CONSTRAINT `fk_tarefa_bucket1`
     FOREIGN KEY (`id_bucket`)
     REFERENCES `eventify`.`bucket` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
