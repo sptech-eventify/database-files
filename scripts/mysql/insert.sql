@@ -21074,3 +21074,7 @@ INSERT INTO eventify.visualizacao (data_criacao, id_funcionalidade, id_buffet) V
 ('2023-06-24 17:40:01', 1, 1),
 ('2023-09-26 20:39:55', 3, 1),
 ('2023-07-11 12:35:25', 2, 1);
+
+-- USUÁRIO FANTASMA
+INSERT INTO usuario (nome, email, senha, tipo_usuario, is_ativo, is_banido, cpf, data_criacao, ultimo_login)  VALUE 
+('Usuário Fantasma', 'funcionario@eventify.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 2, 1, 0, '98765432109', '2022-12-12 14:20:00', '2022-12-15 21:45:00');
