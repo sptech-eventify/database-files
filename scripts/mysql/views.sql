@@ -631,3 +631,20 @@ BEGIN
 	ORDER BY status;
 END //
 DELIMITER ;
+
+
+
+CREATE VIEW eventify.vw_contratos AS (
+SELECT
+	b.id id_buffet,
+	c.nome,
+    e.preco,
+    e.data,
+    e.status
+FROM
+	evento e
+JOIN
+    buffet b ON b.id = e.id_buffet
+JOIN
+	usuario c ON c.id = e.id_contratante
+);

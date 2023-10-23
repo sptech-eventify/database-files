@@ -11,7 +11,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- Schema eventify
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `eventify` DEFAULT CHARACTER SET utf8 ;
-USE `eventify` ;
+USE `eventify` ; -- PREVENÇÃO DE ERRO
 
 -- -----------------------------------------------------
 -- Table `eventify`.`usuario`
