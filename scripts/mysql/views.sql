@@ -508,13 +508,37 @@ ORDER BY
 );
 
 
+
+CREATE OR REPLACE VIEW eventify.vw_avaliacoes_buffet AS (
+SELECT
+    e.id_buffet,
+    DATE_FORMAT(e.data, '%Y') AS ano,
+    TRADUZ_MES(DATE_FORMAT(e.data, '%M')) AS mes,
+    DATE_FORMAT(e.data, '%m') AS mes_n,
+    COUNT(e.id) AS qtd_visualizacoes
+FROM
+	eventify.evento e
+JOIN
+	eventify.buffet b ON b.id = e.id_buffet
+WHERE
+	e.data >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
+    AND e.status = 6
+GROUP BY
+	e.id_buffet, ano, mes, mes_n
+ORDER BY
+	e.id_buffet, ano, mes_n
+);
+
+
+
 CREATE OR REPLACE VIEW eventify.vw_info_eventos AS (
 	SELECT 
 		b.id id_buffet,
 		c.nome,
 		c.cpf,
 		c.email,
-		e.data,	
+		e.data,
+        e.preco,
         CASE
 			WHEN e.status = 1 THEN 'Orçando'
 			WHEN e.status = 2 THEN 'Recusado pelo Buffet'
@@ -525,7 +549,8 @@ CREATE OR REPLACE VIEW eventify.vw_info_eventos AS (
 			WHEN e.status = 7 THEN 'Cancelado'
 			ELSE 'Status Desconhecido'
 		END AS status,
-		e.data_criacao data_pedido
+		e.data_criacao data_pedido,
+        e.id id_evento
 	FROM 
 		eventify.buffet b
 	JOIN
@@ -663,4 +688,11 @@ CREATE VIEW eventify.vw_calendario AS (
 		evento e ON e.id_buffet = b.id
 	JOIN
 		usuario c ON c.id = e.id_contratante
+	WHERE
+		e.status = 6
 );
+
+SELECT id_evento, nome, cpf, email, data, status, data_pedido FROM vw_info_eventos WHERE id_buffet = 1 ;
+SELECT * FROM vw_visualizacoes_buffet;
+SELECT * FROM vw_acessos_buffet;
+SELECT * FROM vw_avaliacoes_buffet where id_buffet = 1;
