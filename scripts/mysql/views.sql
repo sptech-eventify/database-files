@@ -648,3 +648,19 @@ JOIN
 JOIN
 	usuario c ON c.id = e.id_contratante
 );
+
+
+
+CREATE VIEW eventify.vw_calendario AS (
+	SELECT
+		b.id,
+        e.data,
+        e.preco,
+        c.nome
+	FROM
+		buffet b
+	JOIN
+		evento e ON e.id_buffet = b.id
+	JOIN
+		usuario c ON c.id = e.id_contratante
+);
