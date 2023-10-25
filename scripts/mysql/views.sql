@@ -691,8 +691,3 @@ CREATE VIEW eventify.vw_calendario AS (
 	WHERE
 		e.status = 6
 );
-
-SELECT id_evento, nome, cpf, email, data, status, data_pedido FROM vw_info_eventos WHERE id_buffet = 1 ;
-SELECT * FROM vw_visualizacoes_buffet;
-SELECT * FROM vw_acessos_buffet;
-SELECT * FROM vw_avaliacoes_buffet where id_buffet = 1;
