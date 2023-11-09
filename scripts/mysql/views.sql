@@ -691,3 +691,80 @@ CREATE VIEW eventify.vw_calendario AS (
 	WHERE
 		e.status = 6
 );
+
+
+CREATE VIEW vw_comparar_seis_meses AS (
+SELECT TRADUZ_MES(MONTHNAME(data)) periodo, SUM(preco) renda
+FROM evento
+WHERE status = 6
+AND YEAR(data) = YEAR(CURRENT_DATE())
+AND MONTH(data) = MONTH(CURRENT_DATE())
+
+UNION
+
+SELECT TRADUZ_MES(MONTHNAME(data)) periodo, SUM(preco) renda
+FROM evento
+WHERE status = 6
+AND YEAR(data) = YEAR(CURRENT_DATE() - INTERVAL 1 MONTH)
+AND MONTH(data) = MONTH(CURRENT_DATE() - INTERVAL 1 MONTH)
+
+UNION
+
+SELECT TRADUZ_MES(MONTHNAME(data)) periodo, SUM(preco) renda
+FROM evento
+WHERE status = 6
+AND YEAR(data) = YEAR(CURRENT_DATE() - INTERVAL 2 MONTH)
+AND MONTH(data) = MONTH(CURRENT_DATE() - INTERVAL 2 MONTH)
+
+UNION
+
+SELECT TRADUZ_MES(MONTHNAME(data)) periodo, SUM(preco) renda
+FROM evento
+WHERE status = 6
+AND YEAR(data) = YEAR(CURRENT_DATE() - INTERVAL 3 MONTH)
+AND MONTH(data) = MONTH(CURRENT_DATE() - INTERVAL 3 MONTH)
+
+UNION
+
+SELECT TRADUZ_MES(MONTHNAME(data)) periodo, SUM(preco) renda
+FROM evento
+WHERE status = 6
+AND YEAR(data) = YEAR(CURRENT_DATE() - INTERVAL 4 MONTH)
+AND MONTH(data) = MONTH(CURRENT_DATE() - INTERVAL 4 MONTH)
+
+UNION
+
+SELECT TRADUZ_MES(MONTHNAME(data)) periodo, SUM(preco) renda
+FROM evento
+WHERE status = 6
+AND YEAR(data) = YEAR(CURRENT_DATE() - INTERVAL 5 MONTH)
+AND MONTH(data) = MONTH(CURRENT_DATE() - INTERVAL 5 MONTH));
+
+
+SELECT * FROM vw_avaliacoes_buffet_smart_sync;
+CREATE OR REPLACE VIEW eventify.vw_avaliacoes_buffet_smart_sync AS (
+SELECT
+    id_buffet,
+    ano,
+    mes,
+    mes_n,
+    COUNT(id) qtd_acesso
+FROM (
+    SELECT
+        e.id_buffet,
+        DATE_FORMAT(e.data, '%Y') ano,
+        TRADUZ_MES(DATE_FORMAT(e.data, '%M')) mes,
+        DATE_FORMAT(e.data, '%m') mes_n,
+        e.id
+    FROM 
+        eventify.evento e 
+	JOIN
+        eventify.buffet b ON e.id_buffet = b.id
+    WHERE
+        e.data >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
+) subquery
+GROUP BY
+    id_buffet, ano, mes, mes_n
+ORDER BY
+    id_buffet, ano, mes_n ASC
+);
