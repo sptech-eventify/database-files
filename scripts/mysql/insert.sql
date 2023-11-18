@@ -2581,18 +2581,16 @@ INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_na
 ('2023-11-08 00:00:00', 21100.00, 5, 'O serviço de buffet foi eficiente e profissional, garantindo que todos os convidados fossem atendidos de maneira cortês e ágil.', 6, NULL, 0, 1, '2023-08-11 14:30:00', 129, 209);
 INSERT INTO eventify.agenda VALUE (NULL, '2023-11-08 00:00:00', 1, 1);
 
-
-
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-11-10 00:00:00', 1);
-INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
+INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-11-10 00:00:00', 24100.00, 'Destaco a criatividade na escolha do cardápio, proporcionando opções que agradam a todos os gostos e preferências.', 5, 6, NULL, 1, 1, '2023-06-12 14:30:00', 176, 210);
 INSERT INTO eventify.agenda VALUE (NULL, '2023-11-10 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-11-13 00:00:00', 1);
-INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-11-13 00:00:00', 24100.00, NULL, 4.7, 6, NULL, 0, 1, '2023-06-04 14:30:00', 254, 210);
+INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
+('2023-11-13 00:00:00', 24100.00, 'O lugar é incrível! Não me arrependi em nada ao contratar o Buffet do Chef!', 4.7, 6, NULL, 0, 1, '2023-06-04 14:30:00', 254, 210);
 INSERT INTO eventify.agenda VALUE (NULL, '2023-11-13 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
@@ -2603,39 +2601,61 @@ INSERT INTO eventify.agenda VALUE (NULL, '2023-11-17 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-11-19 00:00:00', 1);
-INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
+INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-11-19 00:00:00', 11000.00, 'O ambiente do buffet é acolhedor, contribuindo para uma experiência agradável e socialmente envolvente.', 5, 6, NULL, 0, 1, '2023-10-15 14:30:00', 312, 210);
 INSERT INTO eventify.agenda VALUE (NULL, '2023-11-19 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-11-21 00:00:00', 1);
-INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
+INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-11-21 00:00:00', 10000.00, 'A organização do buffet facilitou a circulação dos convidados e contribuiu para uma experiência mais fluída e agradável.', 4.9, 6, NULL, 0, 1, '2023-07-14 14:30:00', 311, 212);
 INSERT INTO eventify.agenda VALUE (NULL, '2023-11-21 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-11-25 00:00:00', 1);
-INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
+INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-11-25 00:00:00', 8005.00, 'A equipe do buffet demonstrou profissionalismo e cortesia, garantindo que cada detalhe contribuísse para o sucesso do evento.', 5, 6, NULL, 1, 1, '2023-10-25 14:30:00', 303, 213);
 INSERT INTO eventify.agenda VALUE (NULL, '2023-11-25 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-12-01 00:00:00', 1);
-INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
+INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-12-01 00:00:00', 14500.00, 'A diversidade de opções no buffet atendeu a diferentes preferências dietéticas, oferecendo escolhas saudáveis e deliciosas para todos os gostos.', 5, 6, NULL, 0, 1, '2023-04-11 14:30:00', 345, 214);
 INSERT INTO eventify.agenda VALUE (NULL, '2023-12-01 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-12-03 00:00:00', 1);
-INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
+INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
 ('2023-12-03 00:00:00', 21250.00, 'A disposição estratégica dos pratos e estações no buffet permitiu uma fluidez no serviço, evitando congestionamentos e garantindo uma experiência mais confortável.', 5, 6, NULL, 0, 1, '2023-07-12 14:30:00', 378, 215);
 INSERT INTO eventify.agenda VALUE (NULL, '2023-12-03 00:00:00', 1, 1);
 
+-- EVENTO MAGNA
+
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
-(1, '2023-12-09 00:00:00', 0);
+(1, '2023-11-11 00:00:00', 0);
 INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-12-09 00:00:00', 22250.00, NULL, NULL, 6, NULL, 1, 1, '2023-11-14 14:30:00', 399, 216);
-INSERT INTO eventify.agenda VALUE (NULL, '2023-12-09 00:00:00', 1, 1);
+('2023-12-15 00:00:00', 22250.00, NULL, NULL, 6, NULL, 1, 1, '2023-12-15 14:30:00', 399, 216);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-12-15 00:00:00', 1, 1);
+
+-- --------------
+
+INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
+(1, '2023-11-19 00:00:00', 0);
+INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
+('2023-12-18 00:00:00', 22250.00, NULL, NULL, 6, NULL, 1, 1, '2023-12-18 14:30:00', 243, 217);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-12-18 00:00:00', 1, 1);
+
+INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
+(1, '2023-12-01 00:00:00', 0);
+INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
+('2023-12-21 00:00:00', 22250.00, NULL, NULL, 6, NULL, 1, 1, '2023-12-15 14:30:00', 350, 218);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-12-21 00:00:00', 1, 1);
+
+INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
+(1, '2023-10-24 00:00:00', 0);
+INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
+('2023-12-24 00:00:00', 22250.00, NULL, NULL, 6, NULL, 1, 1, '2023-12-24 14:30:00', 360, 219);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-12-24 00:00:00', 1, 1);
 
 -- INSERINDO DADOS DO SMART SYNC
 INSERT INTO eventify.nivel_acesso (descricao) VALUES
@@ -2702,397 +2722,461 @@ INSERT INTO eventify.transacao (valor, referente, is_visivel, data_criacao, is_g
 (75.75, 'Pagamento de pessoal extra', 1, '2023-11-24 14:30:00', 1, 1),
 (45.60, 'Manutenção de mesas e cadeiras', 1, '2023-11-27 11:20:00', 1, 1),
 (85.90, 'Compra de flores para decoração', 1, '2023-11-28 15:55:00', 1, 1),
-(95.25, 'Pagamento de fornecedor de entretenimento', 1, '2023-12-03 10:45:00', 1, 1),
-(55.75, 'Compra de material de escritório', 1, '2023-12-04 16:50:00', 1, 1),
-(75.40, 'Despesas de marketing digital', 1, '2023-12-06 12:10:00', 1, 1),
-(90.30, 'Compra de equipamento de iluminação', 1, '2023-12-10 16:50:00', 1, 1),
-(85.25, 'Material de escritório', 1, '2023-12-12 12:10:00', 1, 1),
-(60.90, 'Manutenção de equipamento de som', 1, '2023-12-14 14:15:00', 1, 1),
-(40.75, 'Despesas de viagem de negócios', 1, '2023-12-17 09:55:00', 1, 1),
-(10.60, 'Investimento em tecnologia', 1, '2023-12-18 12:10:00', 1, 1);
+(95.25, 'Pagamento de fornecedor de entretenimento', 1, '2023-12-02 10:45:00', 1, 1),
+(55.75, 'Compra de material de escritório', 1, '2023-12-03 16:50:00', 1, 1),
+(75.40, 'Despesas de marketing digital', 1, '2023-12-03 12:10:00', 1, 1),
+(90.30, 'Compra de equipamento de iluminação', 1, '2023-12-03 16:50:00', 1, 1),
+(85.25, 'Material de escritório', 1, '2023-12-03 12:10:00', 1, 1),
+(60.90, 'Manutenção de equipamento de som', 1, '2023-12-03 14:15:00', 1, 1),
+(40.75, 'Despesas de viagem de negócios', 1, '2023-12-05 09:55:00', 1, 1),
+(10.60, 'Investimento em tecnologia', 1, '2023-12-06 12:10:00', 1, 1);
 
-UPDATE eventify.transacao
-SET data_criacao = DATE_SUB(data_criacao, INTERVAL 2 MONTH)
-WHERE data_criacao > '2023-10-18';
+-- EVENTO MAGNA
+INSERT INTO eventify.bucket (nome, is_visivel, id_buffet_servico, id_evento) VALUES
+('Entrada', 1, 1, 274),
+('Salgados', 1, 1, 274),
+('Bebidas', 1, 1, 274),
+('Doces', 1, 1, 274),
+('Jantar', 1, 1, 274),
+('Prototipagem', 1, 2, 274),
+('Materiais', 1, 2, 274),
+('Montagem', 1, 2, 274),
+('Desmontagem', 1, 2, 274),
+('Banda', 1, 3, 274),
+('Equipamento', 1, 3, 274),
+('Palco', 1, 3, 274),
+('Empresa Lima', 1, 4, 274),
+('Convidados', 1, 4, 274),
+('Antes do Evento', 5, 1, 274),
+('Plantão Evento', 1, 5, 274),
+('Depois do Evento', 1, 5, 274);
 
 INSERT INTO eventify.bucket (nome, is_visivel, id_buffet_servico, id_evento) VALUES
-('Entrada', 1, 1, 261),
-('Salgados', 1, 1, 261),
-('Bebidas', 1, 1, 261),
-('Doces', 1, 1, 261),
-('Jantar', 1, 1, 261),
-('Prototipagem', 1, 2, 261),
-('Materiais', 1, 2, 261),
-('Montagem', 1, 2, 261),
-('Desmontagem', 1, 2, 261),
-('Banda', 1, 3, 261),
-('Equipamento', 1, 3, 261),
-('Palco', 1, 3, 261),
-('Empresa Lima', 1, 4, 261),
-('Convidados', 1, 4, 261),
-('Antes do Evento', 5, 1, 261),
-('Plantão Evento', 1, 5, 261),
-('Depois do Evento', 1, 5, 261);
+('Entrada', 1, 1, 275),
+('Salgados', 1, 1, 275),
+('Bebidas', 1, 1, 275),
+('Doces', 1, 1, 275),
+('Jantar', 1, 1, 275),
+('Prototipagem', 1, 2, 275),
+('Materiais', 1, 2, 275),
+('Montagem', 1, 2, 275),
+('Desmontagem', 1, 2, 275),
+('Banda', 1, 3, 275),
+('Equipamento', 1, 3, 275),
+('Palco', 1, 3, 275),
+('Empresa Lima', 1, 4, 275),
+('Convidados', 1, 4, 275),
+('Antes do Evento', 5, 1, 275),
+('Plantão Evento', 1, 5, 275),
+('Depois do Evento', 1, 5, 275);
 
--- Bucket 1: Comida Comida Entrada
+INSERT INTO eventify.bucket (nome, is_visivel, id_buffet_servico, id_evento) VALUES
+('Entrada', 1, 1, 276),
+('Salgados', 1, 1, 276),
+('Bebidas', 1, 1, 276),
+('Doces', 1, 1, 276),
+('Jantar', 1, 1, 276),
+('Prototipagem', 1, 2, 276),
+('Materiais', 1, 2, 276),
+('Montagem', 1, 2, 276),
+('Desmontagem', 1, 2, 276),
+('Banda', 1, 3, 276),
+('Equipamento', 1, 3, 276),
+('Palco', 1, 3, 276),
+('Empresa Lima', 1, 4, 276),
+('Convidados', 1, 4, 276),
+('Antes do Evento', 5, 1, 276),
+('Plantão Evento', 1, 5, 276),
+('Depois do Evento', 1, 5, 276);
+
+INSERT INTO eventify.bucket (nome, is_visivel, id_buffet_servico, id_evento) VALUES
+('Entrada', 1, 1, 277),
+('Salgados', 1, 1, 277),
+('Bebidas', 1, 1, 277),
+('Doces', 1, 1, 277),
+('Jantar', 1, 1, 277),
+('Prototipagem', 1, 2, 277),
+('Materiais', 1, 2, 277),
+('Montagem', 1, 2, 277),
+('Desmontagem', 1, 2, 277),
+('Banda', 1, 3, 277),
+('Equipamento', 1, 3, 277),
+('Palco', 1, 3, 277),
+('Empresa Lima', 1, 4, 277),
+('Convidados', 1, 4, 277),
+('Antes do Evento', 5, 1, 277),
+('Plantão Evento', 1, 5, 277),
+('Depois do Evento', 1, 5, 277);
+
+-- Bucket 1: Comida Entrada
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Cozinhar', 'Cozinhar as entradas', 8, 1, 4, '2023-10-25', '2023-10-10 11:15:00', 1, 1),
-('Montar apresentação das entradas', 'Montar a apresentação das entradas', 3, 2, 2, '2023-10-29', '2023-10-09 14:30:00', 1, 1);
+('Cozinhar', 'Cozinhar as entradas', 8, 1, 4, '2023-12-14', '2023-10-10 11:15:00', 1, 1);
+INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket, id_tarefa)
+VALUES
+('Montar apresentação das entradas', 'Montar a apresentação das entradas', 3, 2, 2, '2023-12-15', '2023-12-01 14:30:00', 1, 1, 1);
 
 -- Bucket 2: Comida Salgados
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Comprar ingredientes', '5kg de farinha de trigo, 4kg de margarina, 50 ovos', 5, 1, 3, '2023-10-19', '2023-10-08 10:00:00', 1, 1),
-('Preparar salgados', 'Preparar salgados para o buffet de salgados', 5, 1, 4, '2023-10-19', '2023-10-08 11:30:00', 1, 2),
-('Montar apresentação dos salgados', 'Montar a apresentação dos salgados', 3, 2, 3, '2023-10-22', '2023-10-09 15:45:00', 1, 2);
+('Comprar ingredientes', '5kg de farinha de trigo, 4kg de margarina, 50 ovos', 5, 1, 3, '2023-12-10', '2023-10-08 10:00:00', 1, 1);
+INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket, id_tarefa)
+VALUES
+('Preparar salgados', 'Preparar salgados para o buffet de salgados', 5, 1, 4, '2023-12-14', '2023-10-08 11:30:00', 1, 2, 3),
+('Montar apresentação dos salgados', 'Montar a apresentação dos salgados', 3, 2, 3, '2023-12-15', '2023-10-09 15:45:00', 1, 2, 3);
 
 -- Bucket 3: Comida Bebidas
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Comprar ingredientes', '50 caixas de cerveja, 45 garrafas de refrigerante derivados', 5, 1, 3, '2023-10-19', '2023-10-08 10:00:00', 1, 1),
-('Preparar bebidas', 'Preparar bebidas para o buffet de bebidas', 5, 1, 3, '2023-10-20', '2023-10-09 09:00:00', 1, 3),
-('Montar apresentação das bebidas', 'Montar a apresentação das bebidas', 3, 2, 2, '2023-10-23', '2023-10-10 13:30:00', 1, 3);
+('Comprar ingredientes', '50 caixas de cerveja, 45 garrafas de refrigerante derivados', 5, 1, 3, '2023-12-11', '2023-10-08 10:00:00', 1, 1);
+INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket, id_tarefa)
+VALUES
+('Preparar bebidas', 'Preparar bebidas para o buffet de bebidas', 5, 1, 3, '2023-12-14', '2023-10-09 09:00:00', 1, 3, 6),
+('Montar apresentação das bebidas', 'Montar a apresentação das bebidas', 3, 2, 2, '2023-12-15', '2023-10-10 13:30:00', 1, 3, 6);
 
 -- Bucket 4: Comida Doces
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Comprar ingredientes', '5kg de farinha de trigo, 4kg de margarina, 50 ovos', 5, 1, 3, '2023-10-19', '2023-10-08 10:00:00', 1, 1),
-('Preparar doces', 'Preparar doces para o buffet de doces', 5, 1, 4, '2023-10-20', '2023-10-09 10:15:00', 1, 4),
-('Montar apresentação dos doces', 'Montar a apresentação dos doces', 3, 2, 3, '2023-10-24', '2023-10-10 16:00:00', 1, 4);
+('Comprar ingredientes', '5kg de farinha de trigo, 4kg de margarina, 50 ovos', 5, 1, 3, '2023-12-13', '2023-10-08 10:00:00', 1, 1);
+INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket, id_tarefa)
+VALUES
+('Preparar doces', 'Preparar doces para o buffet de doces', 5, 1, 4, '2023-12-14', '2023-12-14 10:15:00', 1, 4, 9),
+('Montar apresentação dos doces', 'Montar a apresentação dos doces', 3, 2, 3, '2023-12-15', '2023-10-10 16:00:00', 1, 4, 9);
 
 -- Bucket 5: Comida Jantar
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Comprar ingredientes', '5kg de farinha de trigo, 4kg de margarina, 50 ovos', 5, 1, 3, '2023-10-19', '2023-10-08 10:00:00', 1, 1),
-('Preparar jantar', 'Preparar jantar para o buffet de jantar', 5, 1, 5, '2023-10-21', '2023-10-09 11:45:00', 1, 5),
-('Montar apresentação do jantar', 'Montar a apresentação do jantar', 3, 2, 4, '2023-10-25', '2023-10-10 18:30:00', 1, 5);
+('Comprar ingredientes', '5kg de farinha de trigo, 4kg de margarina, 50 ovos', 5, 1, 3, '2023-12-13', '2023-10-08 10:00:00', 1, 1);
+INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket, id_tarefa)
+VALUES
+('Preparar jantar', 'Preparar jantar para o buffet de jantar', 5, 1, 5, '2023-12-14', '2023-10-09 11:45:00', 1, 5, 12),
+('Montar apresentação do jantar', 'Montar a apresentação do jantar', 3, 2, 4, '2023-12-15', '2023-10-10 18:30:00', 1, 5, 12);
 
 -- Bucket 6: Decoração Prototipagem
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Prototipar decoração', 'Prototipar a decoração do evento', 5, 1, 6, '2023-10-22', '2023-10-09 12:30:00', 1, 6),
-('Avaliar protótipo de decoração', 'Avaliar o protótipo de decoração', 3, 2, 5, '2023-10-26', '2023-10-10 20:15:00', 1, 6),
-('Ajustar protótipo de decoração', 'Ajustar o protótipo de decoração', 8, 1, 7, '2023-10-26', '2023-10-11 21:40:00', 1, 6);
+('Prototipar decoração', 'Prototipar a decoração do evento', 5, 1, 6, '2023-12-12', '2023-10-09 12:30:00', 1, 6),
+('Avaliar protótipo de decoração', 'Avaliar o protótipo de decoração', 3, 2, 5, '2023-12-09', '2023-10-10 20:15:00', 1, 6),
+('Ajustar protótipo de decoração', 'Ajustar o protótipo de decoração', 8, 1, 7, '2023-12-10', '2023-10-11 21:40:00', 1, 6);
 
 -- Bucket 7: Decoração Materiais
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Comprar materiais de decoração', 'Comprar materiais para a decoração do evento', 5, 1, 3, '2023-10-23', '2023-10-09 13:15:00', 1, 7),
-('Receber entrega dos materiais', 'Receber a entrega dos materiais de decoração', 3, 2, 2, '2023-10-27', '2023-10-10 21:55:00', 1, 7),
-('Organizar materiais de decoração', 'Organizar os materiais de decoração', 8, 1, 4, '2023-10-29', '2023-10-11 23:05:00', 1, 7);
+('Comprar materiais de decoração', 'Comprar materiais para a decoração do evento', 5, 1, 3, '2023-12-08', '2023-10-09 13:15:00', 1, 7),
+('Receber entrega dos materiais', 'Receber a entrega dos materiais de decoração', 3, 2, 2, '2023-12-11', '2023-10-10 21:55:00', 1, 7),
+('Organizar materiais de decoração', 'Organizar os materiais de decoração', 8, 1, 4, '2023-12-14', '2023-10-11 23:05:00', 1, 7);
 
 -- Bucket 8: Decoração Montagem
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Montar decoração do evento', 'Montar a decoração do evento', 5, 1, 5, '2023-10-24', '2023-10-09 14:00:00', 1, 8),
-('Ajustar decoração do evento', 'Ajustar a decoração do evento', 3, 2, 4, '2023-10-28', '2023-10-11 08:10:00', 1, 8),
-('Finalizar decoração do evento', 'Finalizar a decoração do evento', 8, 1, 6, '2023-10-29', '2023-10-12 09:30:00', 1, 8);
+('Montar decoração do evento', 'Montar a decoração do evento', 5, 1, 5, '2023-12-14', '2023-10-09 14:00:00', 1, 8),
+('Ajustar decoração do evento', 'Ajustar a decoração do evento', 3, 2, 4, '2023-12-14', '2023-10-11 08:10:00', 1, 8),
+('Finalizar decoração do evento', 'Finalizar a decoração do evento', 8, 1, 6, '2023-12-15', '2023-10-12 09:30:00', 1, 8);
 
 -- Bucket 9: Decoração Desmontagem
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Desmontar decoração do evento', 'Desmontar a decoração do evento', 5, 1, 6, '2023-10-25', '2023-10-09 15:45:00', 1, 9),
-('Recolher materiais de decoração', 'Recolher os materiais de decoração do evento', 3, 2, 5, '2023-10-29', '2023-10-11 10:45:00', 1, 9),
-('Armazenar materiais de decoração', 'Armazenar os materiais de decoração', 8, 1, 7, '2023-10-29', '2023-10-12 12:20:00', 1, 9);
+('Desmontar decoração do evento', 'Desmontar a decoração do evento', 5, 1, 6, '2023-12-16', '2023-10-09 15:45:00', 1, 9),
+('Recolher materiais de decoração', 'Recolher os materiais de decoração do evento', 3, 1, 5, '2023-12-16', '2023-10-11 10:45:00', 1, 9),
+('Armazenar materiais de decoração', 'Armazenar os materiais de decoração', 8, 1, 7, '2023-12-16', '2023-10-12 12:20:00', 1, 9);
 
 -- Bucket 10: Música Banda
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Contratar banda de música', 'Contratar uma banda de música para o evento', 5, 1, 4, '2023-10-21', '2023-10-09 16:30:00', 1, 10),
-('Selecionar repertório da banda', 'Selecionar o repertório da banda de música', 3, 2, 3, '2023-10-24', '2023-10-11 11:55:00', 1, 10),
-('Revisar equipamento da banda', 'Revisar o equipamento da banda de música', 8, 1, 5, '2023-10-27', '2023-10-12 14:10:00', 1, 10);
+('Contratar banda de música', 'Contratar uma banda de música para o evento', 5, 1, 4, '2023-12-08', '2023-10-09 16:30:00', 1, 10),
+('Selecionar repertório da banda', 'Selecionar o repertório da banda de música', 3, 2, 3, '2023-12-11', '2023-10-11 11:55:00', 1, 10),
+('Revisar equipamento da banda', 'Revisar o equipamento da banda de música', 8, 1, 5, '2023-12-13', '2023-10-12 14:10:00', 1, 10);
 
 -- Bucket 11: Música Equipamento
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Alugar equipamento de som', 'Alugar equipamento de som para o evento', 5, 1, 3, '2023-10-27', '2023-10-09 17:15:00', 1, 11),
-('Testar equipamento de som', 'Testar o equipamento de som alugado', 3, 2, 2, '2023-10-27', '2023-10-11 13:25:00', 1, 11),
-('Configurar equipamento de som', 'Configurar o equipamento de som', 8, 1, 4, '2023-10-29', '2023-10-12 15:45:00', 1, 11);
+('Alugar equipamento de som', 'Alugar equipamento de som para o evento', 5, 1, 3, '2023-12-11', '2023-10-09 17:15:00', 1, 11),
+('Testar equipamento de som', 'Testar o equipamento de som alugado', 3, 2, 2, '2023-12-11', '2023-10-11 13:25:00', 1, 11),
+('Configurar equipamento de som', 'Configurar o equipamento de som', 8, 1, 4, '2023-12-12', '2023-10-12 15:45:00', 1, 11);
 
 -- Bucket 12: Música Palco
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket, data_conclusao)
 VALUES
-('Montar palco para a banda', 'Montar o palco para a apresentação da banda de música', 5, 3, 5, '2023-10-28', '2023-10-09 18:30:00', 1, 12, '2023-10-22 15:34:56'),
-('Verificar iluminação do palco', 'Verificar a iluminação do palco', 3, 2, 4, '2023-10-29', '2023-10-11 15:05:00', 1, 12, NULL),
-('Ajustar som do palco', 'Ajustar o som do palco para a banda de música', 8, 1, 6, '2023-10-29', '2023-10-12 16:55:00', 1, 12, NULL);
+('Montar palco para a banda', 'Montar o palco para a apresentação da banda de música', 5, 3, 5, '2023-12-13', '2023-10-09 18:30:00', 1, 12, '2023-10-22 15:34:56'),
+('Verificar iluminação do palco', 'Verificar a iluminação do palco', 3, 2, 4, '2023-12-13', '2023-10-13 15:05:00', 1, 12, NULL),
+('Ajustar som do palco', 'Ajustar o som do palco para a banda de música', 8, 1, 6, '2023-12-13', '2023-10-12 16:55:00', 1, 12, NULL);
 
 -- Bucket 13: Segurança Empresa Lima
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Contratar seguranças da empresa Lima', 'Contratar seguranças da empresa Lima para o evento', 5, 1, 6, '2023-10-21', '2023-10-09 19:15:00', 1, 13),
-('Coordenar equipe de segurança', 'Coordenar a equipe de segurança no evento', 3, 2, 5, '2023-11-02', '2023-10-20 16:30:00', 1, 13),
-('Verificar pontos de segurança', 'Verificar os pontos de segurança no local do evento', 8, 1, 7, '2023-10-20', '2023-10-12 17:45:00', 1, 13);
+('Contratar seguranças da empresa Lima', 'Contratar seguranças da empresa Lima para o evento', 5, 1, 6, '2023-12-12', '2023-10-09 19:15:00', 1, 13),
+('Coordenar equipe de segurança', 'Coordenar a equipe de segurança no evento', 3, 2, 5, '2023-12-12', '2023-12-12 16:30:00', 1, 13),
+('Verificar pontos de segurança', 'Verificar os pontos de segurança no local do evento', 8, 1, 7, '2023-12-14', '2023-10-12 17:45:00', 1, 13);
 
 -- Bucket 14: Segurança Convidados
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Receber lista de convidados', 'Receber lista de convidados do evento', 3, 2, 3, '2023-10-28', '2023-10-11 17:55:00', 1, 14),
-('Instruir seguranças sobre procedimentos', 'Instruir os seguranças sobre os procedimentos no evento', 3, 2, 3, '2023-10-29', '2023-10-11 17:55:00', 1, 14);
+('Receber lista de convidados', 'Receber lista de convidados do evento', 3, 2, 3, '2023-12-12', '2023-10-11 17:55:00', 1, 14),
+('Instruir seguranças sobre procedimentos', 'Instruir os seguranças sobre os procedimentos no evento', 3, 2, 3, '2023-12-12', '2023-10-11 17:55:00', 1, 14);
 
 -- Bucket 15: Limpeza Antes do Evento
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Limpar local antes do evento', 'Realizar limpeza no local antes do início do evento', 5, 1, 3, '2023-10-27', '2023-10-09 21:45:00', 1, 15),
-('Verificar estoque de materiais de limpeza', 'Verificar o estoque de materiais de limpeza', 3, 2, 2, '2023-10-24', '2023-10-11 18:30:00', 1, 15),
-('Coordenar equipe de limpeza', 'Coordenar a equipe de limpeza antes do evento', 8, 1, 4, '2023-10-29', '2023-10-12 19:15:00', 1, 15);
+('Limpar local antes do evento', 'Realizar limpeza no local antes do início do evento', 5, 1, 3, '2023-12-15', '2023-10-09 21:45:00', 1, 15),
+('Verificar estoque de materiais de limpeza', 'Verificar o estoque de materiais de limpeza', 3, 2, 2, '2023-12-15', '2023-10-11 18:30:00', 1, 15),
+('Coordenar equipe de limpeza', 'Coordenar a equipe de limpeza antes do evento', 8, 1, 4, '2023-12-16', '2023-10-12 19:15:00', 1, 15);
 
 -- Bucket 16: Limpeza Plantão Evento
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Realizar limpeza durante o evento', 'Realizar limpeza durante o evento', 5, 1, 4, '2023-10-29', '2023-10-09 22:30:00', 1, 16),
-('Manter áreas limpas durante o evento', 'Manter áreas limpas durante o evento', 3, 2, 3, '2023-10-29', '2023-10-11 19:45:00', 1, 16),
-('Disposição de resíduos durante o evento', 'Fazer a disposição de resíduos durante o evento', 8, 1, 5, '2023-10-29', '2023-10-12 20:30:00', 1, 16);
+('Realizar limpeza durante o evento', 'Realizar limpeza durante o evento', 5, 1, 4, '2023-12-15', '2023-10-09 22:30:00', 1, 16),
+('Manter áreas limpas durante o evento', 'Manter áreas limpas durante o evento', 3, 2, 3, '2023-12-15', '2023-10-11 19:45:00', 1, 16),
+('Disposição de resíduos durante o evento', 'Fazer a disposição de resíduos durante o evento', 8, 1, 5, '2023-12-15', '2023-10-12 20:30:00', 1, 16);
 
 -- Bucket 17: Limpeza Depois do Evento
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
 VALUES
-('Limpar local após o evento', 'Realizar limpeza no local após o término do evento', 5, 1, 5, '2023-10-30', '2023-10-09 23:15:00', 1, 17),
-('Verificar estoque de materiais de limpeza', 'Verificar o estoque de materiais de limpeza', 3, 2, 4, '2023-10-30', '2023-10-11 20:30:00', 1, 17),
-('Coordenar equipe de limpeza após o evento', 'Coordenar a equipe de limpeza após o evento', 8, 1, 6, '2023-10-30', '2023-10-12 21:45:00', 1, 17);
+('Limpar local após o evento', 'Realizar limpeza no local após o término do evento', 5, 1, 5, '2023-12-16', '2023-10-09 23:15:00', 1, 17),
+('Verificar estoque de materiais de limpeza', 'Verificar o estoque de materiais de limpeza', 3, 2, 4, '2023-12-16', '2023-10-11 20:30:00', 1, 17),
+('Coordenar equipe de limpeza após o evento', 'Coordenar a equipe de limpeza após o evento', 8, 1, 6, '2023-12-16', '2023-10-12 21:45:00', 1, 17);
 
 -- Tarefa 1: Cozinhar
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(1, '2023-10-28 08:30:00', NOW(), 0, 1, NULL),
-(1, '2023-10-28 09:45:00', NOW(), 0, 2, NULL),
-(1, '2023-10-28 10:30:00', NOW(), 0, 3, NULL);
+(1, '2023-12-06 08:30:00', NOW(), 0, 1, NULL),
+(1, '2023-12-06 09:45:00', NOW(), 0, 2, NULL),
+(1, '2023-12-07 10:30:00', NOW(), 0, 3, NULL);
 
 -- Tarefa 2: Montar apresentação das entradas
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(2, '2023-10-25 14:15:00', NOW(), 0, 4, NULL),
-(2, '2023-10-25 15:30:00', NOW(), 0, 5, NULL);
+(2, NULL, NOW(), 0, 4, NULL),
+(2, NULL, NOW(), 0, 5, NULL);
 
 -- Tarefa 3: Comprar ingredientes
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(3, '2023-10-15 11:45:00', NOW(), 0, 6, NULL),
-(3, '2023-10-15 12:30:00', NOW(), 0, 7, NULL);
+(3, NULL, NOW(), 0, 6, NULL),
+(3, NULL, NOW(), 0, 7, NULL);
 
 -- Tarefa 4: Preparar salgados
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(4, '2023-10-22 10:30:00', NOW(), 0, 8, NULL),
-(4, '2023-10-22 11:45:00', NOW(), 0, 9, NULL);
+(4, NULL, NOW(), 0, 8, NULL),
+(4, NULL, NOW(), 0, 9, NULL);
 
 -- Tarefa 5: Montar apresentação dos salgados
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(5, '2023-10-24 14:15:00', NOW(), 0, 10, NULL);
+(5, NULL, NOW(), 0, 10, NULL);
 
 -- Tarefa 6: Comprar ingredientes
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(6, '2023-10-15 11:45:00', NOW(), 0, 6, NULL),
-(6, '2023-10-15 12:30:00', NOW(), 0, 7, NULL);
+(6, NULL, NOW(), 0, 6, NULL),
+(6, NULL, NOW(), 0, 7, NULL);
 
 -- Tarefa 7: Preparar bebidas
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(7, '2023-10-23 09:30:00', NOW(), 0, 1, NULL),
-(7, '2023-10-23 10:45:00', NOW(), 0, 2, NULL);
+(7, NULL, NOW(), 0, 1, NULL),
+(7, NULL, NOW(), 0, 2, NULL);
 
 -- Tarefa 8: Montar apresentação das bebidas
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(8, '2023-10-27 15:15:00', NOW(), 0, 3, NULL),
-(8, '2023-10-27 16:30:00', NOW(), 0, 4, NULL);
+(8, NULL, NOW(), 0, 3, NULL),
+(8, NULL, NOW(), 0, 4, NULL);
 
 -- Tarefa 9: Comprar ingredientes
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(9, '2023-10-15 11:45:00', NOW(), 0, 5, NULL),
-(9, '2023-10-15 12:30:00', NOW(), 0, 6, NULL);
+(9, NULL, NOW(), 0, 5, NULL),
+(9, NULL, NOW(), 0, 6, NULL);
 
 -- Tarefa 10: Preparar doces
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(10, '2023-10-22 10:30:00', NOW(), 0, 7, NULL),
-(10, '2023-10-22 11:45:00', NOW(), 0, 8, NULL);
+(10, NULL, NOW(), 0, 7, NULL),
+(10, NULL, NOW(), 0, 8, NULL);
 
 -- Tarefa 11: Montar apresentação dos doces
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(11, '2023-10-24 14:15:00', NOW(), 0, 9, NULL);
+(11, NULL, NOW(), 0, 9, NULL);
 
 -- Tarefa 12: Comprar ingredientes
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(12, '2023-10-15 11:45:00', NOW(), 0, 10, NULL),
-(12, '2023-10-15 12:30:00', NOW(), 0, 1, NULL);
+(12, NULL, NOW(), 0, 10, NULL),
+(12, NULL, NOW(), 0, 1, NULL);
 
 -- Tarefa 13: Preparar jantar
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(13, '2023-10-21 18:30:00', NOW(), 0, 2, NULL),
-(13, '2023-10-21 19:45:00', NOW(), 0, 3, NULL);
+(13, NULL, NOW(), 0, 2, NULL),
+(13, NULL, NOW(), 0, 3, NULL);
 
 -- Tarefa 14: Montar apresentação do jantar
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(14, '2023-10-26 20:15:00', NOW(), 0, 4, NULL);
+(14, NULL, NOW(), 0, 4, NULL);
 
 -- Tarefa 15: Prototipar decoração
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(15, '2023-10-17 14:30:00', NOW(), 0, 5, NULL),
-(15, '2023-10-17 15:45:00', NOW(), 0, 6, NULL);
+(15, NULL, NOW(), 0, 5, NULL),
+(15, NULL, NOW(), 0, 6, NULL);
 
 -- Tarefa 16: Avaliar protótipo de decoração
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(16, '2023-10-19 11:15:00', NOW(), 0, 7, NULL),
-(16, '2023-10-19 12:30:00', NOW(), 0, 8, NULL);
+(16, NULL, NOW(), 0, 7, NULL),
+(16, NULL, NOW(), 0, 8, NULL);
 
 -- Tarefa 17: Ajustar protótipo de decoração
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(17, '2023-10-20 09:30:00', NOW(), 0, 9, NULL),
-(17, '2023-10-20 10:45:00', NOW(), 0, 10, NULL);
+(17, NULL, NOW(), 0, 9, NULL),
+(17, NULL, NOW(), 0, 10, NULL);
 
 -- Tarefa 18: Comprar materiais de decoração
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(18, '2023-10-15 14:45:00', NOW(), 0, 1, NULL),
-(18, '2023-10-15 15:30:00', NOW(), 0, 2, NULL);
+(18, NULL, NOW(), 0, 1, NULL),
+(18, NULL, NOW(), 0, 2, NULL);
 
 -- Tarefa 19: Receber entrega dos materiais
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(19, '2023-10-18 08:30:00', NOW(), 0, 3, NULL),
-(19, '2023-10-18 09:45:00', NOW(), 0, 4, NULL);
+(19, NULL, NOW(), 0, 3, NULL),
+(19, NULL, NOW(), 0, 4, NULL);
 
 -- Tarefa 20: Organizar materiais de decoração
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(20, '2023-10-22 12:15:00', NOW(), 0, 5, NULL),
-(20, '2023-10-22 13:30:00', NOW(), 0, 6, NULL);
+(20, NULL, NOW(), 0, 5, NULL),
+(20, NULL, NOW(), 0, 6, NULL);
 
 -- Tarefa 21: Montar decoração do evento
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(21, '2023-10-29 08:30:00', NOW(), 0, 7, NULL),
-(21, '2023-10-29 09:45:00', NOW(), 0, 8, NULL);
+(21, NULL, NOW(), 0, 7, NULL),
+(21, NULL, NOW(), 0, 8, NULL);
 
 -- Tarefa 22: Ajustar decoração do evento
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(22, '2023-10-30 10:30:00', NOW(), 0, 9, NULL),
-(22, '2023-10-30 11:45:00', NOW(), 0, 10, NULL);
+(22, NULL, NOW(), 0, 9, NULL),
+(22, NULL, NOW(), 0, 10, NULL);
 
 -- Tarefa 23: Finalizar decoração do evento
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(23, '2023-10-30 15:15:00', NOW(), 0, 1, NULL),
-(23, '2023-10-30 16:30:00', NOW(), 0, 2, NULL);
+(23, NULL, NOW(), 0, 1, NULL),
+(23, NULL, NOW(), 0, 2, NULL);
 
 -- Tarefa 24: Desmontar decoração do evento
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(24, '2023-11-01 09:30:00', NOW(), 0, 3, NULL),
-(24, '2023-11-01 10:45:00', NOW(), 0, 4, NULL);
+(24, NULL, NOW(), 0, 3, NULL),
+(24, NULL, NOW(), 0, 4, NULL);
 
 -- Tarefa 25: Recolher materiais de decoração
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(25, '2023-11-02 08:30:00', NOW(), 0, 5, NULL),
-(25, '2023-11-02 09:45:00', NOW(), 0, 6, NULL);
+(25, NULL, NOW(), 0, 5, NULL),
+(25, NULL, NOW(), 0, 6, NULL);
 
 -- Tarefa 26: Armazenar materiais de decoração
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(26, '2023-11-03 10:30:00', NOW(), 0, 7, NULL),
-(26, '2023-11-03 11:45:00', NOW(), 0, 8, NULL);
+(26, NULL, NOW(), 0, 7, NULL),
+(26, NULL, NOW(), 0, 8, NULL);
 
 -- Tarefa 27: Contratar banda de música
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(27, '2023-10-20 14:15:00', NOW(), 0, 9, NULL),
-(27, '2023-10-20 15:30:00', NOW(), 0, 10, NULL);
+(27, NULL, NOW(), 0, 9, NULL),
+(27, NULL, NOW(), 0, 10, NULL);
 
 -- Tarefa 28: Selecionar repertório da banda
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(28, '2023-10-25 16:45:00', NOW(), 0, 1, NULL),
-(28, '2023-10-25 17:30:00', NOW(), 0, 2, NULL);
+(28, NULL, NOW(), 0, 1, NULL),
+(28, NULL, NOW(), 0, 2, NULL);
 
 -- Tarefa 29: Revisar equipamento da banda
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(29, '2023-10-22 08:30:00', NOW(), 0, 3, NULL),
-(29, '2023-10-22 09:45:00', NOW(), 0, 4, NULL);
+(29, NULL, NOW(), 0, 3, NULL),
+(29, NULL, NOW(), 0, 4, NULL);
 
 -- Tarefa 30: Alugar equipamento de som
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(30, '2023-10-21 14:15:00', NOW(), 0, 5, NULL),
-(30, '2023-10-21 15:30:00', NOW(), 0, 6, NULL);
+(30, NULL, NOW(), 0, 5, NULL),
+(30, NULL, NOW(), 0, 6, NULL);
 
 -- Tarefa 31: Testar equipamento de som
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(31, '2023-10-24 10:30:00', NOW(), 0, 7, NULL),
-(31, '2023-10-24 11:45:00', NOW(), 0, 8, NULL);
+(31, NULL, NOW(), 0, 7, NULL),
+(31, NULL, NOW(), 0, 8, NULL);
 
 -- Tarefa 32: Configurar equipamento de som
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(32, '2023-10-29 09:30:00', NOW(), 0, 9, NULL),
-(32, '2023-10-29 10:45:00', NOW(), 0, 10, NULL);
+(32, NULL, NOW(), 0, 9, NULL),
+(32, NULL, NOW(), 0, 10, NULL);
 
 -- Tarefa 33: Montar palco para a banda
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(33, '2023-10-30 08:30:00', NOW(), 0, 1, NULL),
-(33, '2023-10-30 09:45:00', NOW(), 0, 2, NULL);
+(33, NULL, NOW(), 0, 1, NULL),
+(33, NULL, NOW(), 0, 2, NULL);
 
 -- Tarefa 34: Verificar iluminação do palco
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(34, '2023-10-31 14:15:00', NOW(), 0, 3, NULL),
-(34, '2023-10-31 15:30:00', NOW(), 0, 4, NULL);
+(34, NULL, NOW(), 0, 3, NULL),
+(34, NULL, NOW(), 0, 4, NULL);
 
 -- Tarefa 35: Ajustar som do palco
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(35, '2023-11-01 10:30:00', NOW(), 0, 5, NULL),
-(35, '2023-11-01 11:45:00', NOW(), 0, 6, NULL);
+(35, NULL, NOW(), 0, 5, NULL),
+(35, NULL, NOW(), 0, 6, NULL);
 
 -- Tarefa 36: Contratar seguranças da empresa Lima
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(36, '2023-10-20 08:30:00', NOW(), 0, 7, NULL),
-(36, '2023-10-20 09:45:00', NOW(), 0, 8, NULL);
+(36, NULL, NOW(), 0, 7, NULL),
+(36, NULL, NOW(), 0, 8, NULL);
 
 -- Tarefa 37: Coordenar equipe de segurança
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(37, '2023-10-21 14:15:00', NOW(), 0, 9, NULL),
-(37, '2023-10-21 15:30:00', NOW(), 0, 10, NULL);
+(37, NULL, NOW(), 0, 9, NULL),
+(37, NULL, NOW(), 0, 10, NULL);
 
 -- Tarefa 38: Verificar pontos de segurança
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(38, '2023-10-23 10:30:00', NOW(), 0, 1, NULL),
-(38, '2023-10-23 11:45:00', NOW(), 0, 2, NULL);
+(38, NULL, NOW(), 0, 1, NULL),
+(38, NULL, NOW(), 0, 2, NULL);
 
 -- Tarefa 39: Receber lista de convidados
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(39, '2023-10-29 14:15:00', NOW(), 0, 3, NULL),
-(39, '2023-10-29 15:30:00', NOW(), 0, 4, NULL);
+(39, NULL, NOW(), 0, 3, NULL),
+(39, NULL, NOW(), 0, 4, NULL);
 
 -- Tarefa 40: Instruir seguranças sobre procedimentos
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(40, '2023-10-30 08:30:00', NOW(), 0, 5, NULL),
-(40, '2023-10-30 09:45:00', NOW(), 0, 6, NULL);
+(40, NULL, NOW(), 0, 5, NULL),
+(40, NULL, NOW(), 0, 6, NULL);
 
 -- Tarefa 41: Limpar local antes do evento
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(41, '2023-11-01 14:15:00', NOW(), 0, 7, NULL),
-(41, '2023-11-01 15:30:00', NOW(), 0, 8, NULL);
+(41, NULL, NOW(), 0, 7, NULL),
+(41, NULL, NOW(), 0, 8, NULL);
 
 -- Tarefa 42: Verificar estoque de materiais de limpeza
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(42, '2023-11-02 10:30:00', NOW(), 0, 9, NULL),
-(42, '2023-11-02 11:45:00', NOW(), 0, 10, NULL);
+(42, NULL, NOW(), 0, 9, NULL),
+(42, NULL, NOW(), 0, 10, NULL);
 
 -- Tarefa 43: Coordenar equipe de limpeza
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(43, '2023-11-03 14:15:00', NOW(), 0, 1, NULL),
-(43, '2023-11-03 15:30:00', NOW(), 0, 2, NULL);
+(43, NULL, NOW(), 0, 1, NULL),
+(43, NULL, NOW(), 0, 2, NULL);
 
 -- Tarefa 44: Realizar limpeza durante o evento
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(44, '2023-11-04 08:30:00', NOW(), 0, 3, NULL),
-(44, '2023-11-04 09:45:00', NOW(), 0, 4, NULL);
+(44, NULL, NOW(), 0, 3, NULL),
+(44, NULL, NOW(), 0, 4, NULL);
 
 -- Tarefa 45: Manter áreas limpas durante o evento
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(45, '2023-11-05 10:30:00', NOW(), 0, 5, NULL),
-(45, '2023-11-05 11:45:00', NOW(), 0, 6, NULL);
+(45, NULL, NOW(), 0, 5, NULL),
+(45, NULL, NOW(), 0, 6, NULL);
 
 -- Tarefa 46: Disposição de resíduos durante o evento
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(46, '2023-11-06 14:15:00', NOW(), 0, 7, NULL),
-(46, '2023-11-06 15:30:00', NOW(), 0, 8, NULL);
+(46, NULL, NOW(), 0, 7, NULL),
+(46, NULL, NOW(), 0, 8, NULL);
 
 -- Tarefa 47: Limpar local após o evento
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(47, '2023-11-07 08:30:00', NOW(), 0, 9, NULL),
-(47, '2023-11-07 09:45:00', NOW(), 0, 10, NULL);
+(47, NULL, NOW(), 0, 9, NULL),
+(47, NULL, NOW(), 0, 10, NULL);
 
 -- Tarefa 48: Verificar estoque de materiais de limpeza
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(48, '2023-11-08 10:30:00', NOW(), 0, 1, NULL),
-(48, '2023-11-08 11:45:00', NOW(), 0, 2, NULL);
+(48, NULL, NOW(), 0, 1, NULL),
+(48, NULL, NOW(), 0, 2, NULL);
 
 -- Tarefa 49: Coordenar equipe de limpeza após o evento
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(49, '2023-11-09 14:15:00', NOW(), 0, 3, NULL),
-(49, '2023-11-09 15:30:00', NOW(), 0, 4, NULL);
+(49, NULL, NOW(), 0, 3, NULL),
+(49, NULL, NOW(), 0, 4, NULL);
 
 INSERT INTO eventify.funcionalidade (nome) VALUES 
 ('Tela Inicial'),

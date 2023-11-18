@@ -741,7 +741,7 @@ AND YEAR(data) = YEAR(CURRENT_DATE() - INTERVAL 5 MONTH)
 AND MONTH(data) = MONTH(CURRENT_DATE() - INTERVAL 5 MONTH));
 
 
-SELECT * FROM vw_avaliacoes_buffet_smart_sync;
+
 CREATE OR REPLACE VIEW eventify.vw_avaliacoes_buffet_smart_sync AS (
 SELECT
     id_buffet,
