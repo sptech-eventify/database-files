@@ -775,6 +775,7 @@ CREATE OR REPLACE VIEW eventify.vw_eventos_por_secao AS (
 SELECT 
 	b.id id_buffet,
     bs.id id_buffet_servico,
+    bck.id_evento,
     t.*
 FROM 
 	buffet b 
@@ -786,4 +787,21 @@ JOIN
 	tarefa t ON t.id_bucket = bck.id
 WHERE 
 	t.is_visivel = 1
+);
+
+
+
+CREATE OR REPLACE VIEW eventify.vw_secoes AS (
+SELECT 
+	bs.id_buffet id_buffet,
+    bck.id_evento id_evento,
+    s.id id_servico,
+    bck.id id_bucket,
+    s.descricao nome_servico
+FROM 
+	buffet_servico bs
+JOIN 
+	bucket bck ON bck.id_buffet_servico = bs.id
+JOIN
+	servico s ON bs.id_servico = s.id
 );
