@@ -19,6 +19,8 @@ SELECT c.id, c.nome, e.data FROM eventify.evento e JOIN eventify.usuario c ON c.
 
 SELECT NOW();
 
+SELECT * FROM eventify.tarefa WHERE id = 1;
+
 SELECT * 
 FROM buffet b
 JOIN transacao AS

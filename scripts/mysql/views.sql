@@ -768,3 +768,22 @@ GROUP BY
 ORDER BY
     id_buffet, ano, mes_n ASC
 );
+
+
+
+CREATE OR REPLACE VIEW eventify.vw_eventos_por_secao AS ( 
+SELECT 
+	b.id id_buffet,
+    bs.id id_buffet_servico,
+    t.*
+FROM 
+	buffet b 
+JOIN 
+	buffet_servico bs ON bs.id_buffet = b.id
+JOIN 
+	bucket bck ON bck.id_buffet_servico = bs.id
+JOIN 
+	tarefa t ON t.id_bucket = bck.id
+WHERE 
+	t.is_visivel = 1
+);
