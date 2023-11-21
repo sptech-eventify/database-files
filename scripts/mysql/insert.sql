@@ -2941,6 +2941,9 @@ INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_
 (1, 987, NOW(), 0, 2, NULL),
 (1, 1432, NOW(), 0, 3, NULL);
 
+INSERT INTO `eventify`.`comentario`(`mensagem`, `data_criacao`, `is_visivel`, `id_funcionario`, `id_usuario`, `id_tarefa`)
+VALUES ('Tentarei comprar os produtos durante a tarde de segunda-feira.', NOW(), 1, 1, NULL, 1);
+
 -- Tarefa 2: Montar apresentação das entradas
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
 (2, NULL, NOW(), 0, 4, NULL),
