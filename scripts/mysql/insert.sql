@@ -2937,9 +2937,9 @@ VALUES
 
 -- Tarefa 1: Cozinhar
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(1, '2023-12-06 08:30:00', NOW(), 0, 1, NULL),
-(1, '2023-12-06 09:45:00', NOW(), 0, 2, NULL),
-(1, '2023-12-07 10:30:00', NOW(), 0, 3, NULL);
+(1, 600, NOW(), 0, 1, NULL),
+(1, 987, NOW(), 0, 2, NULL),
+(1, 1432, NOW(), 0, 3, NULL);
 
 -- Tarefa 2: Montar apresentação das entradas
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
@@ -3025,7 +3025,7 @@ INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_
 
 -- Tarefa 19: Receber entrega dos materiais
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
-(19, NULL, NOW(), 0, 3, NULL),
+(19, NULL, NOW(), 0, NULL, 1),
 (19, NULL, NOW(), 0, 4, NULL);
 
 -- Tarefa 20: Organizar materiais de decoração

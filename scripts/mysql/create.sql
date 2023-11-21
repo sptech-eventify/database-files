@@ -507,7 +507,6 @@ CREATE TABLE IF NOT EXISTS `eventify`.`comentario` (
   `mensagem` VARCHAR(512) NULL,
   `data_criacao` DATETIME NULL,
   `is_visivel` TINYINT NULL,
-  `id_funcionario_gestor` INT NULL,
   `id_funcionario` INT NULL,
   `id_usuario` INT NULL,
   `id_tarefa` INT NOT NULL,
@@ -522,11 +521,6 @@ CREATE TABLE IF NOT EXISTS `eventify`.`comentario` (
     REFERENCES `eventify`.`funcionario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_comentario_funcionario2`
-    FOREIGN KEY (`id_funcionario_gestor`)
-    REFERENCES `eventify`.`funcionario` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_comentario_usuario1`
     FOREIGN KEY (`id_usuario`)
     REFERENCES `eventify`.`usuario` (`id`)
@@ -538,8 +532,6 @@ CREATE INDEX `fk_comentario_tarefa1_idx` ON `eventify`.`comentario` (`id_tarefa`
 
 CREATE INDEX `fk_comentario_funcionario1_idx` ON `eventify`.`comentario` (`id_funcionario` ASC) VISIBLE;
 
-CREATE INDEX `fk_comentario_funcionario2_idx` ON `eventify`.`comentario` (`id_funcionario_gestor` ASC) VISIBLE;
-
 CREATE INDEX `fk_comentario_usuario1_idx` ON `eventify`.`comentario` (`id_usuario` ASC) VISIBLE;
 
 
@@ -548,7 +540,7 @@ CREATE INDEX `fk_comentario_usuario1_idx` ON `eventify`.`comentario` (`id_usuari
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eventify`.`executor_tarefa` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `tempo_executado` TIMESTAMP NULL,
+  `tempo_executado` INT NULL,
   `data_criacao` DATETIME NULL,
   `is_removido` TINYINT NULL,
   `id_tarefa` INT NOT NULL,
