@@ -805,3 +805,57 @@ JOIN
 JOIN
 	servico s ON bs.id_servico = s.id
 );
+
+
+CREATE OR REPLACE VIEW eventify.vw_qtd_tarefas_status_eventos AS (
+SELECT
+    e.id AS id_evento,
+    COUNT(CASE WHEN t.status = 3 THEN 1 END) AS tarefas_realizadas,
+    COUNT(CASE WHEN t.status = 1 THEN 1 END) AS tarefas_pendentes,
+    COUNT(CASE WHEN t.status = 2 THEN 1 END) AS tarefas_em_andamento
+FROM
+    evento e
+    LEFT JOIN bucket b ON e.id = b.id_evento
+    LEFT JOIN tarefa t ON b.id = t.id_bucket
+GROUP BY
+    e.id
+);
+
+
+CREATE OR REPLACE VIEW vw_listagem_proximos_eventos AS (
+SELECT 
+	us.nome proprietario,
+    ev.id,
+    ev.data,
+    ev.status,
+    vw.tarefas_realizadas,
+    vw.tarefas_pendentes,
+    vw.tarefas_em_andamento
+FROM
+	evento ev
+JOIN
+	usuario us ON us.id = ev.id_contratante
+JOIN
+	vw_qtd_tarefas_status_eventos vw ON vw.id_evento = ev.id
+WHERE
+	ev.status = 5 AND ev.id_buffet = 1
+);
+
+CREATE OR REPLACE VIEW eventify.vw_avaliacoes_buffet_usuario AS(
+SELECT 
+    usuario.nome,
+    evento.nota,
+    evento.avaliacao,
+    evento.data,
+    evento.id_buffet
+FROM 
+    evento
+RIGHT JOIN
+    usuario ON evento.id_contratante = usuario.id
+WHERE
+    evento.status = 6
+);
+
+
+
+listagem de secoes no kanbam de tarefas, os serviços no caso, que serao os mesmos que o buffet oferece

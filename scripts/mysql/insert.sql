@@ -2634,7 +2634,7 @@ INSERT INTO eventify.agenda VALUE (NULL, '2023-12-03 00:00:00', 1, 1);
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-11-11 00:00:00', 0);
 INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-12-15 00:00:00', 22250.00, NULL, NULL, 6, NULL, 1, 1, '2023-12-15 14:30:00', 399, 216);
+('2023-12-15 00:00:00', 22250.00, NULL, NULL, 5, NULL, 1, 1, '2023-12-15 14:30:00', 399, 216);
 INSERT INTO eventify.agenda VALUE (NULL, '2023-12-15 00:00:00', 1, 1);
 
 -- --------------
@@ -2642,19 +2642,19 @@ INSERT INTO eventify.agenda VALUE (NULL, '2023-12-15 00:00:00', 1, 1);
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-11-19 00:00:00', 0);
 INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-12-18 00:00:00', 22250.00, NULL, NULL, 6, NULL, 1, 1, '2023-12-18 14:30:00', 243, 217);
+('2023-12-18 00:00:00', 22250.00, NULL, NULL, 5, NULL, 1, 1, '2023-12-18 14:30:00', 243, 217);
 INSERT INTO eventify.agenda VALUE (NULL, '2023-12-18 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-12-01 00:00:00', 0);
 INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-12-21 00:00:00', 22250.00, NULL, NULL, 6, NULL, 1, 1, '2023-12-15 14:30:00', 350, 218);
+('2023-12-21 00:00:00', 22250.00, NULL, NULL, 5, NULL, 1, 1, '2023-12-15 14:30:00', 350, 218);
 INSERT INTO eventify.agenda VALUE (NULL, '2023-12-21 00:00:00', 1, 1);
 
 INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
 (1, '2023-10-24 00:00:00', 0);
 INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
-('2023-12-24 00:00:00', 22250.00, NULL, NULL, 6, NULL, 1, 1, '2023-12-24 14:30:00', 360, 219);
+('2023-12-24 00:00:00', 22250.00, NULL, NULL, 5, NULL, 1, 1, '2023-12-24 14:30:00', 360, 219);
 INSERT INTO eventify.agenda VALUE (NULL, '2023-12-24 00:00:00', 1, 1);
 
 -- INSERINDO DADOS DO SMART SYNC
