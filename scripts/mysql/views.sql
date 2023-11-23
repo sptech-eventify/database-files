@@ -838,8 +838,10 @@ JOIN
 JOIN
 	vw_qtd_tarefas_status_eventos vw ON vw.id_evento = ev.id
 WHERE
-	ev.status = 5 AND ev.id_buffet = 1
+	ev.status = 5
 );
+
+
 
 CREATE OR REPLACE VIEW eventify.vw_avaliacoes_buffet_usuario AS(
 SELECT 
@@ -855,7 +857,3 @@ RIGHT JOIN
 WHERE
     evento.status = 6
 );
-
-
-
-listagem de secoes no kanbam de tarefas, os serviços no caso, que serao os mesmos que o buffet oferece
