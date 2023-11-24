@@ -1,4 +1,3 @@
-TRUNCATE imagem;
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
 ('https://s3-eventify-arquivos.s3.amazonaws.com/img/', '11_2-min', 'webp', NOW(), id_buffet),
 ('https://s3-eventify-arquivos.s3.amazonaws.com/img/', '11_1-min', 'webp', NOW(), id_buffet),

@@ -507,6 +507,19 @@ INSERT INTO eventify.pagina (nome, uri) VALUES
 ('cadastro de buffet', '/proprietario/adicionar-buffet'),
 ('formulário dinâmico', '/contratante');
 
+
+
+INSERT INTO eventify.acao (descricao) VALUES
+('criou'),
+('alterou'),
+('removeu'),
+('acrescentou'),
+('atribuiu'),
+('desatribuiu'),
+('aumentou'),
+('diminuiu'),
+('finalizou');
+
 -- --------------------- BUFFET 1 ---------------------
 INSERT INTO `eventify`.`endereco` (is_validado, logradouro, numero, bairro, cidade, uf, cep, latitude, longitude, data_criacao) VALUES
 (1, 'Rua Augusta', 123, 'Consolação', 'São Paulo', 'SP', '01304001', -23.554279, -46.653040, '2023-03-02 16:30:49');
@@ -2939,7 +2952,8 @@ VALUES
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
 (1, 600, NOW(), 0, 1, NULL),
 (1, 987, NOW(), 0, 2, NULL),
-(1, 1432, NOW(), 0, 3, NULL);
+(1, 1432, NOW(), 0, 3, NULL),
+(1, 1432, NOW(), 0, NULL, 1);
 
 INSERT INTO `eventify`.`comentario`(`mensagem`, `data_criacao`, `is_visivel`, `id_funcionario`, `id_usuario`, `id_tarefa`)
 VALUES ('Tentarei comprar os produtos durante a tarde de segunda-feira.', NOW(), 1, 1, NULL, 1);
@@ -2981,7 +2995,7 @@ INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_
 -- Tarefa 9: Comprar ingredientes
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
 (9, NULL, NOW(), 0, 5, NULL),
-(9, NULL, NOW(), 0, 6, NULL);
+(9, NULL, NOW(), 0, NULL, 1);
 
 -- Tarefa 10: Preparar doces
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
@@ -3139,6 +3153,7 @@ INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_
 -- Tarefa 41: Limpar local antes do evento
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
 (41, NULL, NOW(), 0, 7, NULL),
+(41, NULL, NOW(), 0, NULL, 1),
 (41, NULL, NOW(), 0, 8, NULL);
 
 -- Tarefa 42: Verificar estoque de materiais de limpeza
@@ -3180,6 +3195,31 @@ INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_
 INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
 (49, NULL, NOW(), 0, 3, NULL),
 (49, NULL, NOW(), 0, 4, NULL);
+
+INSERT INTO flag_log (data_criacao, is_visivel, id_funcionario, id_usuario, id_tarefa) VALUES 
+(NOW(), 1, NULL, 1, 1),
+(NOW(), 1, NULL, 1, 3),
+(NOW(), 1, NULL, 1, 11),
+(NOW(), 1, NULL, 1, 13),
+(NOW(), 1, NULL, 1, 17),
+(NOW(), 1, NULL, 1, 21);
+
+INSERT INTO log_acesso_tarefa (data_criacao, id_tarefa, id_usuario) VALUES
+(NOW(), 14, 1),
+(NOW(), 17, 1),
+(NOW(), 11, 1),
+(NOW(), 7, 1),
+(NOW(), 41, 1),
+(NOW(), 22, 1),
+(NOW(), 5, 1);
+
+INSERT INTO log_tarefa (valor, data_criacao, id_funcionario, id_usuario, id_tarefa, id_acao) VALUES
+('a Leandro mertilo a tarefa', NOW(), NULL, 1, 1, 5),
+('o fibonacci de 8 para 13 na tarefa', NOW(), 1, NULL, 3, 7),
+('a data estimada para 14 de dezembro da tarefa', NOW(), 4, NULL, 5, 2),
+('a data estimada para 14 de dezembro da tarefa', NOW(), 4, NULL, 5, 2),
+('removeu Eduardo Almeida da tarefa', NOW(), 3, NULL, 10, 3),
+('a tarefa', NOW(), 5, NULL, 49, 1);
 
 INSERT INTO eventify.funcionalidade (nome) VALUES 
 ('Tela Inicial'),
