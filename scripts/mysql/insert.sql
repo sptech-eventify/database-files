@@ -21191,3 +21191,7 @@ INSERT INTO eventify.visualizacao (data_criacao, id_funcionalidade, id_buffet) V
 -- USUÁRIO FANTASMA
 INSERT INTO usuario (nome, email, senha, tipo_usuario, is_ativo, is_banido, cpf, data_criacao, ultimo_login)  VALUE 
 ('Usuário Fantasma', 'funcionario@eventify.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 2, 1, 0, '98765432109', '2022-12-12 14:20:00', '2022-12-15 21:45:00');
+
+UPDATE evento
+SET status = 6
+WHERE status = 5 AND data < '2023-12-07 00:00:00';

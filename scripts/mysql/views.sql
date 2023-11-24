@@ -824,7 +824,8 @@ GROUP BY
 
 CREATE OR REPLACE VIEW vw_listagem_proximos_eventos AS (
 SELECT 
-	us.nome proprietario,
+	ev.id_buffet,
+	us.nome cliente,
     ev.id,
     ev.data,
     ev.status,
