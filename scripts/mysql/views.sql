@@ -858,3 +858,30 @@ RIGHT JOIN
 WHERE
     evento.status = 6
 );
+
+
+CREATE OR REPLACE VIEW vw_flag_log_tarefa AS (
+SELECT 
+	bs.id id_secao,
+    flog.id id_log,
+    tsk.id id_tarefa,
+    flog.data_criacao data_criacao_log,
+    flog.id_funcionario,
+    flog.id_usuario
+FROM
+	buffet_servico bs
+JOIN
+	bucket bck ON bck.id_buffet_servico = bs.id
+JOIN
+	tarefa tsk ON tsk.id_bucket = bck.id
+JOIN
+	flag_log flog ON flog.id_tarefa = tsk.id
+LEFT JOIN
+	funcionario fnc ON fnc.id = flog.id_funcionario
+LEFT JOIN
+	usuario us ON us.id = flog.id_funcionario
+WHERE 
+	bck.is_visivel = 1 AND 
+    tsk.is_visivel = 1 AND 
+    flog.is_visivel = 1
+);
