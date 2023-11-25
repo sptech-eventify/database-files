@@ -885,3 +885,18 @@ WHERE
     tsk.is_visivel = 1 AND 
     flog.is_visivel = 1
 );
+
+CREATE OR REPLACE VIEW vw_tarefas_por_usuario AS (
+SELECT
+	us.id id_usuario,
+    fnc.id id_funcionario,
+	tsk.*
+FROM
+	tarefa tsk
+JOIN
+	executor_tarefa ex ON ex.id_tarefa = tsk.id
+LEFT JOIN
+	usuario us ON us.id = ex.id_executor_usuario
+LEFT JOIN
+	funcionario fnc ON fnc.id = ex.id_executor_funcionario
+);
