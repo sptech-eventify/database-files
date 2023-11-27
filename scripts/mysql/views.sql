@@ -776,7 +776,8 @@ SELECT
 	b.id id_buffet,
     bs.id id_buffet_servico,
     bck.id_evento,
-    t.*
+    t.*,
+    bs.id_servico
 FROM 
 	buffet b 
 JOIN 
