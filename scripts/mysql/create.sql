@@ -1,8 +1,7 @@
 DROP DATABASE IF EXISTS eventify;
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
+SET SESSION sql_mode = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+SET GLOBAL sql_mode = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 -- -----------------------------------------------------
 -- Schema eventify
 -- -----------------------------------------------------
@@ -11,7 +10,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- Schema eventify
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `eventify` DEFAULT CHARACTER SET utf8 ;
-USE `eventify` ;
+USE `eventify` ; -- PREVENÇÃO DE ERRO
 
 -- -----------------------------------------------------
 -- Table `eventify`.`usuario`
@@ -436,12 +435,18 @@ CREATE TABLE IF NOT EXISTS `eventify`.`tarefa` (
   `data_criacao` DATETIME NULL,
   `data_conclusao` DATETIME NULL,
   `is_visivel` TINYINT NULL,
+  `id_tarefa` INT NULL,
   `id_bucket` INT NOT NULL,
   PRIMARY KEY (`id`),
+  CONSTRAINT `fk_tarefa_tarefa1`
+	FOREIGN KEY (`id_tarefa`)
+	REFERENCES `eventify`.`tarefa`(`id`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION,
   CONSTRAINT `fk_tarefa_bucket1`
     FOREIGN KEY (`id_bucket`)
     REFERENCES `eventify`.`bucket` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
@@ -502,7 +507,6 @@ CREATE TABLE IF NOT EXISTS `eventify`.`comentario` (
   `mensagem` VARCHAR(512) NULL,
   `data_criacao` DATETIME NULL,
   `is_visivel` TINYINT NULL,
-  `id_funcionario_gestor` INT NULL,
   `id_funcionario` INT NULL,
   `id_usuario` INT NULL,
   `id_tarefa` INT NOT NULL,
@@ -517,11 +521,6 @@ CREATE TABLE IF NOT EXISTS `eventify`.`comentario` (
     REFERENCES `eventify`.`funcionario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_comentario_funcionario2`
-    FOREIGN KEY (`id_funcionario_gestor`)
-    REFERENCES `eventify`.`funcionario` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_comentario_usuario1`
     FOREIGN KEY (`id_usuario`)
     REFERENCES `eventify`.`usuario` (`id`)
@@ -533,8 +532,6 @@ CREATE INDEX `fk_comentario_tarefa1_idx` ON `eventify`.`comentario` (`id_tarefa`
 
 CREATE INDEX `fk_comentario_funcionario1_idx` ON `eventify`.`comentario` (`id_funcionario` ASC) VISIBLE;
 
-CREATE INDEX `fk_comentario_funcionario2_idx` ON `eventify`.`comentario` (`id_funcionario_gestor` ASC) VISIBLE;
-
 CREATE INDEX `fk_comentario_usuario1_idx` ON `eventify`.`comentario` (`id_usuario` ASC) VISIBLE;
 
 
@@ -543,7 +540,7 @@ CREATE INDEX `fk_comentario_usuario1_idx` ON `eventify`.`comentario` (`id_usuari
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eventify`.`executor_tarefa` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `tempo_executado` TIMESTAMP NULL,
+  `tempo_executado` INT NULL,
   `data_criacao` DATETIME NULL,
   `is_removido` TINYINT NULL,
   `id_tarefa` INT NOT NULL,
@@ -600,9 +597,8 @@ CREATE INDEX `fk_transacoes_buffet1_idx` ON `eventify`.`transacao` (`id_buffet` 
 -- Table `eventify`.`funcionalidade`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eventify`.`funcionalidade` (
-  `id` INT NOT NULL,
-  `nome` VARCHAR(64) NOT NULL,
-  PRIMARY KEY (`id`))
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `nome` VARCHAR(64) NOT NULL)
 ENGINE = InnoDB;
 
 
@@ -610,11 +606,10 @@ ENGINE = InnoDB;
 -- Table `eventify`.`visualizacao`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `eventify`.`visualizacao` (
-  `id` INT NOT NULL,
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
   `data_criacao` DATETIME NULL,
   `id_funcionalidade` INT NOT NULL,
   `id_buffet` INT NOT NULL,
-  PRIMARY KEY (`id`),
   CONSTRAINT `fk_visualizacao_funcionalidade1`
     FOREIGN KEY (`id_funcionalidade`)
     REFERENCES `eventify`.`funcionalidade` (`id`)
@@ -632,6 +627,124 @@ CREATE INDEX `fk_visualizacao_funcionalidade1_idx` ON `eventify`.`visualizacao` 
 CREATE INDEX `fk_visualizacao_buffet1_idx` ON `eventify`.`visualizacao` (`id_buffet` ASC) VISIBLE;
 
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+-- -----------------------------------------------------
+-- Table `eventify`.`acao`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `eventify`.`acao` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `descricao` VARCHAR(64) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+
+-- -----------------------------------------------------
+-- Table `eventify`.`log_tarefa`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `eventify`.`log_tarefa` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `valor` VARCHAR(1024) NULL,
+  `data_criacao` DATETIME NULL,
+  `id_funcionario` INT NULL,
+  `id_usuario` INT NULL,
+  `id_tarefa` INT NOT NULL,
+  `id_acao` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_log_tarefa_acao1`
+    FOREIGN KEY (`id_acao`)
+    REFERENCES `eventify`.`acao` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_log_tarefa_tarefa1`
+    FOREIGN KEY (`id_tarefa`)
+    REFERENCES `eventify`.`tarefa` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_log_tarefa_funcionario1`
+    FOREIGN KEY (`id_funcionario`)
+    REFERENCES `eventify`.`funcionario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_log_tarefa_usuario1`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `eventify`.`usuario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_log_tarefa_acao1_idx` ON `eventify`.`log_tarefa` (`id_acao` ASC) VISIBLE;
+
+CREATE INDEX `fk_log_tarefa_tarefa1_idx` ON `eventify`.`log_tarefa` (`id_tarefa` ASC) VISIBLE;
+
+CREATE INDEX `fk_log_tarefa_funcionario1_idx` ON `eventify`.`log_tarefa` (`id_funcionario` ASC) VISIBLE;
+
+CREATE INDEX `fk_log_tarefa_usuario1_idx` ON `eventify`.`log_tarefa` (`id_usuario` ASC) VISIBLE;
+
+
+-- -----------------------------------------------------
+-- Table `eventify`.`log_acesso_tarefa`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `eventify`.`log_acesso_tarefa` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `data_criacao` DATETIME NULL,
+  `id_tarefa` INT NOT NULL,
+  `id_funcionario` INT NULL,
+  `id_usuario` INT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_log_acesso_tarefa_tarefa1`
+    FOREIGN KEY (`id_tarefa`)
+    REFERENCES `eventify`.`tarefa` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_log_acesso_tarefa_funcionario1`
+    FOREIGN KEY (`id_funcionario`)
+    REFERENCES `eventify`.`funcionario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_log_acesso_tarefa_usuario1`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `eventify`.`usuario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_log_acesso_tarefa_tarefa1_idx` ON `eventify`.`log_acesso_tarefa` (`id_tarefa` ASC) VISIBLE;
+
+CREATE INDEX `fk_log_acesso_tarefa_funcionario1_idx` ON `eventify`.`log_acesso_tarefa` (`id_funcionario` ASC) VISIBLE;
+
+CREATE INDEX `fk_log_acesso_tarefa_usuario1_idx` ON `eventify`.`log_acesso_tarefa` (`id_usuario` ASC) VISIBLE;
+
+
+-- -----------------------------------------------------
+-- Table `eventify`.`flag_log`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `eventify`.`flag_log` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `data_criacao` DATETIME NULL,
+  `is_visivel` TINYINT NULL,
+  `id_funcionario` INT NULL,
+  `id_usuario` INT NULL,
+  `id_tarefa` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_flag_log_funcionario1`
+    FOREIGN KEY (`id_funcionario`)
+    REFERENCES `eventify`.`funcionario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_flag_log_usuario1`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `eventify`.`usuario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_flag_log_tarefa1`
+    FOREIGN KEY (`id_tarefa`)
+    REFERENCES `eventify`.`tarefa` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_flag_log_funcionario1_idx` ON `eventify`.`flag_log` (`id_funcionario` ASC) VISIBLE;
+
+CREATE INDEX `fk_flag_log_usuario1_idx` ON `eventify`.`flag_log` (`id_usuario` ASC) VISIBLE;
+
+CREATE INDEX `fk_flag_log_tarefa1_idx` ON `eventify`.`flag_log` (`id_tarefa` ASC) VISIBLE;

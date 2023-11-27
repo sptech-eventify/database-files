@@ -332,13 +332,6 @@ END //
 DELIMITER ;
 
 
-
-
-
-
-
-
-
 DELIMITER //
 CREATE PROCEDURE eventify.sp_atividades(IN buffet_id INT)
 BEGIN
@@ -436,12 +429,538 @@ BEGIN
     WHERE
         m.mandado_por = 0
         AND m.id_buffet = buffet_id
-    ORDER BY data DESC;
+    ORDER BY data ASC
+    LIMIT 20;
 END //
 DELIMITER ;
 
-CALL sp_atividades(1);
-DROP PROCEDURE sp_atividades;
 
-select * from evento where id_buffet = 1 AND status = 6;
-select * from usuario where id = 191;
+
+DELIMITER //
+CREATE PROCEDURE eventify.sp_proximo_evento(IN buffet_id INT)
+BEGIN
+	SELECT 
+		e.id,
+        u.nome, 
+        e.data
+	FROM 
+		buffet b 
+    JOIN
+		evento e ON e.id_buffet = b.id
+	JOIN
+		usuario u ON u.id = e.id_contratante
+	WHERE b.id = buffet_id
+    AND e.data >= NOW()
+    ORDER BY data ASC
+    LIMIT 1;
+END //
+DELIMITER ;
+
+
+
+
+CREATE OR REPLACE VIEW eventify.vw_acessos_buffet AS (
+SELECT
+    id_buffet,
+    ano,
+    mes,
+    mes_n,
+    COUNT(id) qtd_acesso
+FROM (
+    SELECT
+        p.id_buffet,
+        DATE_FORMAT(a.data_criacao, '%Y') ano,
+        TRADUZ_MES(DATE_FORMAT(a.data_criacao, '%M')) mes,
+        DATE_FORMAT(a.data_criacao, '%m') mes_n,
+        a.id
+    FROM 
+        eventify.pagina p
+    JOIN 
+        eventify.acesso a ON a.id_pagina = p.id
+    JOIN
+        eventify.buffet b ON p.id_buffet = b.id
+    WHERE
+        a.data_criacao >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
+) subquery
+GROUP BY
+    id_buffet, ano, mes, mes_n
+ORDER BY
+    id_buffet, ano, mes_n ASC
+);
+
+
+CREATE OR REPLACE VIEW eventify.vw_visualizacoes_buffet AS (
+SELECT
+    v.id_buffet,
+    DATE_FORMAT(v.data_criacao, '%Y') AS ano,
+    TRADUZ_MES(DATE_FORMAT(v.data_criacao, '%M')) AS mes,
+    DATE_FORMAT(v.data_criacao, '%m') AS mes_n,
+    COUNT(v.id) AS qtd_visualizacoes
+FROM
+	eventify.visualizacao v
+JOIN
+	eventify.buffet b ON b.id = v.id_buffet
+WHERE
+	v.data_criacao >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
+GROUP BY
+	v.id_buffet, ano, mes, mes_n
+ORDER BY
+	v.id_buffet, ano, mes_n
+);
+
+
+
+CREATE OR REPLACE VIEW eventify.vw_avaliacoes_buffet AS (
+SELECT
+    e.id_buffet,
+    DATE_FORMAT(e.data, '%Y') AS ano,
+    TRADUZ_MES(DATE_FORMAT(e.data, '%M')) AS mes,
+    DATE_FORMAT(e.data, '%m') AS mes_n,
+    COUNT(e.id) AS qtd_visualizacoes
+FROM
+	eventify.evento e
+JOIN
+	eventify.buffet b ON b.id = e.id_buffet
+WHERE
+	e.data >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
+    AND e.status = 6
+GROUP BY
+	e.id_buffet, ano, mes, mes_n
+ORDER BY
+	e.id_buffet, ano, mes_n
+);
+
+
+
+CREATE OR REPLACE VIEW eventify.vw_info_eventos AS (
+	SELECT 
+		b.id id_buffet,
+		c.nome,
+		c.cpf,
+		c.email,
+		e.data,
+        e.preco,
+        CASE
+			WHEN e.status = 1 THEN 'Orçando'
+			WHEN e.status = 2 THEN 'Recusado pelo Buffet'
+			WHEN e.status = 3 THEN 'Orçado'
+			WHEN e.status = 4 THEN 'Recusado pelo Contratante'
+			WHEN e.status = 5 THEN 'Reservado'
+			WHEN e.status = 6 THEN 'Realizado'
+			WHEN e.status = 7 THEN 'Cancelado'
+			ELSE 'Status Desconhecido'
+		END AS status,
+		e.data_criacao data_pedido,
+        e.id id_evento
+	FROM 
+		eventify.buffet b
+	JOIN
+		eventify.evento e ON e.id_buffet = b.id
+	JOIN
+		eventify.usuario c ON c.id = e.id_contratante
+	ORDER BY
+		e.data_criacao DESC
+);
+
+
+CREATE OR REPLACE VIEW eventify.vw_tarefas_proximas AS (
+SELECT 
+	t.id id_tarefa,
+    b.id id_buffet,
+	t.nome nome_tarefa,
+    t.descricao descricao_tarefa,
+    t.data_estimada data_estimada_tarefa,
+    e.data data_evento,
+    c.nome nome_contratante
+FROM 
+	tarefa t
+JOIN
+	bucket bu ON bu.id = t.id_bucket
+JOIN
+	buffet_servico bs ON bs.id = bu.id_buffet_servico
+JOIN
+	buffet b ON b.id = bs.id_buffet
+JOIN
+	evento e ON e.id = bu.id_evento
+JOIN
+	usuario c ON c.id = e.id_contratante
+WHERE
+	e.status = 5
+ORDER BY data_estimada ASC LIMIT 3
+);
+
+CREATE OR REPLACE VIEW eventify.vw_tarefas_proximas_responsaveis AS (
+SELECT 
+	t.id id_tarefa,
+    b.id id_buffet,
+	t.nome nome_tarefa,
+    t.descricao descricao_tarefa,
+    t.data_estimada data_estimada_tarefa,
+    e.data data_evento,
+    c.nome nome_contratante,
+    COALESCE(f.nome, executor_prop.nome) nome_executor
+FROM 
+	tarefa t
+JOIN
+	bucket bu ON bu.id = t.id_bucket
+JOIN
+	buffet_servico bs ON bs.id = bu.id_buffet_servico
+JOIN
+	buffet b ON b.id = bs.id_buffet
+JOIN
+	evento e ON e.id = bu.id_evento
+JOIN
+	usuario c ON c.id = e.id_contratante
+JOIN
+	executor_tarefa et ON et.id_tarefa = t.id
+JOIN
+	usuario executor_prop ON executor_prop.id = et.id_executor_funcionario
+JOIN
+	funcionario f ON et.id_executor_funcionario = f.id
+WHERE
+	e.status = 5
+ORDER BY data_estimada
+);
+
+
+DELIMITER //
+CREATE PROCEDURE eventify.sp_info_status(IN buffet_id INT)
+BEGIN
+    SELECT 
+        subquery.status,
+        subquery.quantidade,
+        CASE
+            WHEN subquery.status = 1 THEN 'Orçando'
+            WHEN subquery.status = 2 THEN 'Recusado pelo Buffet'
+            WHEN subquery.status = 3 THEN 'Orçado'
+            WHEN subquery.status = 4 THEN 'Recusado pelo Contratante'
+            WHEN subquery.status = 5 THEN 'Reservado'
+            WHEN subquery.status = 6 THEN 'Realizado'
+            WHEN subquery.status = 7 THEN 'Cancelado'
+            ELSE 'Status Desconhecido'
+        END AS status_traduzido,
+        buffet.id AS id_buffet
+    FROM 
+        (SELECT 
+            e.status,
+            COUNT(e.id) AS quantidade
+        FROM 
+            eventify.buffet b
+        JOIN
+            eventify.evento e ON e.id_buffet = b.id
+        WHERE 
+            b.id = buffet_id
+        GROUP BY
+            e.status) AS subquery
+    LEFT JOIN
+        eventify.buffet buffet ON buffet.id = buffet_id
+	ORDER BY status;
+END //
+DELIMITER ;
+
+
+
+CREATE VIEW eventify.vw_contratos AS (
+SELECT
+	b.id id_buffet,
+	c.nome,
+    e.preco,
+    e.data,
+    e.status
+FROM
+	evento e
+JOIN
+    buffet b ON b.id = e.id_buffet
+JOIN
+	usuario c ON c.id = e.id_contratante
+);
+
+
+
+CREATE VIEW eventify.vw_calendario AS (
+	SELECT
+		b.id,
+        e.data,
+        e.preco,
+        c.nome
+	FROM
+		buffet b
+	JOIN
+		evento e ON e.id_buffet = b.id
+	JOIN
+		usuario c ON c.id = e.id_contratante
+	WHERE
+		e.status = 6
+);
+
+
+CREATE VIEW vw_comparar_seis_meses AS (
+SELECT TRADUZ_MES(MONTHNAME(data)) periodo, SUM(preco) renda
+FROM evento
+WHERE status = 6
+AND YEAR(data) = YEAR(CURRENT_DATE())
+AND MONTH(data) = MONTH(CURRENT_DATE())
+
+UNION
+
+SELECT TRADUZ_MES(MONTHNAME(data)) periodo, SUM(preco) renda
+FROM evento
+WHERE status = 6
+AND YEAR(data) = YEAR(CURRENT_DATE() - INTERVAL 1 MONTH)
+AND MONTH(data) = MONTH(CURRENT_DATE() - INTERVAL 1 MONTH)
+
+UNION
+
+SELECT TRADUZ_MES(MONTHNAME(data)) periodo, SUM(preco) renda
+FROM evento
+WHERE status = 6
+AND YEAR(data) = YEAR(CURRENT_DATE() - INTERVAL 2 MONTH)
+AND MONTH(data) = MONTH(CURRENT_DATE() - INTERVAL 2 MONTH)
+
+UNION
+
+SELECT TRADUZ_MES(MONTHNAME(data)) periodo, SUM(preco) renda
+FROM evento
+WHERE status = 6
+AND YEAR(data) = YEAR(CURRENT_DATE() - INTERVAL 3 MONTH)
+AND MONTH(data) = MONTH(CURRENT_DATE() - INTERVAL 3 MONTH)
+
+UNION
+
+SELECT TRADUZ_MES(MONTHNAME(data)) periodo, SUM(preco) renda
+FROM evento
+WHERE status = 6
+AND YEAR(data) = YEAR(CURRENT_DATE() - INTERVAL 4 MONTH)
+AND MONTH(data) = MONTH(CURRENT_DATE() - INTERVAL 4 MONTH)
+
+UNION
+
+SELECT TRADUZ_MES(MONTHNAME(data)) periodo, SUM(preco) renda
+FROM evento
+WHERE status = 6
+AND YEAR(data) = YEAR(CURRENT_DATE() - INTERVAL 5 MONTH)
+AND MONTH(data) = MONTH(CURRENT_DATE() - INTERVAL 5 MONTH));
+
+
+
+CREATE OR REPLACE VIEW eventify.vw_avaliacoes_buffet_smart_sync AS (
+SELECT
+    id_buffet,
+    ano,
+    mes,
+    mes_n,
+    COUNT(id) qtd_acesso
+FROM (
+    SELECT
+        e.id_buffet,
+        DATE_FORMAT(e.data, '%Y') ano,
+        TRADUZ_MES(DATE_FORMAT(e.data, '%M')) mes,
+        DATE_FORMAT(e.data, '%m') mes_n,
+        e.id
+    FROM 
+        eventify.evento e 
+	JOIN
+        eventify.buffet b ON e.id_buffet = b.id
+    WHERE
+        e.data >= DATE_SUB(NOW(), INTERVAL 6 MONTH)
+) subquery
+GROUP BY
+    id_buffet, ano, mes, mes_n
+ORDER BY
+    id_buffet, ano, mes_n ASC
+);
+
+
+
+CREATE OR REPLACE VIEW eventify.vw_eventos_por_secao AS ( 
+SELECT 
+	b.id id_buffet,
+    bs.id id_buffet_servico,
+    bck.id_evento,
+    t.*,
+    bs.id_servico
+FROM 
+	buffet b 
+JOIN 
+	buffet_servico bs ON bs.id_buffet = b.id
+JOIN 
+	bucket bck ON bck.id_buffet_servico = bs.id
+JOIN 
+	tarefa t ON t.id_bucket = bck.id
+WHERE 
+	t.is_visivel = 1
+);
+
+
+
+CREATE OR REPLACE VIEW eventify.vw_secoes AS (
+SELECT 
+	bs.id_buffet id_buffet,
+    bck.id_evento id_evento,
+    s.id id_servico,
+    bck.id id_bucket,
+    s.descricao nome_servico
+FROM 
+	buffet_servico bs
+JOIN 
+	bucket bck ON bck.id_buffet_servico = bs.id
+JOIN
+	servico s ON bs.id_servico = s.id
+);
+
+
+CREATE OR REPLACE VIEW eventify.vw_qtd_tarefas_status_eventos AS (
+SELECT
+    e.id AS id_evento,
+    COUNT(CASE WHEN t.status = 3 THEN 1 END) AS tarefas_realizadas,
+    COUNT(CASE WHEN t.status = 1 THEN 1 END) AS tarefas_pendentes,
+    COUNT(CASE WHEN t.status = 2 THEN 1 END) AS tarefas_em_andamento
+FROM
+    evento e
+    LEFT JOIN bucket b ON e.id = b.id_evento
+    LEFT JOIN tarefa t ON b.id = t.id_bucket
+GROUP BY
+    e.id
+);
+
+
+CREATE OR REPLACE VIEW vw_listagem_proximos_eventos AS (
+SELECT 
+	ev.id_buffet,
+	us.nome cliente,
+    ev.id,
+    ev.data,
+    ev.status,
+    vw.tarefas_realizadas,
+    vw.tarefas_pendentes,
+    vw.tarefas_em_andamento
+FROM
+	evento ev
+JOIN
+	usuario us ON us.id = ev.id_contratante
+JOIN
+	vw_qtd_tarefas_status_eventos vw ON vw.id_evento = ev.id
+WHERE
+	ev.status = 5
+);
+
+
+
+CREATE OR REPLACE VIEW eventify.vw_avaliacoes_buffet_usuario AS(
+SELECT 
+    usuario.nome,
+    evento.nota,
+    evento.avaliacao,
+    evento.data,
+    evento.id_buffet
+FROM 
+    evento
+RIGHT JOIN
+    usuario ON evento.id_contratante = usuario.id
+WHERE
+    evento.status = 6
+);
+
+
+CREATE OR REPLACE VIEW vw_flag_log_tarefa AS (
+SELECT 
+	bs.id id_secao,
+    flog.id id_log,
+    tsk.id id_tarefa,
+    flog.data_criacao data_criacao_log,
+    flog.id_funcionario,
+    flog.id_usuario
+FROM
+	buffet_servico bs
+JOIN
+	bucket bck ON bck.id_buffet_servico = bs.id
+JOIN
+	tarefa tsk ON tsk.id_bucket = bck.id
+JOIN
+	flag_log flog ON flog.id_tarefa = tsk.id
+LEFT JOIN
+	funcionario fnc ON fnc.id = flog.id_funcionario
+LEFT JOIN
+	usuario us ON us.id = flog.id_funcionario
+WHERE 
+	bck.is_visivel = 1 AND 
+    tsk.is_visivel = 1 AND 
+    flog.is_visivel = 1
+);
+
+CREATE OR REPLACE VIEW vw_tarefas_por_usuario AS (
+SELECT
+	us.id id_usuario,
+    fnc.id id_funcionario,
+	tsk.*
+FROM
+	tarefa tsk
+JOIN
+	executor_tarefa ex ON ex.id_tarefa = tsk.id
+LEFT JOIN
+	usuario us ON us.id = ex.id_executor_usuario
+LEFT JOIN
+	funcionario fnc ON fnc.id = ex.id_executor_funcionario
+);
+
+
+CREATE OR REPLACE VIEW eventify.vw_qtd_tarefas_status_eventos_paginavel AS (
+SELECT
+    e.id AS id_evento,
+    e.data,
+    COUNT(CASE WHEN t.status = 3 THEN 1 END) AS tarefas_realizadas,
+    COUNT(CASE WHEN t.status = 1 THEN 1 END) AS tarefas_pendentes,
+    COUNT(CASE WHEN t.status = 2 THEN 1 END) AS tarefas_em_andamento,
+    MAX(t.data_estimada)
+FROM
+    evento e
+    LEFT JOIN bucket b ON e.id = b.id_evento
+    LEFT JOIN tarefa t ON b.id = t.id_bucket
+WHERE
+	e.status = 5
+GROUP BY
+    e.id
+);
+
+
+CREATE OR REPLACE VIEW vw_status_eventos AS (
+    SELECT
+        id_buffet,
+        id_evento,
+        nome_cliente,
+        data_evento,
+        MAX(data_estimada) data_estimada,
+        CAST(COUNT(CASE WHEN status = 3 THEN 1 END) AS SIGNED) AS tarefas_realizadas,
+        CAST(COUNT(CASE WHEN status = 1 THEN 1 END) AS SIGNED) AS tarefas_pendentes,
+        CAST(COUNT(CASE WHEN status = 2 THEN 1 END) AS SIGNED) AS tarefas_em_andamento
+    FROM (
+        SELECT
+            bf.id id_buffet,
+            evt.id id_evento,
+            usr.nome nome_cliente,
+            evt.data data_evento,
+            tsk.data_estimada,
+            tsk.status
+        FROM
+            buffet bf
+        JOIN
+            evento evt ON evt.id_buffet = bf.id
+        JOIN 
+            usuario usr ON usr.id = evt.id_contratante
+        LEFT JOIN
+            buffet_servico bs ON bs.id_buffet = bf.id
+        JOIN
+            bucket bck ON bck.id_buffet_servico = bs.id AND bck.id_evento = evt.id
+        LEFT JOIN
+            tarefa tsk ON tsk.id_bucket = bck.id
+        WHERE
+            evt.status = 5
+    ) AS subconsulta
+    GROUP BY id_evento
+    ORDER BY data_evento
+    LIMIT 5
+);
+
+
+
+SELECT * FROM vw_status_eventos;

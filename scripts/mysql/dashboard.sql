@@ -470,32 +470,6 @@ JOIN eventify.imagem img ON img.id_buffet = buffet.id
 GROUP BY buffet.id
 );
 
-
-
--- ------- VALIDAÇÕES ---------------
-CALL eventify.sp_avaliacoes_buffet(6, 1);
-CALL eventify.sp_churn(6);
-CALL eventify.sp_dados_do_buffet(6, 1);
-CALL eventify.sp_kpi_abandono_reserva(6, 1);
-CALL eventify.sp_kpi_conversao_de_reservas(6);
-CALL eventify.sp_kpi_conversao_de_visitantes(6);
-CALL eventify.sp_kpi_movimentacao_financeira(6, 1);
-CALL eventify.sp_kpi_precisao_do_formulario(6);
-CALL eventify.sp_kpi_satisfacao(6, 1);
-CALL eventify.sp_log_paginas(6, 1);
-CALL eventify.sp_retencao_buffets_retidos(6);
-CALL eventify.sp_retencao_formularios_retidos(6);
-CALL eventify.sp_retencao_usuarios_retidos(6);
-SELECT eventify.haversine(-23.550520, -46.633308, -23.957410, -46.328250);
-SELECT eventify.haversine(-23.550520, -46.633308, -30.034632, -30.034632);
-SELECT * FROM eventify.vw_buffet_info WHERE tipos_evento LIKE '%casamento%';
-SELECT * FROM eventify.vw_buffet_pesquisa;
-SELECT * FROM eventify.vw_notas_buffet;
-SELECT * FROM eventify.vw_orcamentos_usuario WHERE id_contratante = 162;
-
-
-------- VALIDAÇÕES ---------------
-	SELECT descricao FROM tipo_evento ORDER BY descricao ASC;
 /*
 DROP PROCEDURE sp_avaliacoes_buffet;
 DROP PROCEDURE sp_churn;
