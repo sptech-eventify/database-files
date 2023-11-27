@@ -921,28 +921,44 @@ GROUP BY
 );
 
 
-SELECT
-	evt.id id_evento,
-    usr.nome nome_cliente,
-    evt.data data_evento,
-    bs.id id_secao,
-    tsk.id id_task,
-    tsk.status
-FROM
-	buffet bf
-JOIN
-	evento evt ON evt.id_buffet = bf.id
-JOIN 
-	usuario usr ON usr.id = evt.id_contratante
-LEFT JOIN
-	buffet_servico bs ON bs.id_buffet = bf.id
-LEFT JOIN
-	bucket bck ON bck.id_buffet_servico = bs.id AND bck.id_evento = evt.id
-LEFT JOIN
-	tarefa tsk ON tsk.id_bucket = bck.id
-WHERE
-	evt.status = 5 AND bf.id = 1
-ORDER BY id_evento;
+CREATE OR REPLACE VIEW vw_status_eventos AS (
+    SELECT
+        id_buffet,
+        id_evento,
+        nome_cliente,
+        data_evento,
+        MAX(data_estimada) data_estimada,
+        CAST(COUNT(CASE WHEN status = 3 THEN 1 END) AS SIGNED) AS tarefas_realizadas,
+        CAST(COUNT(CASE WHEN status = 1 THEN 1 END) AS SIGNED) AS tarefas_pendentes,
+        CAST(COUNT(CASE WHEN status = 2 THEN 1 END) AS SIGNED) AS tarefas_em_andamento
+    FROM (
+        SELECT
+            bf.id id_buffet,
+            evt.id id_evento,
+            usr.nome nome_cliente,
+            evt.data data_evento,
+            tsk.data_estimada,
+            tsk.status
+        FROM
+            buffet bf
+        JOIN
+            evento evt ON evt.id_buffet = bf.id
+        JOIN 
+            usuario usr ON usr.id = evt.id_contratante
+        LEFT JOIN
+            buffet_servico bs ON bs.id_buffet = bf.id
+        JOIN
+            bucket bck ON bck.id_buffet_servico = bs.id AND bck.id_evento = evt.id
+        LEFT JOIN
+            tarefa tsk ON tsk.id_bucket = bck.id
+        WHERE
+            evt.status = 5
+    ) AS subconsulta
+    GROUP BY id_evento
+    ORDER BY data_evento
+    LIMIT 5
+);
 
 
-SELECT * FROM vw_listagem_proximos_eventos;
+
+SELECT * FROM vw_status_eventos;
