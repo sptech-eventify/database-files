@@ -900,3 +900,49 @@ LEFT JOIN
 LEFT JOIN
 	funcionario fnc ON fnc.id = ex.id_executor_funcionario
 );
+
+
+CREATE OR REPLACE VIEW eventify.vw_qtd_tarefas_status_eventos_paginavel AS (
+SELECT
+    e.id AS id_evento,
+    e.data,
+    COUNT(CASE WHEN t.status = 3 THEN 1 END) AS tarefas_realizadas,
+    COUNT(CASE WHEN t.status = 1 THEN 1 END) AS tarefas_pendentes,
+    COUNT(CASE WHEN t.status = 2 THEN 1 END) AS tarefas_em_andamento,
+    MAX(t.data_estimada)
+FROM
+    evento e
+    LEFT JOIN bucket b ON e.id = b.id_evento
+    LEFT JOIN tarefa t ON b.id = t.id_bucket
+WHERE
+	e.status = 5
+GROUP BY
+    e.id
+);
+
+
+SELECT
+	evt.id id_evento,
+    usr.nome nome_cliente,
+    evt.data data_evento,
+    bs.id id_secao,
+    tsk.id id_task,
+    tsk.status
+FROM
+	buffet bf
+JOIN
+	evento evt ON evt.id_buffet = bf.id
+JOIN 
+	usuario usr ON usr.id = evt.id_contratante
+LEFT JOIN
+	buffet_servico bs ON bs.id_buffet = bf.id
+LEFT JOIN
+	bucket bck ON bck.id_buffet_servico = bs.id AND bck.id_evento = evt.id
+LEFT JOIN
+	tarefa tsk ON tsk.id_bucket = bck.id
+WHERE
+	evt.status = 5 AND bf.id = 1
+ORDER BY id_evento;
+
+
+SELECT * FROM vw_listagem_proximos_eventos;

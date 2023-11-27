@@ -2670,6 +2670,18 @@ INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_na
 ('2023-12-24 00:00:00', 22250.00, NULL, NULL, 5, NULL, 1, 1, '2023-12-24 14:30:00', 360, 219);
 INSERT INTO eventify.agenda VALUE (NULL, '2023-12-24 00:00:00', 1, 1);
 
+INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
+(1, '2023-10-24 00:00:00', 0);
+INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
+('2023-12-24 00:00:00', 22250.00, NULL, NULL, 5, NULL, 1, 1, '2023-12-24 14:30:00', 360, 219);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-12-24 00:00:00', 1, 1);
+
+INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet) VALUE
+(1, '2023-10-31 00:00:00', 0);
+INSERT INTO `eventify`.`evento` (data, preco, nota, avaliacao, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUE
+('2023-12-29 00:00:00', 31250.00, NULL, NULL, 5, NULL, 0, 1, '2023-12-24 14:30:00', 220, 220);
+INSERT INTO eventify.agenda VALUE (NULL, '2023-12-29 00:00:00', 1, 1);
+
 -- INSERINDO DADOS DO SMART SYNC
 INSERT INTO eventify.nivel_acesso (descricao) VALUES
 ('Acesso à manipulação das tarefas.'),
@@ -2765,61 +2777,19 @@ INSERT INTO eventify.bucket (nome, is_visivel, id_buffet_servico, id_evento) VAL
 ('Depois do Evento', 1, 5, 274);
 
 INSERT INTO eventify.bucket (nome, is_visivel, id_buffet_servico, id_evento) VALUES
-('Entrada', 1, 1, 275),
-('Salgados', 1, 1, 275),
-('Bebidas', 1, 1, 275),
-('Doces', 1, 1, 275),
-('Jantar', 1, 1, 275),
-('Prototipagem', 1, 2, 275),
-('Materiais', 1, 2, 275),
-('Montagem', 1, 2, 275),
-('Desmontagem', 1, 2, 275),
-('Banda', 1, 3, 275),
-('Equipamento', 1, 3, 275),
-('Palco', 1, 3, 275),
-('Empresa Lima', 1, 4, 275),
-('Convidados', 1, 4, 275),
-('Antes do Evento', 5, 1, 275),
-('Plantão Evento', 1, 5, 275),
-('Depois do Evento', 1, 5, 275);
+('Entrada', 1, 1, 275);
 
 INSERT INTO eventify.bucket (nome, is_visivel, id_buffet_servico, id_evento) VALUES
-('Entrada', 1, 1, 276),
-('Salgados', 1, 1, 276),
-('Bebidas', 1, 1, 276),
-('Doces', 1, 1, 276),
-('Jantar', 1, 1, 276),
-('Prototipagem', 1, 2, 276),
-('Materiais', 1, 2, 276),
-('Montagem', 1, 2, 276),
-('Desmontagem', 1, 2, 276),
-('Banda', 1, 3, 276),
-('Equipamento', 1, 3, 276),
-('Palco', 1, 3, 276),
-('Empresa Lima', 1, 4, 276),
-('Convidados', 1, 4, 276),
-('Antes do Evento', 5, 1, 276),
-('Plantão Evento', 1, 5, 276),
-('Depois do Evento', 1, 5, 276);
+('Entrada', 1, 1, 276);
 
 INSERT INTO eventify.bucket (nome, is_visivel, id_buffet_servico, id_evento) VALUES
-('Entrada', 1, 1, 277),
-('Salgados', 1, 1, 277),
-('Bebidas', 1, 1, 277),
-('Doces', 1, 1, 277),
-('Jantar', 1, 1, 277),
-('Prototipagem', 1, 2, 277),
-('Materiais', 1, 2, 277),
-('Montagem', 1, 2, 277),
-('Desmontagem', 1, 2, 277),
-('Banda', 1, 3, 277),
-('Equipamento', 1, 3, 277),
-('Palco', 1, 3, 277),
-('Empresa Lima', 1, 4, 277),
-('Convidados', 1, 4, 277),
-('Antes do Evento', 5, 1, 277),
-('Plantão Evento', 1, 5, 277),
-('Depois do Evento', 1, 5, 277);
+('Entrada', 1, 1, 277);
+
+INSERT INTO eventify.bucket (nome, is_visivel, id_buffet_servico, id_evento) VALUES
+('Entrada', 1, 1, 278);
+
+INSERT INTO eventify.bucket (nome, is_visivel, id_buffet_servico, id_evento) VALUES
+('Entrada', 1, 1, 279);
 
 -- Bucket 1: Comida Entrada
 INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
@@ -3220,6 +3190,117 @@ INSERT INTO log_tarefa (valor, data_criacao, id_funcionario, id_usuario, id_tare
 ('a data estimada para 14 de dezembro da tarefa', NOW(), 4, NULL, 5, 2),
 ('removeu Eduardo Almeida da tarefa', NOW(), 3, NULL, 10, 3),
 ('a tarefa', NOW(), 5, NULL, 49, 1);
+
+
+-- POPULANDO OUTRAS TAREFAS
+
+-- EVENTO 275
+
+-- Bucket 1: Comida Entrada
+INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
+VALUES
+('Condensar o leite', 'Cozinhar o leite com açucar para fazer leite condensado', 8, 1, 4, '2023-12-18', '2023-10-10 11:15:00', 1, 18),
+('Montar apresentação das entradas', 'Montar a apresentação das entradas', 3, 2, 2, '2023-12-18', '2023-12-01 14:30:00', 1, 18),
+('Comprar ingredientes', '5kg de farinha de trigo, 4kg de margarina, 50 ovos', 5, 1, 3, '2023-12-10', '2023-10-08 10:00:00', 1, 18),
+('Preparar salgados', 'Preparar salgados para o buffet de salgados', 5, 1, 4, '2023-12-14', '2023-10-08 11:30:00', 1, 18),
+('Comprar ingredientes', '50 caixas de cerveja, 45 garrafas de refrigerante derivados', 5, 1, 3, '2023-12-11', '2023-10-08 10:00:00', 1, 18),
+('Preparar bebidas', 'Preparar bebidas para o buffet de bebidas', 5, 1, 3, '2023-12-14', '2023-10-09 09:00:00', 1, 18),
+('Montar apresentação das bebidas', 'Montar a apresentação das bebidas', 3, 2, 2, '2023-12-15', '2023-10-10 13:30:00', 1, 18);
+
+-- Tarefa 1: Cozinhar
+INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
+(50, 600, NOW(), 0, 1, NULL),
+(50, 987, NOW(), 0, 2, NULL),
+(50, 1432, NOW(), 0, 3, 1),
+(50, 1432, NOW(), 0, 7, NULL);
+
+-- EVENTO 276
+
+-- Bucket 1: Comida Entrada
+INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
+VALUES
+('Cozinhar', 'Cozinhar as entradas', 8, 1, 4, '2023-12-14', '2023-10-10 11:15:00', 1, 19),
+('Montar apresentação das entradas', 'Montar a apresentação das entradas', 3, 2, 2, '2023-12-15', '2023-12-01 14:30:00', 1, 19),
+('Comprar ingredientes', '5kg de farinha de trigo, 4kg de margarina, 50 ovos', 5, 1, 3, '2023-12-10', '2023-10-08 10:00:00', 1, 19),
+('Preparar salgados', 'Preparar salgados para o buffet de salgados', 5, 1, 4, '2023-12-14', '2023-10-08 11:30:00', 1, 19),
+('Montar apresentação dos salgados', 'Montar a apresentação dos salgados', 3, 2, 3, '2023-12-15', '2023-10-09 15:45:00', 1, 19),
+('Comprar ingredientes', '50 caixas de cerveja, 45 garrafas de refrigerante derivados', 5, 1, 3, '2023-12-11', '2023-10-08 10:00:00', 1, 19),
+('Preparar bebidas', 'Preparar bebidas para o buffet de bebidas', 5, 1, 3, '2023-12-14', '2023-10-09 09:00:00', 1, 19),
+('Montar apresentação das bebidas', 'Montar a apresentação das bebidas', 3, 2, 2, '2023-12-15', '2023-10-10 13:30:00', 1, 19);
+
+-- Tarefa 1: Cozinhar
+INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
+(56, 600, NOW(), 0, 1, NULL),
+(56, 987, NOW(), 0, NULL, 1),
+(56, 1432, NOW(), 0, 3, NULL),
+(56, 1432, NOW(), 0, 8, NULL);
+
+-- EVENTO 277
+
+-- Bucket 1: Comida Entrada
+INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
+VALUES
+('Cozinhar', 'Cozinhar as entradas', 8, 1, 4, '2023-12-14', '2023-10-10 11:15:00', 1, 20),
+('Montar apresentação das entradas', 'Montar a apresentação das entradas', 3, 2, 2, '2023-12-15', '2023-12-01 14:30:00', 1, 20),
+('Comprar ingredientes', '5kg de farinha de trigo, 4kg de margarina, 50 ovos', 5, 1, 3, '2023-12-10', '2023-10-08 10:00:00', 1, 20),
+('Preparar salgados', 'Preparar salgados para o buffet de salgados', 5, 1, 4, '2023-12-14', '2023-10-08 11:30:00', 1, 20),
+('Montar apresentação dos salgados', 'Montar a apresentação dos salgados', 3, 2, 3, '2023-12-15', '2023-10-09 15:45:00', 1, 20),
+('Comprar ingredientes', '50 caixas de cerveja, 45 garrafas de refrigerante derivados', 5, 1, 3, '2023-12-11', '2023-10-08 10:00:00', 1, 20),
+('Preparar bebidas', 'Preparar bebidas para o buffet de bebidas', 5, 1, 3, '2023-12-14', '2023-10-09 09:00:00', 1, 20),
+('Montar apresentação das bebidas', 'Montar a apresentação das bebidas', 3, 2, 2, '2023-12-15', '2023-10-10 13:30:00', 1, 20);
+
+-- Tarefa 1: Cozinhar
+INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
+(71, 600, NOW(), 0, 9, 1),
+(71, 987, NOW(), 0, 2, NULL),
+(71, 1432, NOW(), 0, 3, NULL),
+(71, 1432, NOW(), 0, NULL, 1);
+
+-- EVENTO 278
+
+-- Bucket 1: Comida Entrada
+INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
+VALUES
+('Cozinhar', 'Cozinhar as entradas', 8, 1, 4, '2023-12-14', '2023-10-10 11:15:00', 1, 21),
+('Montar apresentação das entradas', 'Montar a apresentação das entradas', 3, 2, 2, '2023-12-15', '2023-12-01 14:30:00', 1, 21),
+('Comprar ingredientes', '5kg de farinha de trigo, 4kg de margarina, 50 ovos', 5, 1, 3, '2023-12-10', '2023-10-08 10:00:00', 1, 21),
+('Preparar salgados', 'Preparar salgados para o buffet de salgados', 5, 1, 4, '2023-12-14', '2023-10-08 11:30:00', 1, 21),
+('Montar apresentação dos salgados', 'Montar a apresentação dos salgados', 3, 2, 3, '2023-12-15', '2023-10-09 15:45:00', 1, 21),
+('Comprar ingredientes', '50 caixas de cerveja, 45 garrafas de refrigerante derivados', 5, 1, 3, '2023-12-11', '2023-10-08 10:00:00', 1, 21),
+('Preparar bebidas', 'Preparar bebidas para o buffet de bebidas', 5, 1, 3, '2023-12-14', '2023-10-09 09:00:00', 1, 21),
+('Montar apresentação das bebidas', 'Montar a apresentação das bebidas', 3, 2, 2, '2023-12-15', '2023-10-10 13:30:00', 1, 21);
+
+-- Tarefa 1: Cozinhar
+INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
+(75, 600, NOW(), 0, 1, NULL),
+(75, 987, NOW(), 0, 2, NULL),
+(75, 1432, NOW(), 0, 3, NULL),
+(75, 1432, NOW(), 0, NULL, 1);
+
+-- EVENTO 279
+
+-- Bucket 1: Comida Entrada
+INSERT INTO tarefa (nome, descricao, fibonacci, status, horas_estimada, data_estimada, data_criacao, is_visivel, id_bucket)
+VALUES
+('Cozinhar', 'Cozinhar as entradas', 8, 1, 4, '2023-12-14', '2023-10-10 11:15:00', 1, 22),
+('Montar apresentação das entradas', 'Montar a apresentação das entradas', 3, 2, 2, '2023-12-15', '2023-12-01 14:30:00', 1, 22),
+('Comprar ingredientes', '5kg de farinha de trigo, 4kg de margarina, 50 ovos', 5, 1, 3, '2023-12-10', '2023-10-08 10:00:00', 1, 22),
+('Preparar salgados', 'Preparar salgados para o buffet de salgados', 5, 1, 4, '2023-12-14', '2023-10-08 11:30:00', 1, 22),
+('Montar apresentação dos salgados', 'Montar a apresentação dos salgados', 3, 2, 3, '2023-12-15', '2023-10-09 15:45:00', 1, 22),
+('Comprar ingredientes', '50 caixas de cerveja, 45 garrafas de refrigerante derivados', 5, 1, 3, '2023-12-11', '2023-10-08 10:00:00', 1, 22),
+('Preparar bebidas', 'Preparar bebidas para o buffet de bebidas', 5, 1, 3, '2023-12-14', '2023-10-09 09:00:00', 1, 22),
+('Montar apresentação das bebidas', 'Montar a apresentação das bebidas', 3, 2, 2, '2023-12-15', '2023-10-10 13:30:00', 1, 22);
+
+-- Tarefa 1: Cozinhar
+INSERT INTO `executor_tarefa` (id_tarefa, `tempo_executado`, `data_criacao`, is_removido, id_executor_funcionario, id_executor_usuario) VALUES
+(85, 600, NOW(), 0, 1, NULL),
+(85, 987, NOW(), 0, 2, NULL),
+(85, 1432, NOW(), 0, 3, NULL),
+(85, 1432, NOW(), 0, NULL, 1);
+
+UPDATE tarefa
+SET data_estimada = DATE_ADD(data_estimada, INTERVAL 5 DAY)
+WHERE id_bucket > 18;
 
 INSERT INTO eventify.funcionalidade (nome) VALUES 
 ('Tela Inicial'),
@@ -21235,3 +21316,7 @@ INSERT INTO usuario (nome, email, senha, tipo_usuario, is_ativo, is_banido, cpf,
 UPDATE evento
 SET status = 6
 WHERE status = 5 AND data < '2023-12-07 00:00:00';
+
+UPDATE tarefa
+SET status = 1
+WHERE staTus IS NULL;
