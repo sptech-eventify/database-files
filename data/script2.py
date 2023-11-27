@@ -7,10 +7,10 @@ if not os.path.exists("gerados"):
 
 arquivo = open("gerados/datas2.txt", "w")
 
-data_inicial = datetime.datetime(2023, 5, 3, 0, 0, 0)
-data_final = datetime.datetime(2023, 10, 24, 23, 59, 59)
+data_inicial = datetime.datetime(2023, 10, 25, 0, 0, 0)
+data_final = datetime.datetime(2023, 12, 6, 23, 59, 59)
 
-qtd_datas = 18000
+qtd_datas = 7484
 
 for i in range(qtd_datas):
     data_aleatoria = data_inicial + (data_final - data_inicial) * random.random()
