@@ -888,13 +888,20 @@ WHERE
     flog.is_visivel = 1
 );
 
+
+
 CREATE OR REPLACE VIEW vw_tarefas_por_usuario AS (
 SELECT
 	us.id id_usuario,
     fnc.id id_funcionario,
-	tsk.*
+	tsk.*,
+    bs.id_servico
 FROM
-	tarefa tsk
+	buffet_servico bs
+JOIN
+	bucket b ON b.id_buffet_servico = bs.id
+JOIN
+	tarefa tsk ON tsk.id_bucket = b.id
 JOIN
 	executor_tarefa ex ON ex.id_tarefa = tsk.id
 LEFT JOIN
@@ -902,6 +909,7 @@ LEFT JOIN
 LEFT JOIN
 	funcionario fnc ON fnc.id = ex.id_executor_funcionario
 );
+
 
 
 CREATE OR REPLACE VIEW eventify.vw_qtd_tarefas_status_eventos_paginavel AS (
@@ -932,7 +940,8 @@ CREATE OR REPLACE VIEW vw_status_eventos AS (
         MAX(data_estimada) data_estimada,
         CAST(COUNT(CASE WHEN status = 3 THEN 1 END) AS SIGNED) AS tarefas_realizadas,
         CAST(COUNT(CASE WHEN status = 1 THEN 1 END) AS SIGNED) AS tarefas_pendentes,
-        CAST(COUNT(CASE WHEN status = 2 THEN 1 END) AS SIGNED) AS tarefas_em_andamento
+        CAST(COUNT(CASE WHEN status = 2 THEN 1 END) AS SIGNED) AS tarefas_em_andamento,
+        id_servico
     FROM (
         SELECT
             bf.id id_buffet,
@@ -940,7 +949,8 @@ CREATE OR REPLACE VIEW vw_status_eventos AS (
             usr.nome nome_cliente,
             evt.data data_evento,
             tsk.data_estimada,
-            tsk.status
+            tsk.status,
+            bs.id_servico
         FROM
             buffet bf
         JOIN
@@ -960,7 +970,3 @@ CREATE OR REPLACE VIEW vw_status_eventos AS (
     ORDER BY data_evento
     LIMIT 5
 );
-
-
-
-SELECT * FROM vw_status_eventos;
