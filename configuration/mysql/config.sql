@@ -1,4 +1,5 @@
 GRANT INSERT, SELECT, UPDATE, DELETE ON eventify.* TO 'backend_eventify'@'%';
+
 GRANT EXECUTE ON PROCEDURE eventify.sp_avaliacoes_buffet TO 'backend_eventify'@'%';
 GRANT EXECUTE ON PROCEDURE eventify.sp_churn TO 'backend_eventify'@'%';
 GRANT EXECUTE ON PROCEDURE eventify.sp_dados_do_buffet TO 'backend_eventify'@'%';
