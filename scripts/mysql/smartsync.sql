@@ -43,6 +43,26 @@ HAVING
 
 
 -- taxa conversao visitas em fracao escala  (calculo back)
+CREATE OR REPLACE VIEW vw_fracao_evento_acesso AS (
+SELECT
+    b.id,
+    b.nome,
+    (
+        SELECT COUNT(*)
+        FROM evento e
+        WHERE e.id_buffet = b.id AND e.status = 6
+    ) AS qtd_eventos,
+    (
+        SELECT COUNT(*)
+        FROM pagina p
+        JOIN acesso a ON a.id_pagina = p.id
+        WHERE p.id_buffet = b.id
+    ) AS qtd_acessos
+FROM
+    buffet b
+);
+
+
 -- categorias (lista categoria, qtd)
 -- taxa contratos cancelados (calculo back)
 
