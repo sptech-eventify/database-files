@@ -125,3 +125,13 @@ GROUP BY
 ORDER BY
     MONTH(data_criacao)
 );
+
+
+CREATE OR REPLACE VIEW vw_ultimas_7_dias AS (
+SELECT 
+	COUNT(id)
+FROM 
+	usuario 
+WHERE 
+	data_criacao > DATE_SUB(NOW(), INTERVAL 7 DAY)
+);

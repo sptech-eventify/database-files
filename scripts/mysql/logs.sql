@@ -36967,4 +36967,3 @@ INSERT INTO acesso (data_criacao, id_pagina) VALUES
 (NOW(), 46),
 (NOW(), 49),
 (NOW(), 51);
-
