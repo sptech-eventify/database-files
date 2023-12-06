@@ -63,7 +63,19 @@ FROM
 );
 
 
--- categorias (lista categoria, qtd)
+CREATE OR REPLACE VIEW vw_categorias_qtd AS (
+SELECT
+    te.descricao AS tipo_evento,
+    COUNT(*) AS quantidade
+FROM
+    buffet_tipo_evento bt
+JOIN
+    tipo_evento te ON bt.id_tipo_evento = te.id
+GROUP BY
+    te.id
+);
+
+
 -- taxa contratos cancelados (calculo back)
 
 -- grafico de barras de todos eventos 
