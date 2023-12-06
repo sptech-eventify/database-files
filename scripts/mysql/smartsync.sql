@@ -126,12 +126,45 @@ ORDER BY
     MONTH(data_criacao)
 );
 
-
 CREATE OR REPLACE VIEW vw_ultimas_7_dias AS (
 SELECT 
 	COUNT(id)
 FROM 
 	usuario 
 WHERE 
-	data_criacao > DATE_SUB(NOW(), INTERVAL 7 DAY)
+	data_criacao > DATE_SUB(NOW(), INTERVAL 7 DAY) OR ultimo_login > DATE_SUB(NOW(), INTERVAL 90 DAY)
 );
+
+CREATE OR REPLACE VIEW vw_ultimas_90_dias AS (
+SELECT 
+	COUNT(id)
+FROM 
+	usuario 
+WHERE 
+	data_criacao > DATE_SUB(NOW(), INTERVAL 90 DAY) OR ultimo_login > DATE_SUB(NOW(), INTERVAL 180 DAY)
+);
+
+CREATE OR REPLACE VIEW vw_retencao_usuario AS (
+SELECT 
+	COUNT(id)
+FROM 
+	usuario 
+WHERE 
+	data_criacao > DATE_SUB(NOW(), INTERVAL 120 DAY) OR ultimo_login > DATE_SUB(NOW(), INTERVAL 120 DAY)
+);
+
+
+CREATE OR REPLACE VIEW vw_curiosidades_usuario AS (
+SELECT
+    tipo_usuario,
+    COUNT(*) AS quantidade,
+    (COUNT(*) / (SELECT COUNT(*) FROM usuario)) * 100 AS porcentagem
+FROM
+    usuario
+WHERE
+    tipo_usuario IN (1, 2)
+GROUP BY
+    tipo_usuario
+);
+
+
