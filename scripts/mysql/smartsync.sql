@@ -95,6 +95,33 @@ FROM
     buffet b
 );
 
--- grafico de barras de todos eventos 
--- clientes que fecharam 0 / 1 / 2 / 3 ou mais (calculo back, retorna lista)
+
+CREATE OR REPLACE VIEW vw_contratantes_consumo AS (
+SELECT
+	u.id,
+	u.nome,
+    COUNT(e.id) qtd_eventos
+FROM
+	usuario u
+JOIN
+	evento e ON e.id_contratante = u.id    
+WHERE
+	u.tipo_usuario = 1
+GROUP BY u.id
+);
+
+
 -- Uso do formulário dinâmico
+CREATE OR REPLACE VIEW vw_grafico AS (
+SELECT
+    traduz_mes(MONTHNAME(data_criacao)) nome_mes,
+    COUNT(*) quantidade_acessos
+FROM
+    acesso
+WHERE
+    id_pagina = 4
+GROUP BY
+    nome_mes
+ORDER BY
+    MONTH(data_criacao)
+);
