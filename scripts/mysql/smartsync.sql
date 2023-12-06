@@ -25,13 +25,23 @@ JOIN
 GROUP BY b.id ORDER BY id);
 
 
-
-
-
-
-    
-
 -- buffetsSemVisitas (15) (lista)
+CREATE OR REPLACE VIEW vw_buffet_15_sem_visitas AS (
+SELECT
+    b.id,
+    MAX(a.data_criacao) AS data_mais_atual
+FROM
+    acesso a
+JOIN
+    pagina p ON p.id = a.id_pagina
+JOIN
+    buffet b ON b.id = p.id_buffet
+GROUP BY
+    b.id
+HAVING 
+    data_mais_atual <= CURDATE() - INTERVAL 15 DAY);
+
+
 -- taxa conversao visitas em fracao escala  (calculo back)
 -- categorias (lista categoria, qtd)
 -- taxa contratos cancelados (calculo back)

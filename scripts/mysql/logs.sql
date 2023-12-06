@@ -36944,3 +36944,27 @@ INSERT INTO eventify.acesso (data_criacao, id_pagina) VALUES
 ('2023-11-04 12:58:20', 4),
 ('2023-11-25 17:50:50', 4),
 ('2023-11-29 15:35:09', 4);
+
+INSERT INTO eventify.acesso (data_criacao, id_pagina)
+SELECT
+    TIMESTAMPADD(HOUR, -FLOOR(RAND() * 5000), NOW()) as data_criacao,
+    CASE
+        WHEN RAND() > 0.5 THEN FLOOR(4 + RAND() * (53 - 4 + 1))
+        ELSE 4  -- Valor fixo para o id_pagina 4
+    END as id_pagina
+FROM
+    information_schema.tables
+LIMIT 2000;
+
+INSERT INTO acesso (data_criacao, id_pagina) VALUES
+(NOW(), 17),
+(NOW(), 21),
+(NOW(), 22),
+(NOW(), 24),
+(NOW(), 32),
+(NOW(), 35),
+(NOW(), 41),
+(NOW(), 46),
+(NOW(), 49),
+(NOW(), 51);
+

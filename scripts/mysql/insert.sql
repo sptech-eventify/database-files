@@ -3404,6 +3404,4 @@ SELECT
 FROM
     temp_simulacao;
 
--- Remoção da tabela temporária
 DROP TEMPORARY TABLE IF EXISTS temp_simulacao;
-
