@@ -2705,58 +2705,58 @@ INSERT INTO funcionario (nome, cpf, email, senha, telefone, salario, dia_pagamen
 ('Sandra Lima', '43210987654', 'sandra.lima@sptech.school', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', '10177778888', 3900.50, 5, 1, 2, 1, 'https://media.istockphoto.com/id/1368424494/pt/foto/studio-portrait-of-a-cheerful-woman.jpg?b=1&s=612x612&w=0&k=20&c=wAl_RDHNCYhlvN28N1IsgrzO-rqGKPMXe5-cuRfDdd4=', '2022-11-01 00:00:00');
 
 INSERT INTO eventify.transacao (valor, referente, is_visivel, data_criacao, is_gasto, id_buffet) VALUES
-(75.25, 'Pagamento de fornecedor', 1, '2023-10-02 14:15:00', 1, 1),
-(50.75, 'Taxas administrativas', 1, '2023-10-04 16:20:00', 1, 1),
-(90.90, 'Manutenção de equipamento', 1, '2023-10-05 09:55:00', 1, 1),
+(750.25, 'Pagamento de fornecedor', 1, '2023-10-02 14:15:00', 1, 1),
+(500.75, 'Taxas administrativas', 1, '2023-10-04 16:20:00', 1, 1),
+(900.90, 'Manutenção de equipamento', 1, '2023-10-05 09:55:00', 1, 1),
 (120.25, 'Perdas do último evento', 1, '2023-10-06 12:10:00', 1, 1),
-(45.60, 'Compra de bebidas', 1, '2023-10-07 17:40:00', 1, 1),
-(95.75, 'Despesas de marketing', 1, '2023-10-09 11:30:00', 1, 1),
-(85.30, 'Taxas legais', 1, '2023-10-11 08:50:00', 1, 1),
-(60.40, 'Despesas operacionais', 1, '2023-10-13 16:50:00', 1, 1),
-(70.90, 'Energia elétrica', 1, '2023-10-15 14:30:00', 1, 1),
-(55.75, 'Material de escritório', 1, '2023-10-16 07:45:00', 1, 1),
+(405.60, 'Compra de bebidas', 1, '2023-10-07 17:40:00', 1, 1),
+(9005.75, 'Despesas de marketing', 1, '2023-10-09 11:30:00', 1, 1),
+(8005.30, 'Taxas legais', 1, '2023-10-11 08:50:00', 1, 1),
+(60000.40, 'Despesas operacionais', 1, '2023-10-13 16:50:00', 1, 1),
+(700.90, 'Energia elétrica', 1, '2023-10-15 14:30:00', 1, 1),
+(505.75, 'Material de escritório', 1, '2023-10-16 07:45:00', 1, 1),
 (40.25, 'Despesas de viagem', 1, '2023-10-18 15:55:00', 1, 1),
-(90.20, 'Manutenção de mesas e cadeiras', 1, '2023-01-20 14:30:00', 1, 1),
+(24000.20, 'Manutenção de mesas e cadeiras', 1, '2023-01-20 14:30:00', 1, 1),
 (150.45, 'Compra de flores para decoração', 1, '2023-03-05 11:15:00', 1, 1),
 (80.60, 'Despesas com limpeza', 1, '2023-04-10 08:20:00', 1, 1),
-(65.75, 'Despesas de publicidade', 1, '2023-07-20 10:40:00', 1, 1),
-(95.90, 'Pagamento de fornecedor de entretenimento', 1, '2023-08-25 12:25:00', 1, 1),
+(6050.75, 'Despesas de publicidade', 1, '2023-07-20 10:40:00', 1, 1),
+(950.90, 'Pagamento de fornecedor de entretenimento', 1, '2023-08-25 12:25:00', 1, 1),
 (110.25, 'Manutenção de equipamento de som', 1, '2023-10-16 07:45:00', 1, 1),
-(75.25, 'Compra de suprimentos de escritório', 1, '2022-12-29 14:15:00', 1, 1),
-(50.75, 'Taxas administrativas', 1, '2023-02-11 16:20:00', 1, 1),
-(95.90, 'Compra de equipamento de som', 1, '2023-03-19 09:55:00', 1, 1),
-(80.60, 'Compra de bebidas para evento', 1, '2023-05-03 17:40:00', 1, 1),
-(85.75, 'Despesas de marketing online', 1, '2023-07-17 11:30:00', 1, 1),
-(95.75, 'Manutenção de instalações', 1, '2023-09-08 13:15:00', 1, 1),
-(60.40, 'Despesas operacionais gerais', 1, '2023-09-15 16:50:00', 1, 1),
-(70.90, 'Energia elétrica', 1, '2023-09-29 14:30:00', 1, 1),
-(55.75, 'Material de escritório', 1, '2023-10-06 07:45:00', 1, 1),
+(7500.25, 'Compra de suprimentos de escritório', 1, '2022-12-29 14:15:00', 1, 1),
+(500.75, 'Taxas administrativas', 1, '2023-02-11 16:20:00', 1, 1),
+(9005.90, 'Compra de equipamento de som', 1, '2023-03-19 09:55:00', 1, 1),
+(8000.60, 'Compra de bebidas para evento', 1, '2023-05-03 17:40:00', 1, 1),
+(8005.75, 'Despesas de marketing online', 1, '2023-07-17 11:30:00', 1, 1),
+(9500.75, 'Manutenção de instalações', 1, '2023-09-08 13:15:00', 1, 1),
+(20000.40, 'Despesas operacionais gerais', 1, '2023-09-15 16:50:00', 1, 1),
+(700.90, 'Energia elétrica', 1, '2023-09-29 14:30:00', 1, 1),
+(55000.75, 'Material de escritório', 1, '2023-10-06 07:45:00', 1, 1),
 (40.25, 'Despesas de viagem de negócios', 1, '2023-10-14 15:55:00', 1, 1),
 (95.40, 'Manutenção de equipamento de iluminação', 1, '2023-10-21 14:15:00', 1, 1),
 (60.75, 'Taxas administrativas', 1, '2023-10-23 16:20:00', 1, 1),
 (70.25, 'Pagamento de pessoal extra', 1, '2023-10-25 12:10:00', 1, 1),
 (85.75, 'Compra de utensílios de cozinha', 1, '2023-10-27 07:25:00', 1, 1),
-(75.90, 'Despesas com limpeza', 1, '2023-10-30 08:50:00', 1, 1),
-(45.40, 'Despesas de publicidade', 1, '2023-11-02 16:50:00', 1, 1),
-(95.60, 'Despesas de marketing online', 1, '2023-11-06 11:20:00', 1, 1),
-(60.25, 'Aquisição de mobiliário para salão', 1, '2023-11-07 15:55:00', 1, 1),
+(705.90, 'Despesas com limpeza', 1, '2023-10-30 08:50:00', 1, 1),
+(405.40, 'Despesas de publicidade', 1, '2023-11-02 16:50:00', 1, 1),
+(905.60, 'Despesas de marketing online', 1, '2023-11-06 11:20:00', 1, 1),
+(60000.25, 'Aquisição de mobiliário para salão', 1, '2023-11-07 15:55:00', 1, 1),
 (80.25, 'Despesas operacionais gerais', 1, '2023-11-10 10:30:00', 1, 1),
-(65.90, 'Energia elétrica', 1, '2023-11-12 08:45:00', 1, 1),
-(40.50, 'Despesas de viagem de negócios', 1, '2023-11-15 12:10:00', 1, 1),
-(90.25, 'Investimento em tecnologia', 1, '2023-11-16 17:40:00', 1, 1),
+(650.90, 'Energia elétrica', 1, '2023-11-12 08:45:00', 1, 1),
+(400.50, 'Despesas de viagem de negócios', 1, '2023-11-15 12:10:00', 1, 1),
+(90000.25, 'Investimento em tecnologia', 1, '2023-11-16 17:40:00', 1, 1),
 (95.40, 'Compra de utensílios de cozinha', 1, '2023-11-19 13:15:00', 1, 1),
-(60.25, 'Despesas de marketing digital', 1, '2023-11-21 12:10:00', 1, 1),
-(75.75, 'Pagamento de pessoal extra', 1, '2023-11-24 14:30:00', 1, 1),
+(60000.25, 'Despesas de marketing digital', 1, '2023-11-21 12:10:00', 1, 1),
+(7500.75, 'Pagamento de pessoal extra', 1, '2023-11-24 14:30:00', 1, 1),
 (45.60, 'Manutenção de mesas e cadeiras', 1, '2023-11-27 11:20:00', 1, 1),
 (85.90, 'Compra de flores para decoração', 1, '2023-11-28 15:55:00', 1, 1),
-(95.25, 'Pagamento de fornecedor de entretenimento', 1, '2023-12-02 10:45:00', 1, 1),
-(55.75, 'Compra de material de escritório', 1, '2023-12-03 16:50:00', 1, 1),
-(75.40, 'Despesas de marketing digital', 1, '2023-12-03 12:10:00', 1, 1),
-(90.30, 'Compra de equipamento de iluminação', 1, '2023-12-03 16:50:00', 1, 1),
+(950.25, 'Pagamento de fornecedor de entretenimento', 1, '2023-12-02 10:45:00', 1, 1),
+(550.75, 'Compra de material de escritório', 1, '2023-12-03 16:50:00', 1, 1),
+(750.40, 'Despesas de marketing digital', 1, '2023-12-03 12:10:00', 1, 1),
+(900.30, 'Compra de equipamento de iluminação', 1, '2023-12-03 16:50:00', 1, 1),
 (85.25, 'Material de escritório', 1, '2023-12-03 12:10:00', 1, 1),
-(60.90, 'Manutenção de equipamento de som', 1, '2023-12-03 14:15:00', 1, 1),
-(40.75, 'Despesas de viagem de negócios', 1, '2023-12-05 09:55:00', 1, 1),
-(10.60, 'Investimento em tecnologia', 1, '2023-12-06 12:10:00', 1, 1);
+(600.90, 'Manutenção de equipamento de som', 1, '2023-12-03 14:15:00', 1, 1),
+(400.75, 'Despesas de viagem de negócios', 1, '2023-12-05 09:55:00', 1, 1),
+(10000.60, 'Investimento em tecnologia', 1, '2023-12-06 12:10:00', 1, 1);
 
 -- EVENTO MAGNA
 INSERT INTO eventify.bucket (nome, is_visivel, id_buffet_servico, id_evento) VALUES
@@ -3306,6 +3306,8 @@ INSERT INTO eventify.funcionalidade (nome) VALUES
 ('Tela de Pesquisa');
 
 
+
+
 -- USUÁRIO FANTASMA
 INSERT INTO usuario (nome, email, senha, tipo_usuario, is_ativo, is_banido, cpf, data_criacao, ultimo_login)  VALUE 
 ('Usuário Fantasma', 'funcionario@eventify.com', '$2a$10$0/TKTGxdREbWaWjWYhwf6e9P1fPOAMMNqEnZgOG95jnSkHSfkkIrC', 2, 1, 0, '98765432109', '2022-12-12 14:20:00', '2022-12-15 21:45:00');
@@ -3322,3 +3324,86 @@ WHERE status IS NULL;
 UPDATE buffet
 SET preco_medio_diaria = preco_medio_diaria + 10000
 WHERE id BETWEEN 2 AND 50;
+
+-- Criação de uma tabela temporária para armazenar os dados simulados
+CREATE TEMPORARY TABLE IF NOT EXISTS temp_simulacao (
+    valor DECIMAL(10, 2),
+    referente VARCHAR(255),
+    is_visivel INT,
+    data_criacao DATETIME,
+    is_gasto INT,
+    id_buffet INT
+);
+
+INSERT INTO temp_simulacao (valor, referente, is_visivel, data_criacao, is_gasto, id_buffet)
+SELECT
+    ROUND(RAND() * 100, 2) as valor,
+    CASE 
+        WHEN RAND() > 0.5 THEN 'Taxas administrativas'
+        ELSE 'Pagamento de fornecedor'
+    END as referente,
+    1 as is_visivel,
+    NOW() - INTERVAL ROUND(RAND() * 90) DAY as data_criacao,
+    1 as is_gasto,
+    FLOOR(2 + RAND() * (50 - 2 + 1)) as id_buffet
+FROM
+    information_schema.tables
+LIMIT 750;
+
+INSERT INTO eventify.transacao (valor, referente, is_visivel, data_criacao, is_gasto, id_buffet)
+SELECT
+    valor,
+    referente,
+    is_visivel,
+    data_criacao,
+    is_gasto,
+    id_buffet
+FROM
+    temp_simulacao;
+
+DROP TEMPORARY TABLE IF EXISTS temp_simulacao;
+
+-- Criação de uma tabela temporária para armazenar os dados simulados
+CREATE TEMPORARY TABLE IF NOT EXISTS temp_simulacao (
+    valor DECIMAL(10, 2),
+    referente VARCHAR(255),
+    is_visivel INT,
+    data_criacao DATETIME,
+    is_gasto INT,
+    id_buffet INT
+);
+
+-- Geração dos dados simulados
+INSERT INTO temp_simulacao (valor, referente, is_visivel, data_criacao, is_gasto, id_buffet)
+SELECT
+    CASE 
+        WHEN RAND() > 0.5 THEN 25000  -- Defina o valor fixo de 25.000 para as duas primeiras transações
+        ELSE ROUND(RAND() * 100, 2)
+    END as valor,
+    CASE 
+        WHEN RAND() > 0.5 THEN 'Taxas administrativas'
+        ELSE 'Pagamento de fornecedor'
+    END as referente,
+    1 as is_visivel,
+    NOW() - INTERVAL ROUND(RAND() * 90) DAY as data_criacao,
+    1 as is_gasto,
+    FLOOR(2 + RAND() * (50 - 2 + 1)) as id_buffet
+FROM
+    information_schema.tables
+LIMIT 750;  -- Ajuste conforme necessário
+
+-- Inserção dos dados simulados na tabela final
+INSERT INTO eventify.transacao (valor, referente, is_visivel, data_criacao, is_gasto, id_buffet)
+SELECT
+    valor,
+    referente,
+    is_visivel,
+    data_criacao,
+    is_gasto,
+    id_buffet
+FROM
+    temp_simulacao;
+
+-- Remoção da tabela temporária
+DROP TEMPORARY TABLE IF EXISTS temp_simulacao;
+
