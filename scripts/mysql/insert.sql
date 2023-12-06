@@ -979,105 +979,105 @@ VALUES (1, '2023-01-19 10:00:00', 1),
 
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento)
 VALUES 
-('2023-02-02 14:30:00', 2000.00, 'Evento incrível!', 4.8, 6, NULL, 0, 1, '2023-01-02 14:30:00', 103, 2),
-('2023-02-03 18:45:00', 1800.50, 'Gostei bastante!', 4.2, 6, NULL, 1, 1, '2023-01-03 18:45:00', 105, 3),
-('2023-02-04 11:15:00', 1200.00, 'Superou minhas expectativas!', 4.9, 1, NULL, 0, 8, '2023-01-04 11:15:00', 234, 4),
-('2023-02-05 16:30:00', 3000.00, 'Maravilhoso evento!', 4.7, 6, NULL, 1, 15, '2023-01-05 16:30:00', 236, 5),
-('2023-02-06 10:45:00', 2500.00, 'Adorei tudo!', 4.6, 6, NULL, 0, 18, '2023-01-06 10:45:00', 238, 6),
-('2023-02-07 13:30:00', 1750.50, 'Muito bom!', 4.3, 6, NULL, 1, 7, '2023-01-07 13:30:00', 240, 7),
-('2023-02-08 19:15:00', 1900.00, 'Evento top!', 4.8, 6, NULL, 0, 11, '2023-01-08 19:15:00', 242, 8),
-('2023-02-09 15:00:00', 2200.50, 'Recomendo!', 4.4, 6, NULL, 1, 14, '2023-01-09 15:00:00', 244, 9),
-('2023-02-10 12:30:00', 1700.00, 'Excelente!', 4.9, 6, NULL, 0, 17, '2023-01-10 12:30:00', 246, 10),
-('2023-02-01 09:00:00', 1800.00, 'Evento sensacional!', 4.7, 6, NULL, 1, 6, '2023-01-01 09:00:00', 229, 11),
-('2023-02-02 14:30:00', 2100.00, 'Muito bem organizado!', 4.8, 6, NULL, 0, 9, '2023-01-02 14:30:00', 231, 12),
-('2023-02-03 18:45:00', 1950.50, 'Ótima experiência!', 4.6, 6, NULL, 1, 13, '2023-01-03 18:45:00', 233, 13),
-('2023-02-04 11:15:00', 1300.00, 'Recomendo fortemente!', 4.9, 6, NULL, 0, 7, '2023-01-04 11:15:00', 235, 14),
-('2023-02-05 16:30:00', 2800.00, 'Não poderia ser melhor!', 4.8, 6, NULL, 1, 16, '2023-01-05 16:30:00', 237, 15),
-('2023-02-06 10:45:00', 2400.00, 'Tudo perfeito!', 4.7, 6, NULL, 0, 17, '2023-01-06 10:45:00', 239, 16),
-('2023-02-07 13:30:00', 1650.50, 'Incrível!', 4.5, 6, NULL, 1, 8, '2023-01-07 13:30:00', 241, 17),
-('2023-02-08 19:15:00', 2000.00, 'Fantástico evento!', 4.9, 6, NULL, 0, 12, '2023-01-08 19:15:00', 243, 18),
-('2023-02-09 15:00:00', 2300.50, 'Adorei cada momento!', 4.5, 6, NULL, 1, 15, '2023-01-09 15:00:00', 245, 19),
-('2023-02-10 12:45:00', 1750.00, 'Superou minhas expectativas!', 4.6, 6, NULL, 0, 18, '2023-01-10 12:45:00', 247, 20),
-('2023-02-01 09:00:00', 1800.00, 'Evento sensacional!', 4.7, 6, NULL, 1, 6, '2023-01-01 09:00:00', 103, 21),
-('2023-02-02 14:30:00', 2100.00, 'Muito bem organizado!', 4.8, 6, NULL, 0, 9, '2023-01-02 14:30:00', 231, 22),
-('2023-03-03 18:45:00', 1950.50, 'Ótima experiência!', 4.6, 6, NULL, 1, 13, '2023-01-03 18:45:00', 233, 23),
-('2023-03-04 11:15:00', 1300.00, 'Recomendo fortemente!', 4.9, 6, NULL, 0, 7, '2023-01-04 11:15:00', 235, 24),
-('2023-03-05 16:30:00', 2800.00, 'Não poderia ser melhor!', 4.8, 6, NULL, 1, 16, '2023-01-05 16:30:00', 237, 25),
-('2023-03-06 10:45:00', 2400.00, 'Tudo perfeito!', 4.7, 6, NULL, 0, 17, '2023-01-06 10:45:00', 239, 26),
-('2023-03-07 13:30:00', 1650.50, 'Incrível!', 4.5, 6, NULL, 1, 8, '2023-01-07 13:30:00', 241, 27),
-('2023-03-08 19:15:00', 2000.00, 'Fantástico evento!', 4.9, 6, NULL, 0, 12, '2023-01-08 19:15:00', 243, 28),
-('2023-03-09 15:00:00', 2300.50, 'Adorei cada momento!', 4.5, 6, NULL, 1, 15, '2023-01-09 15:00:00', 245, 29),
-('2023-03-10 12:45:00', 1750.00, 'Superou minhas expectativas!', 4.6, 6, NULL, 0, 18, '2023-01-10 12:45:00', 103, 30),
-('2023-03-01 09:00:00', 1800.00, 'Evento incrível!', 4.7, 6, NULL, 1, 11, '2023-01-01 09:00:00', 230, 31),
-('2023-03-02 14:30:00', 2100.00, 'Melhor evento da cidade!', 4.8, 6, NULL, 0, 14, '2023-01-02 14:30:00', 232, 32),
-('2023-03-03 18:45:00', 1950.50, 'Surpreendente!', 4.6, 6, NULL, 1, 8, '2023-01-03 18:45:00', 234, 33),
-('2023-03-04 11:15:00', 1300.00, 'Não poderia ser melhor!', 4.9, 6, NULL, 0, 16, '2023-01-04 11:15:00', 236, 34),
-('2023-03-05 16:30:00', 2800.00, 'Experiência única!', 4.8, 6, NULL, 1, 17, '2023-01-05 16:30:00', 238, 35),
-('2023-04-06 10:45:00', 2400.00, 'Evento memorável!', 4.7, 6, NULL, 0, 9, '2023-01-06 10:45:00', 240, 36),
-('2023-04-07 13:30:00', 1650.50, 'Incrível organização!', 4.5, 6, NULL, 1, 13, '2023-01-07 13:30:00', 242, 37),
-('2023-04-08 19:15:00', 2000.00, 'Fantástico evento!', 4.9, 6, NULL, 0, 6, '2023-01-08 19:15:00', 244, 38),
-('2023-04-09 15:00:00', 2300.50, 'Momentos inesquecíveis!', 4.5, 6, NULL, 1, 15, '2023-01-09 15:00:00', 246, 39),
-('2023-04-10 12:30:00', 1750.00, 'Superou todas as expectativas!', 4.6, 6, NULL, 0, 18, '2023-01-10 12:30:00', 248, 40),
-('2023-04-01 09:00:00', 1800.00, 'Evento incrível!', 4.7, 6, NULL, 1, 12, '2023-01-01 09:00:00', 231, 41),
-('2023-04-02 14:30:00', 2100.00, 'Melhor evento da cidade!', 4.8, 6, NULL, 0, 15, '2023-01-02 14:30:00', 233, 42),
-('2023-04-03 18:45:00', 1950.50, 'Surpreendente!', 4.6, 6, NULL, 1, 9, '2023-01-03 18:45:00', 235, 43),
-('2023-04-04 11:15:00', 1300.00, 'Não poderia ser melhor!', 4.9, 6, NULL, 0, 17, '2023-01-04 11:15:00', 237, 44),
-('2023-04-05 16:30:00', 2800.00, 'Experiência única!', 4.8, 6, NULL, 1, 18, '2023-01-05 16:30:00', 239, 45),
-('2023-04-06 10:45:00', 2400.00, 'Evento memorável!', 4.7, 6, NULL, 0, 10, '2023-01-06 10:45:00', 241, 46),
-('2023-04-07 13:30:00', 1650.50, 'Incrível organização!', 4.5, 6, NULL, 1, 14, '2023-01-07 13:30:00', 243, 47),
-('2023-04-08 19:15:00', 2000.00, 'Fantástico evento!', 4.9, 6, NULL, 0, 7, '2023-01-08 19:15:00', 245, 48),
-('2023-05-09 15:00:00', 2300.50, 'Momentos inesquecíveis!', 4.5, 6, NULL, 1, 16, '2023-01-09 15:00:00', 247, 49),
-('2023-05-10 12:45:00', 1750.00, 'Adorei cada detalhe!', 4.6, 6, NULL, 0, 11, '2023-01-10 12:45:00', 249, 50),
-('2023-05-01 09:00:00', 1800.00, 'Evento incrível!', 4.7, 6, NULL, 1, 12, '2023-01-01 09:00:00', 231, 41),
-('2023-05-02 14:30:00', 2100.00, 'Melhor evento da cidade!', 4.8, 6, NULL, 0, 15, '2023-01-02 14:30:00', 233, 42),
-('2023-05-03 18:45:00', 1950.50, 'Surpreendente!', 4.6, 6, NULL, 1, 9, '2023-01-03 18:45:00', 235, 43),
-('2023-05-04 11:15:00', 1300.00, 'Não poderia ser melhor!', 4.9, 6, NULL, 0, 17, '2023-01-04 11:15:00', 237, 44),
-('2023-05-05 16:30:00', 2800.00, 'Experiência única!', 4.8, 6, NULL, 1, 18, '2023-01-05 16:30:00', 239, 45),
-('2023-05-06 10:45:00', 2400.00, 'Evento memorável!', 4.7, 6, NULL, 0, 10, '2023-01-06 10:45:00', 241, 46),
-('2023-05-07 13:30:00', 1650.50, 'Incrível organização!', 4.5, 6, NULL, 1, 14, '2023-01-07 13:30:00', 243, 47),
-('2023-05-08 19:15:00', 2000.00, 'Fantástico evento!', 4.9, 6, NULL, 0, 7, '2023-01-08 19:15:00', 245, 48),
-('2023-05-09 15:00:00', 2300.50, 'Momentos inesquecíveis!', 4.5, 6, NULL, 1, 16, '2023-01-09 15:00:00', 247, 49),
-('2023-05-10 12:45:00', 1750.00, 'Adorei cada detalhe!', 4.6, 6, NULL, 0, 11, '2023-01-10 12:45:00', 249, 50),
-('2023-05-01 09:00:00', 1800.00, NULL, NULL, 5, NULL, 1, 15, '2023-01-01 09:00:00', 233, 61),
-('2023-06-02 14:30:00', 2100.00, NULL, NULL, 5, NULL, 0, 18, '2023-01-02 14:30:00', 235, 62),
-('2023-06-03 18:45:00', 1950.50, NULL, NULL, 5, NULL, 1, 10, '2023-01-03 18:45:00', 237, 63),
-('2023-06-04 11:15:00', 1300.00, NULL, NULL, 5, NULL, 0, 12, '2023-01-04 11:15:00', 239, 64),
-('2023-06-05 16:30:00', 2800.00, NULL, NULL, 5, NULL, 1, 14, '2023-01-05 16:30:00', 241, 65),
-('2023-06-06 10:45:00', 2400.00, NULL, NULL, 5, NULL, 0, 17, '2023-01-06 10:45:00', 243, 66),
-('2023-06-07 13:30:00', 1650.50, NULL, NULL, 5, NULL, 1, 9, '2023-01-07 13:30:00', 245, 67),
-('2023-06-08 19:15:00', 2000.00, NULL, NULL, 5, NULL, 0, 11, '2023-02-08 19:15:00', 247, 68),
-('2023-06-09 15:00:00', 2300.50, NULL, NULL, 5, NULL, 1, 13, '2023-02-09 15:00:00', 249, 69),
-('2023-06-10 12:45:00', 1750.00, NULL, NULL, 5, NULL, 0, 15, '2023-02-10 12:45:00', 251, 70),
-('2024-06-01 09:00:00', 1800.00, NULL, NULL, 5, NULL, 1, 15, '2024-02-01 09:00:00', 233, 71),
-('2024-06-02 14:30:00', 2100.00, NULL, NULL, 5, NULL, 0, 18, '2024-02-02 14:30:00', 235, 72),
-('2024-06-03 18:45:00', 1950.50, NULL, NULL, 5, NULL, 1, 10, '2024-02-03 18:45:00', 237, 73),
-('2024-06-04 11:15:00', 1300.00, NULL, NULL, 5, NULL, 0, 12, '2024-02-04 11:15:00', 239, 74),
-('2024-07-05 16:30:00', 2800.00, NULL, NULL, 5, NULL, 1, 17, '2024-02-05 16:30:00', 241, 75),
-('2024-07-06 09:45:00', 1750.00, NULL, NULL, 5, NULL, 0, 11, '2024-02-06 09:45:00', 243, 76),
-('2024-07-07 13:00:00', 2200.50, NULL, NULL, 5, NULL, 1, 14, '2024-02-07 13:00:00', 245, 77),
-('2024-07-08 10:30:00', 1500.00, NULL, NULL, 5, NULL, 0, 16, '2024-02-08 10:30:00', 247, 78),
-('2024-07-09 14:45:00', 1900.00, NULL, NULL, 5, NULL, 1, 13, '2024-02-09 14:45:00', 249, 79),
-('2024-07-10 18:00:00', 2050.50, NULL, NULL, 5, NULL, 0, 10, '2024-02-10 18:00:00', 251, 80),
-('2024-07-11 11:30:00', 1200.00, NULL, NULL, 5, NULL, 1, 18, '2024-02-11 11:30:00', 253, 81),
-('2024-07-12 16:45:00', 2600.00, NULL, NULL, 5, NULL, 0, 11, '2024-02-12 16:45:00', 255, 82),
-('2024-07-13 10:15:00', 1650.00, NULL, NULL, 5, NULL, 1, 15, '2024-02-13 10:15:00', 257, 83),
-('2024-07-14 13:30:00', 2100.50, NULL, NULL, 5, NULL, 0, 12, '2024-02-14 13:30:00', 259, 84),
-('2024-07-15 09:45:00', 1450.00, NULL, NULL, 5, NULL, 1, 16, '2024-02-15 09:45:00', 261, 85),
-('2024-07-16 14:00:00', 1850.50, NULL, NULL, 5, NULL, 0, 13, '2024-02-16 14:00:00', 263, 86),
-('2024-07-17 18:15:00', 2000.00, NULL, NULL, 5, NULL, 1, 10, '2024-02-17 18:15:00', 265, 87),
-('2024-08-18 11:45:00', 1100.00, NULL, NULL, 5, NULL, 0, 17, '2024-02-18 11:45:00', 228, 88),
-('2024-08-19 17:00:00', 2500.00, NULL, NULL, 5, NULL, 1, 14, '2024-02-19 17:00:00', 230, 89),
-('2024-08-20 10:30:00', 1600.00, NULL, NULL, 5, NULL, 0, 11, '2024-02-20 10:30:00', 232, 90),
-('2024-08-21 14:45:00', 1950.00, NULL, NULL, 5, NULL, 1, 18, '2024-02-21 14:45:00', 234, 91),
-('2024-08-22 18:00:00', 2200.50, NULL, NULL, 5, NULL, 0, 15, '2024-02-22 18:00:00', 236, 92),
-('2024-08-23 11:30:00', 1350.00, NULL, NULL, 5, NULL, 1, 13, '2024-02-23 11:30:00', 238, 93),
-('2024-08-24 15:45:00', 1800.00, NULL, NULL, 5, NULL, 0, 12, '2024-02-24 15:45:00', 240, 94),
-('2024-08-25 09:15:00', 2050.50, NULL, NULL, 5, NULL, 1, 16, '2024-02-25 09:15:00', 242, 95),
-('2024-08-26 13:30:00', 1250.00, NULL, NULL, 5, NULL, 0, 10, '2024-02-26 13:30:00', 244, 96),
-('2024-08-27 10:00:00', 2450.00, NULL, NULL, 5, NULL, 1, 11, '2024-02-27 10:00:00', 103, 97),
-('2024-08-28 14:15:00', 1550.50, NULL, NULL, 5, NULL, 0, 14, '2024-02-28 14:15:00', 248, 98),
-('2024-08-29 17:30:00', 1900.00, NULL, NULL, 5, NULL, 1, 17, '2024-02-29 17:30:00', 250, 99),
-('2024-08-30 11:45:00', 2250.50, NULL, NULL, 5, NULL, 0, 15, '2024-02-27 11:45:00', 252, 100);
+('2023-02-02 14:30:00', 20000.00, 'Evento incrível!', 4.8, 6, NULL, 0, 1, '2023-01-02 14:30:00', 103, 2),
+('2023-02-03 18:45:00', 10800.50, 'Gostei bastante!', 4.2, 6, NULL, 1, 1, '2023-01-03 18:45:00', 105, 3),
+('2023-02-04 11:15:00', 10200.00, 'Superou minhas expectativas!', 4.9, 1, NULL, 0, 8, '2023-01-04 11:15:00', 234, 4),
+('2023-02-05 16:30:00', 30000.00, 'Maravilhoso evento!', 4.7, 6, NULL, 1, 15, '2023-01-05 16:30:00', 236, 5),
+('2023-02-06 10:45:00', 20500.00, 'Adorei tudo!', 4.6, 6, NULL, 0, 18, '2023-01-06 10:45:00', 238, 6),
+('2023-02-07 13:30:00', 10750.50, 'Muito bom!', 4.3, 6, NULL, 1, 7, '2023-01-07 13:30:00', 240, 7),
+('2023-02-08 19:15:00', 10900.00, 'Evento top!', 4.8, 6, NULL, 0, 11, '2023-01-08 19:15:00', 242, 8),
+('2023-02-09 15:00:00', 20200.50, 'Recomendo!', 4.4, 6, NULL, 1, 14, '2023-01-09 15:00:00', 244, 9),
+('2023-02-10 12:30:00', 10700.00, 'Excelente!', 4.9, 6, NULL, 0, 17, '2023-01-10 12:30:00', 246, 10),
+('2023-02-01 09:00:00', 10800.00, 'Evento sensacional!', 4.7, 6, NULL, 1, 6, '2023-01-01 09:00:00', 229, 11),
+('2023-02-02 14:30:00', 20100.00, 'Muito bem organizado!', 4.8, 6, NULL, 0, 9, '2023-01-02 14:30:00', 231, 12),
+('2023-02-03 18:45:00', 10950.50, 'Ótima experiência!', 4.6, 6, NULL, 1, 13, '2023-01-03 18:45:00', 233, 13),
+('2023-02-04 11:15:00', 10300.00, 'Recomendo fortemente!', 4.9, 6, NULL, 0, 7, '2023-01-04 11:15:00', 235, 14),
+('2023-02-05 16:30:00', 20800.00, 'Não poderia ser melhor!', 4.8, 6, NULL, 1, 16, '2023-01-05 16:30:00', 237, 15),
+('2023-02-06 10:45:00', 20400.00, 'Tudo perfeito!', 4.7, 6, NULL, 0, 17, '2023-01-06 10:45:00', 239, 16),
+('2023-02-07 13:30:00', 10650.50, 'Incrível!', 4.5, 6, NULL, 1, 8, '2023-01-07 13:30:00', 241, 17),
+('2023-02-08 19:15:00', 20000.00, 'Fantástico evento!', 4.9, 6, NULL, 0, 12, '2023-01-08 19:15:00', 243, 18),
+('2023-02-09 15:00:00', 20300.50, 'Adorei cada momento!', 4.5, 6, NULL, 1, 15, '2023-01-09 15:00:00', 245, 19),
+('2023-02-10 12:45:00', 10750.00, 'Superou minhas expectativas!', 4.6, 6, NULL, 0, 18, '2023-01-10 12:45:00', 247, 20),
+('2023-02-01 09:00:00', 10800.00, 'Evento sensacional!', 4.7, 6, NULL, 1, 6, '2023-01-01 09:00:00', 103, 21),
+('2023-02-02 14:30:00', 20100.00, 'Muito bem organizado!', 4.8, 6, NULL, 0, 9, '2023-01-02 14:30:00', 231, 22),
+('2023-03-03 18:45:00', 10950.50, 'Ótima experiência!', 4.6, 6, NULL, 1, 13, '2023-01-03 18:45:00', 233, 23),
+('2023-03-04 11:15:00', 10300.00, 'Recomendo fortemente!', 4.9, 6, NULL, 0, 7, '2023-01-04 11:15:00', 235, 24),
+('2023-03-05 16:30:00', 20800.00, 'Não poderia ser melhor!', 4.8, 6, NULL, 1, 16, '2023-01-05 16:30:00', 237, 25),
+('2023-03-06 10:45:00', 20400.00, 'Tudo perfeito!', 4.7, 6, NULL, 0, 17, '2023-01-06 10:45:00', 239, 26),
+('2023-03-07 13:30:00', 10650.50, 'Incrível!', 4.5, 6, NULL, 1, 8, '2023-01-07 13:30:00', 241, 27),
+('2023-03-08 19:15:00', 20000.00, 'Fantástico evento!', 4.9, 6, NULL, 0, 12, '2023-01-08 19:15:00', 243, 28),
+('2023-03-09 15:00:00', 20300.50, 'Adorei cada momento!', 4.5, 6, NULL, 1, 15, '2023-01-09 15:00:00', 245, 29),
+('2023-03-10 12:45:00', 10750.00, 'Superou minhas expectativas!', 4.6, 6, NULL, 0, 18, '2023-01-10 12:45:00', 103, 30),
+('2023-03-01 09:00:00', 10800.00, 'Evento incrível!', 4.7, 6, NULL, 1, 11, '2023-01-01 09:00:00', 230, 31),
+('2023-03-02 14:30:00', 20100.00, 'Melhor evento da cidade!', 4.8, 6, NULL, 0, 14, '2023-01-02 14:30:00', 232, 32),
+('2023-03-03 18:45:00', 10950.50, 'Surpreendente!', 4.6, 6, NULL, 1, 8, '2023-01-03 18:45:00', 234, 33),
+('2023-03-04 11:15:00', 10300.00, 'Não poderia ser melhor!', 4.9, 6, NULL, 0, 16, '2023-01-04 11:15:00', 236, 34),
+('2023-03-05 16:30:00', 20800.00, 'Experiência única!', 4.8, 6, NULL, 1, 17, '2023-01-05 16:30:00', 238, 35),
+('2023-04-06 10:45:00', 20400.00, 'Evento memorável!', 4.7, 6, NULL, 0, 9, '2023-01-06 10:45:00', 240, 36),
+('2023-04-07 13:30:00', 10650.50, 'Incrível organização!', 4.5, 6, NULL, 1, 13, '2023-01-07 13:30:00', 242, 37),
+('2023-04-08 19:15:00', 20000.00, 'Fantástico evento!', 4.9, 6, NULL, 0, 6, '2023-01-08 19:15:00', 244, 38),
+('2023-04-09 15:00:00', 20300.50, 'Momentos inesquecíveis!', 4.5, 6, NULL, 1, 15, '2023-01-09 15:00:00', 246, 39),
+('2023-04-10 12:30:00', 10750.00, 'Superou todas as expectativas!', 4.6, 6, NULL, 0, 18, '2023-01-10 12:30:00', 248, 40),
+('2023-04-01 09:00:00', 10800.00, 'Evento incrível!', 4.7, 6, NULL, 1, 12, '2023-01-01 09:00:00', 231, 41),
+('2023-04-02 14:30:00', 20100.00, 'Melhor evento da cidade!', 4.8, 6, NULL, 0, 15, '2023-01-02 14:30:00', 233, 42),
+('2023-04-03 18:45:00', 10950.50, 'Surpreendente!', 4.6, 6, NULL, 1, 9, '2023-01-03 18:45:00', 235, 43),
+('2023-04-04 11:15:00', 10300.00, 'Não poderia ser melhor!', 4.9, 6, NULL, 0, 17, '2023-01-04 11:15:00', 237, 44),
+('2023-04-05 16:30:00', 20800.00, 'Experiência única!', 4.8, 6, NULL, 1, 18, '2023-01-05 16:30:00', 239, 45),
+('2023-04-06 10:45:00', 20400.00, 'Evento memorável!', 4.7, 6, NULL, 0, 10, '2023-01-06 10:45:00', 241, 46),
+('2023-04-07 13:30:00', 10650.50, 'Incrível organização!', 4.5, 6, NULL, 1, 14, '2023-01-07 13:30:00', 243, 47),
+('2023-04-08 19:15:00', 20000.00, 'Fantástico evento!', 4.9, 6, NULL, 0, 7, '2023-01-08 19:15:00', 245, 48),
+('2023-05-09 15:00:00', 20300.50, 'Momentos inesquecíveis!', 4.5, 6, NULL, 1, 16, '2023-01-09 15:00:00', 247, 49),
+('2023-05-10 12:45:00', 10750.00, 'Adorei cada detalhe!', 4.6, 6, NULL, 0, 11, '2023-01-10 12:45:00', 249, 50),
+('2023-05-01 09:00:00', 10800.00, 'Evento incrível!', 4.7, 6, NULL, 1, 12, '2023-01-01 09:00:00', 231, 41),
+('2023-05-02 14:30:00', 20100.00, 'Melhor evento da cidade!', 4.8, 6, NULL, 0, 15, '2023-01-02 14:30:00', 233, 42),
+('2023-05-03 18:45:00', 10950.50, 'Surpreendente!', 4.6, 6, NULL, 1, 9, '2023-01-03 18:45:00', 235, 43),
+('2023-05-04 11:15:00', 10300.00, 'Não poderia ser melhor!', 4.9, 6, NULL, 0, 17, '2023-01-04 11:15:00', 237, 44),
+('2023-05-05 16:30:00', 20800.00, 'Experiência única!', 4.8, 6, NULL, 1, 18, '2023-01-05 16:30:00', 239, 45),
+('2023-05-06 10:45:00', 20400.00, 'Evento memorável!', 4.7, 6, NULL, 0, 10, '2023-01-06 10:45:00', 241, 46),
+('2023-05-07 13:30:00', 10650.50, 'Incrível organização!', 4.5, 6, NULL, 1, 14, '2023-01-07 13:30:00', 243, 47),
+('2023-05-08 19:15:00', 20000.00, 'Fantástico evento!', 4.9, 6, NULL, 0, 7, '2023-01-08 19:15:00', 245, 48),
+('2023-05-09 15:00:00', 20300.50, 'Momentos inesquecíveis!', 4.5, 6, NULL, 1, 16, '2023-01-09 15:00:00', 247, 49),
+('2023-05-10 12:45:00', 17050.00, 'Adorei cada detalhe!', 4.6, 6, NULL, 0, 11, '2023-01-10 12:45:00', 249, 50),
+('2023-05-01 09:00:00', 10800.00, NULL, 4.8, 6, NULL, 1, 15, '2023-01-01 09:00:00', 233, 61),
+('2023-06-02 14:30:00', 20100.00, NULL, 4.8, 6, NULL, 0, 18, '2023-01-02 14:30:00', 235, 62),
+('2023-06-03 18:45:00', 10950.50, NULL, 4.8, 6, NULL, 1, 10, '2023-01-03 18:45:00', 237, 63),
+('2023-06-04 11:15:00', 10300.00, NULL, 4.8, 6, NULL, 0, 12, '2023-01-04 11:15:00', 239, 64),
+('2023-06-05 16:30:00', 20800.00, NULL, 4.8, 6, NULL, 1, 14, '2023-01-05 16:30:00', 241, 65),
+('2023-06-06 10:45:00', 20400.00, NULL, 4.8, 6, NULL, 0, 17, '2023-01-06 10:45:00', 243, 66),
+('2023-06-07 13:30:00', 10650.50, NULL, 4.8, 6, NULL, 1, 9, '2023-01-07 13:30:00', 245, 67),
+('2023-06-08 19:15:00', 20000.00, NULL, 4.8, 6, NULL, 0, 11, '2023-02-08 19:15:00', 247, 68),
+('2023-06-09 15:00:00', 20300.50, NULL, 4.8, 6, NULL, 1, 13, '2023-02-09 15:00:00', 249, 69),
+('2023-06-10 12:45:00', 10750.00, NULL, 4.8, 6, NULL, 0, 15, '2023-02-10 12:45:00', 251, 70),
+('2023-06-01 09:00:00', 10800.00, NULL, 4.8, 6, NULL, 1, 15, '2023-02-01 09:00:00', 233, 71),
+('2023-06-02 14:30:00', 20100.00, NULL, 4.8, 6, NULL, 0, 18, '2023-02-02 14:30:00', 235, 72),
+('2023-06-03 18:45:00', 10950.50, NULL, 4.8, 6, NULL, 1, 10, '2023-02-03 18:45:00', 237, 73),
+('2023-06-04 11:15:00', 10300.00, NULL, 4.8, 6, NULL, 0, 12, '2023-02-04 11:15:00', 239, 74),
+('2023-07-05 16:30:00', 20800.00, NULL, 4.8, 6, NULL, 1, 17, '2023-02-05 16:30:00', 241, 75),
+('2023-07-06 09:45:00', 10750.00, NULL, 4.8, 6, NULL, 0, 11, '2023-02-06 09:45:00', 243, 76),
+('2023-07-07 13:00:00', 20200.50, NULL, 4.8, 6, NULL, 1, 14, '2023-02-07 13:00:00', 245, 77),
+('2023-07-08 10:30:00', 10500.00, NULL, 4.8, 6, NULL, 0, 16, '2023-02-08 10:30:00', 247, 78),
+('2023-07-09 14:45:00', 10900.00, NULL, 4.8, 6, NULL, 1, 13, '2023-02-09 14:45:00', 249, 79),
+('2023-07-10 18:00:00', 20050.50, NULL, 4.8, 6, NULL, 0, 10, '2023-02-10 18:00:00', 251, 80),
+('2023-07-11 11:30:00', 10200.00, NULL, 4.8, 6, NULL, 1, 18, '2023-02-11 11:30:00', 253, 81),
+('2023-07-12 16:45:00', 20600.00, NULL, 4.8, 6, NULL, 0, 11, '2023-02-12 16:45:00', 255, 82),
+('2023-07-13 10:15:00', 10650.00, NULL, 4.8, 6, NULL, 1, 15, '2023-02-13 10:15:00', 257, 83),
+('2023-07-14 13:30:00', 20100.50, NULL, 4.8, 6, NULL, 0, 12, '2023-02-14 13:30:00', 259, 84),
+('2023-07-15 09:45:00', 10450.00, NULL, 4.8, 6, NULL, 1, 16, '2023-02-15 09:45:00', 261, 85),
+('2023-07-16 14:00:00', 10850.50, NULL, 4.8, 6, NULL, 0, 13, '2023-02-16 14:00:00', 263, 86),
+('2023-07-17 18:15:00', 20000.00, NULL, 4.8, 6, NULL, 1, 10, '2023-02-17 18:15:00', 265, 87),
+('2023-08-18 11:45:00', 10100.00, NULL, 4.8, 6, NULL, 0, 17, '2023-02-18 11:45:00', 228, 88),
+('2023-08-19 17:00:00', 20500.00, NULL, 4.8, 6, NULL, 1, 14, '2023-02-19 17:00:00', 230, 89),
+('2023-08-20 10:30:00', 10600.00, NULL, 4.8, 6, NULL, 0, 11, '2023-02-20 10:30:00', 232, 90),
+('2023-08-21 14:45:00', 10950.00, NULL, 4.8, 6, NULL, 1, 18, '2023-02-21 14:45:00', 234, 91),
+('2023-08-22 18:00:00', 20200.50, NULL, 4.8, 6, NULL, 0, 15, '2023-02-22 18:00:00', 236, 92),
+('2023-08-23 11:30:00', 10350.00, NULL, 4.8, 6, NULL, 1, 13, '2023-02-23 11:30:00', 238, 93),
+('2023-08-24 15:45:00', 10800.00, NULL, 4.8, 6, NULL, 0, 12, '2023-02-24 15:45:00', 240, 94),
+('2023-08-25 09:15:00', 20050.50, NULL, 4.8, 6, NULL, 1, 16, '2023-02-25 09:15:00', 242, 95),
+('2023-08-26 13:30:00', 10250.00, NULL, 4.8, 6, NULL, 0, 10, '2023-02-26 13:30:00', 244, 96),
+('2023-08-27 10:00:00', 20450.00, NULL, 4.8, 6, NULL, 1, 11, '2023-02-27 10:00:00', 103, 97),
+('2023-08-28 14:15:00', 10550.50, NULL, 4.8, 6, NULL, 0, 14, '2023-02-28 14:15:00', 248, 98),
+('2023-08-29 17:30:00', 10900.00, NULL, 4.8, 6, NULL, 1, 17, '2023-02-21 17:30:00', 250, 99),
+('2023-08-30 11:45:00', 20250.50, NULL, 4.8, 6, NULL, 0, 15, '2023-02-27 11:45:00', 252, 100);
        
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento)
@@ -1218,36 +1218,36 @@ VALUES
     ('2023-06-08 19:15:00', 11),
     ('2023-06-09 15:00:00', 13),
     ('2023-06-10 12:45:00', 15),
-    ('2024-06-01 09:00:00', 15),
-    ('2024-06-02 14:30:00', 18),
-    ('2024-06-03 18:45:00', 10),
-    ('2024-06-04 11:15:00', 12),
-    ('2024-07-05 16:30:00', 17),
-    ('2024-07-06 09:45:00', 11),
-    ('2024-07-07 13:00:00', 14),
-    ('2024-07-08 10:30:00', 16),
-    ('2024-07-09 14:45:00', 13),
-    ('2024-07-10 18:00:00', 10),
-    ('2024-07-11 11:30:00', 18),
-    ('2024-07-12 16:45:00', 11),
-    ('2024-07-13 10:15:00', 15),
-    ('2024-07-14 13:30:00', 12),
-    ('2024-07-15 09:45:00', 16),
-    ('2024-07-16 14:00:00', 13),
-    ('2024-07-17 18:15:00', 10),
-    ('2024-08-18 11:45:00', 17),
-    ('2024-08-19 17:00:00', 14),
-    ('2024-08-20 10:30:00', 11),
-    ('2024-08-21 14:45:00', 18),
-    ('2024-08-22 18:00:00', 15),
-    ('2024-08-23 11:30:00', 13),
-    ('2024-08-24 15:45:00', 12),
-    ('2024-08-25 09:15:00', 16),
-    ('2024-08-26 13:30:00', 10),
-    ('2024-08-27 10:00:00', 11),
-    ('2024-08-28 14:15:00', 14),
-    ('2024-08-29 17:30:00', 17),
-    ('2024-08-30 11:45:00', 15);
+    ('2023-06-01 09:00:00', 15),
+    ('2023-06-02 14:30:00', 18),
+    ('2023-06-03 18:45:00', 10),
+    ('2023-06-04 11:15:00', 12),
+    ('2023-07-05 16:30:00', 17),
+    ('2023-07-06 09:45:00', 11),
+    ('2023-07-07 13:00:00', 14),
+    ('2023-07-08 10:30:00', 16),
+    ('2023-07-09 14:45:00', 13),
+    ('2023-07-10 18:00:00', 10),
+    ('2023-07-11 11:30:00', 18),
+    ('2023-07-12 16:45:00', 11),
+    ('2023-07-13 10:15:00', 15),
+    ('2023-07-14 13:30:00', 12),
+    ('2023-07-15 09:45:00', 16),
+    ('2023-07-16 14:00:00', 13),
+    ('2023-07-17 18:15:00', 10),
+    ('2023-08-18 11:45:00', 17),
+    ('2023-08-19 17:00:00', 14),
+    ('2023-08-20 10:30:00', 11),
+    ('2023-08-21 14:45:00', 18),
+    ('2023-08-22 18:00:00', 15),
+    ('2023-08-23 11:30:00', 13),
+    ('2023-08-24 15:45:00', 12),
+    ('2023-08-25 09:15:00', 16),
+    ('2023-08-26 13:30:00', 10),
+    ('2023-08-27 10:00:00', 11),
+    ('2023-08-28 14:15:00', 14),
+    ('2023-08-29 17:30:00', 17),
+    ('2023-08-30 11:45:00', 15);
 
 
 INSERT INTO `eventify`.`imagem` (caminho, nome, tipo, is_ativo, data_upload, id_buffet)
@@ -1343,8 +1343,8 @@ INSERT INTO `eventify`.`pagamento` (is_pago_contrato, data_pago, is_pago_buffet)
 (1, '2023-01-28 00:00:00', 1);
 
 INSERT INTO `eventify`.`evento` (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES 
-('2023-01-18 00:00:00', 1500.00, 'Maravilho! Minha filha adorou o aniversário..', 5, 6, NULL, 1, 20, '2022-12-01 09:00:00', 163, 122),
-('2023-01-28 00:00:00', 2000.00, 'A melhor casa de culinária do Rio Grande do Sul!', 4.8, 6, NULL, 0, 20, '2022-12-02 14:30:00', 164, 123);
+('2023-01-18 00:00:00', 10500.00, 'Maravilho! Minha filha adorou o aniversário..', 5, 6, NULL, 1, 20, '2022-12-01 09:00:00', 163, 122),
+('2023-01-28 00:00:00', 20000.00, 'A melhor casa de culinária do Rio Grande do Sul!', 4.8, 6, NULL, 0, 20, '2022-12-02 14:30:00', 164, 123);
 
 INSERT INTO `eventify`.`imagem` (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://www.bastidoresdatv.com.br/wp-content/uploads/2015/11/', 'Cozinha-sob-press%C3%A3o', 'jpg', 1, NOW(), 20);
@@ -1389,7 +1389,7 @@ INSERT INTO eventify.imagem (caminho, nome, tipo, is_ativo, data_upload, id_buff
 
 -- Buffet 22 ----------------------
 INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, uf, cep, latitude, longitude, data_criacao) VALUES
-(1, 'Avenida Paulista', 1500, 'Bela Vista', 'São Paulo', 'SP', '01310000', -23.564830, -46.652640, '2023-06-04 12:00:00');
+(1, 'Avenida Paulista', 10500, 'Bela Vista', 'São Paulo', 'SP', '01310000', -23.564830, -46.652640, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
 ('Buffet Sabores da Terra', 'Comida típica e regional para eventos especiais!', 600, 3500.00, 500, 'caminho/comprovante22.jpg', 1, 1, '2023-06-04 12:00:00', 22, 22);
@@ -1417,8 +1417,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2000.00, 'Excelente serviço e decoração impecável!', 4.7, 6, NULL, 1, 22, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 2800.00, 'Festa perfeita, tudo saiu como planejado!', 5, 6, NULL, 0, 22, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20000.00, 'Excelente serviço e decoração impecável!', 4.7, 6, NULL, 1, 22, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 20800.00, 'Festa perfeita, tudo saiu como planejado!', 5, 6, NULL, 0, 22, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO eventify.imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://www.afrikanhouse.com.br/images/palavras-chaves/', 'melhor-buffet-casamento-sao-paulo', 'jpg', 1, NOW(), 22);
@@ -1453,8 +1453,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2800.00, 'Serviço de alta qualidade, recomendo!', 4.8, 6, NULL, 1, 23, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 3500.00, 'Tudo perfeito, os convidados adoraram!', 5, 6, NULL, 0, 23, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20800.00, 'Serviço de alta qualidade, recomendo!', 4.8, 6, NULL, 1, 23, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 30500.00, 'Tudo perfeito, os convidados adoraram!', 5, 6, NULL, 0, 23, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO eventify.imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://lejour.com.br/wp-content/uploads/2021/11/', 'cedrom-casamento-intimista', 'jpg', 1, NOW(), 23);
@@ -1489,8 +1489,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2400.00, 'Comida deliciosa e equipe super atenciosa!', 4.9, 6, NULL, 1, 24, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 3200.00, 'Festa incrível, todos os convidados elogiaram!', 5, 6, NULL, 0, 24, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20400.00, 'Comida deliciosa e equipe super atenciosa!', 4.9, 6, NULL, 1, 24, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 30200.00, 'Festa incrível, todos os convidados elogiaram!', 5, 6, NULL, 0, 24, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO eventify.imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://lejour.com.br/wp-content/uploads/2021/10/', 'espaco-jardim-leopoldina', 'jpg', 1, NOW(), 24);
@@ -1525,8 +1525,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2700.00, 'Foi tudo perfeito, superou minhas expectativas!', 4.7, 6, NULL, 1, 25, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 3500.00, 'Equipe muito profissional, recomendo!', 4.9, 6, NULL, 0, 25, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20700.00, 'Foi tudo perfeito, superou minhas expectativas!', 4.7, 6, NULL, 1, 25, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 30500.00, 'Equipe muito profissional, recomendo!', 4.9, 6, NULL, 0, 25, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://lejour.com.br/wp-content/uploads/2021/07/', 'villa-glam-1', 'jpg', 1, NOW(), 25);
@@ -1561,8 +1561,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 3800.00, 'Tudo perfeito, recomendo fortemente!', 4.8, 6, NULL, 1, 26, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 4500.00, 'Uma festa dos sonhos, obrigado!', 5, 6, NULL, 0, 26, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 30800.00, 'Tudo perfeito, recomendo fortemente!', 4.8, 6, NULL, 1, 26, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 40500.00, 'Uma festa dos sonhos, obrigado!', 5, 6, NULL, 0, 26, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://lejour.com.br/wp-content/uploads/2021/11/', 'espaco-armazem', 'jpg', 1, NOW(), 26);
@@ -1597,8 +1597,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2800.00, 'Excelente serviço, recomendo!', 4.9, 6, NULL, 1, 27, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 3200.00, 'Festa incrível, todos adoraram!', 4.7, 6, NULL, 0, 27, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20800.00, 'Excelente serviço, recomendo!', 4.9, 6, NULL, 1, 27, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 30200.00, 'Festa incrível, todos adoraram!', 4.7, 6, NULL, 0, 27, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://lejour.com.br/wp-content/uploads/2021/07/', 'kaza-fendi', 'jpg', 1, NOW(), 27);
@@ -1633,8 +1633,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 4800.00, 'Simplesmente perfeito! Recomendo a todos.', 4.9, 6, NULL, 1, 28, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 5500.00, 'Melhor buffet que já contratei, nota 10!', 5, 6, NULL, 0, 28, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 40800.00, 'Simplesmente perfeito! Recomendo a todos.', 4.9, 6, NULL, 1, 28, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 50500.00, 'Melhor buffet que já contratei, nota 10!', 5, 6, NULL, 0, 28, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://lejour.com.br/wp-content/uploads/2021/10/', 'espaco-infinitto', 'jpg', 1, NOW(), 28);
@@ -1669,8 +1669,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 1800.00, 'Serviço impecável, superou minhas expectativas!', 4.7, 6, NULL, 1, 29, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 2200.00, 'Festa linda e organizada, recomendo!', 4.8, 6, NULL, 0, 29, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 10800.00, 'Serviço impecável, superou minhas expectativas!', 4.7, 6, NULL, 1, 29, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 20200.00, 'Festa linda e organizada, recomendo!', 4.8, 6, NULL, 0, 29, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://lejour.com.br/wp-content/uploads/2021/10/', 'casa-lucci-casamento-larissa-e-paulo', 'jpg', 1, NOW(), 29);
@@ -1706,8 +1706,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 1200.00, 'Ótimo atendimento e comida deliciosa!', 4.5, 6, NULL, 1, 30, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 1500.00, 'Adoramos o ambiente e a decoração!', 4.6, 6, NULL, 0, 30, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 10200.00, 'Ótimo atendimento e comida deliciosa!', 4.5, 6, NULL, 1, 30, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 10500.00, 'Adoramos o ambiente e a decoração!', 4.6, 6, NULL, 0, 30, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://lejour.com.br/wp-content/uploads/2021/11/', 'espaco-zabeu2', 'jpg', 1, NOW(), 30);
@@ -1742,15 +1742,15 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2200.00, 'Excelente serviço e ambiente incrível!', 4.9, 6, NULL, 1, 31, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 1800.00, 'Festa perfeita, todos adoraram!', 4.8, 6, NULL, 0, 31, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20200.00, 'Excelente serviço e ambiente incrível!', 4.9, 6, NULL, 1, 31, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 10800.00, 'Festa perfeita, todos adoraram!', 4.8, 6, NULL, 0, 31, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://lejour.com.br/wp-content/uploads/2021/11/', 'estacao-840', 'jpg', 1, NOW(), 31);
 
 -- Buffet 32 ----------------------
 INSERT INTO eventify.endereco (is_validado, logradouro, numero, bairro, cidade, uf, cep, latitude, longitude, data_criacao) VALUES
-(1, 'Avenida Boa Viagem', 1000, 'Boa Viagem', 'Recife', 'PE', '51011000', -8.120838, -34.901586, '2023-06-04 12:00:00');
+(1, 'Avenida Boa Viagem', 10000, 'Boa Viagem', 'Recife', 'PE', '51011000', -8.120838, -34.901586, '2023-06-04 12:00:00');
 
 INSERT INTO eventify.buffet (nome, descricao, tamanho, preco_medio_diaria, qtd_pessoas, caminho_comprovante, residencia_comprovada, is_visivel, data_criacao, id_usuario, id_endereco) VALUES
 ('Buffet Recife Mar', 'O sabor do Nordeste em seu evento!', 250, 2000.00, 150, 'caminho/comprovante32.jpg', 1, 1, '2023-06-04 12:00:00', 32, 32);
@@ -1778,8 +1778,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 1900.00, 'Comida típica deliciosa e atendimento impecável!', 4.7, 6, NULL, 1, 32, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 2200.00, 'Festa incrível, tudo perfeito!', 4.9, 6, NULL, 0, 32, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 10900.00, 'Comida típica deliciosa e atendimento impecável!', 4.7, 6, NULL, 1, 32, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 20200.00, 'Festa incrível, tudo perfeito!', 4.9, 6, NULL, 0, 32, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/9753/3_2/320/jpeg/', 'whatsapp-image-2023-03-17-at-16-48-01-1_13_379753-167909515633840', 'webp', 1, NOW(), 32);
@@ -1814,8 +1814,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 1300.00, 'Buffet maravilhoso, recomendo!', 4.3, 6, NULL, 1, 33, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 1600.00, 'Comida deliciosa e atendimento excelente!', 4.5, 6, NULL, 0, 33, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 10300.00, 'Buffet maravilhoso, recomendo!', 4.3, 6, NULL, 1, 33, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 10600.00, 'Comida deliciosa e atendimento excelente!', 4.5, 6, NULL, 0, 33, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/7539/3_2/320/jpg/', 'img-1147_13_87539-160996397526758', 'webp', 1, NOW(), 33);
@@ -1850,8 +1850,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2000.00, 'Evento memorável, todos adoraram!', 4.9, 6, NULL, 1, 34, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 1800.00, 'Festa impecável, serviço de alta qualidade!', 4.8, 6, NULL, 0, 34, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20000.00, 'Evento memorável, todos adoraram!', 4.9, 6, NULL, 1, 34, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 10800.00, 'Festa impecável, serviço de alta qualidade!', 4.8, 6, NULL, 0, 34, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/1833/3_2/320/jpg/', 'sem-titulo111_13_121833-168548084885418', 'webp', 1, NOW(), 34);
@@ -1886,8 +1886,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2800.00, 'Momento único e inesquecível, recomendo!', 4.7, 6, NULL, 1, 35, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 2600.00, 'Equipe dedicada e comida deliciosa!', 4.6, 6, NULL, 0, 35, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20800.00, 'Momento único e inesquecível, recomendo!', 4.7, 6, NULL, 1, 35, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 20600.00, 'Equipe dedicada e comida deliciosa!', 4.6, 6, NULL, 0, 35, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/7428/3_2/320/jpg/', 'zaf-9756_13_67428-162863272481756', 'webp', 1, NOW(), 35);
@@ -1922,8 +1922,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 1900.00, 'Buffet excepcional, recomendo a todos!', 4.8, 6, NULL, 1, 36, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 2100.00, 'Serviço impecável, todos elogiaram!', 4.7, 6, NULL, 0, 36, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 10900.00, 'Buffet excepcional, recomendo a todos!', 4.8, 6, NULL, 1, 36, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 20100.00, 'Serviço impecável, todos elogiaram!', 4.7, 6, NULL, 0, 36, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/8480/3_2/320/jpg/', 'dsc-9900_13_158480-1551897007', 'webp', 1, NOW(), 36);
@@ -1958,8 +1958,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2800.00, 'Momento único e inesquecível, recomendo!', 4.7, 6, NULL, 1, 37, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 2600.00, 'Equipe dedicada e comida deliciosa!', 4.6, 6, NULL, 0, 37, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20800.00, 'Momento único e inesquecível, recomendo!', 4.7, 6, NULL, 1, 37, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 20600.00, 'Equipe dedicada e comida deliciosa!', 4.6, 6, NULL, 0, 37, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/9054/3_2/320/jpg/', 'mzf01894_13_309054-165420352399904', 'webp', 1, NOW(), 37);
@@ -1994,8 +1994,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 4000.00, 'Serviço impecável, recomendo a todos!', 4.9, 6, NULL, 1, 38, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 3800.00, 'Comida deliciosa e atendimento de primeira!', 4.8, 6, NULL, 0, 38, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 40000.00, 'Serviço impecável, recomendo a todos!', 4.9, 6, NULL, 1, 38, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 30800.00, 'Comida deliciosa e atendimento de primeira!', 4.8, 6, NULL, 0, 38, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/6744/3_2/320/jpg/', 'img-6177-2_13_326744-165419254058615', 'webp', 1, NOW(), 38);
@@ -2030,8 +2030,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 3500.00, 'Comida maravilhosa, todos elogiaram!', 4.7, 6, NULL, 1, 39, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 3200.00, 'Festa incrível, buffet de primeira qualidade!', 4.6, 6, NULL, 0, 39, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 30500.00, 'Comida maravilhosa, todos elogiaram!', 4.7, 6, NULL, 1, 39, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 30200.00, 'Festa incrível, buffet de primeira qualidade!', 4.6, 6, NULL, 0, 39, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/1299/3_2/320/jpeg/', 'whatsapp-image-2022-10-27-at-19-51-21-1_13_371299-166696436994653', 'webp', 1, NOW(), 39);
@@ -2066,8 +2066,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 4000.00, 'Serviço impecável, recomendo a todos!', 4.9, 6, NULL, 1, 40, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 3800.00, 'Comida deliciosa e atendimento de primeira!', 4.8, 6, NULL, 0, 40, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 40000.00, 'Serviço impecável, recomendo a todos!', 4.9, 6, NULL, 1, 40, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 30800.00, 'Comida deliciosa e atendimento de primeira!', 4.8, 6, NULL, 0, 40, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/1311/3_2/320/jpg/', 'novobuffet-109-de-199_13_371311-166698329736971', 'webp', 1, NOW(), 40);
@@ -2102,8 +2102,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2800.00, 'Festa incrível com comida saborosa!', 4.7, 6, NULL, 1, 41, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 2600.00, 'Serviço de qualidade e ótimo atendimento!', 4.6, 6, NULL, 0, 41, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20800.00, 'Festa incrível com comida saborosa!', 4.7, 6, NULL, 1, 41, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 20600.00, 'Serviço de qualidade e ótimo atendimento!', 4.6, 6, NULL, 0, 41, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/1604/3_2/320/jpeg/', 'f373d5a6-67d4-4245-9f2e-a3952240b1ff_13_111604-167032813913962', 'webp', 1, NOW(), 41);
@@ -2138,8 +2138,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 3200.00, 'Serviço de primeira qualidade e comida maravilhosa!', 4.9, 6, NULL, 1, 42, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 2900.00, 'Tudo perfeito! Adoramos a festa!', 4.8, 6, NULL, 0, 42, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 32000.00, 'Serviço de primeira qualidade e comida maravilhosa!', 4.9, 6, NULL, 1, 42, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 29000.00, 'Tudo perfeito! Adoramos a festa!', 4.8, 6, NULL, 0, 42, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/3101/3_2/320/jpg/', '1597ea66-fd05-44bd-a645-b0186d9fe85b_13_123101-163287889588080', 'webp', 1, NOW(), 42);
@@ -2174,8 +2174,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2600.00, 'Buffet incrível e atendimento impecável!', 4.7, 6, NULL, 1, 43, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 2400.00, 'Adoramos tudo! Foi uma festa maravilhosa!', 4.6, 6, NULL, 0, 43, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 26000.00, 'Buffet incrível e atendimento impecável!', 4.7, 6, NULL, 1, 43, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 24000.00, 'Adoramos tudo! Foi uma festa maravilhosa!', 4.6, 6, NULL, 0, 43, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/8513/3_2/320/jpg/', 'img-20180816-wa0130_13_68513', 'webp', 1, NOW(), 43);
@@ -2210,8 +2210,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 3000.00, 'Festa incrível com comida saborosa!', 4.9, 6, NULL, 1, 44, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 2800.00, 'Serviço de qualidade e ótimo atendimento!', 4.8, 6, NULL, 0, 44, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 30000.00, 'Festa incrível com comida saborosa!', 4.9, 6, NULL, 1, 44, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 28000.00, 'Serviço de qualidade e ótimo atendimento!', 4.8, 6, NULL, 0, 44, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/7080/3_2/320/jpg/', 'doces-delicias_13_347080-167542924770997', 'webp', 1, NOW(), 44);
@@ -2246,8 +2246,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2500.00, 'Buffet encantador em meio a um ambiente florido!', 4.7, 6, NULL, 1, 45, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 2300.00, 'Comida deliciosa e atendimento impecável!', 4.6, 6, NULL, 0, 45, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20500.00, 'Buffet encantador em meio a um ambiente florido!', 4.7, 6, NULL, 1, 45, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 23000.00, 'Comida deliciosa e atendimento impecável!', 4.6, 6, NULL, 0, 45, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/5927/3_2/320/jpg/', '33_13_255927-166930175236968', 'webp', 1, NOW(), 45);
@@ -2282,8 +2282,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2200.00, 'Sabores autênticos da Bahia em um buffet de qualidade!', 4.5, 6, NULL, 1, 46, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 2000.00, 'Buffet saboroso e serviço excelente!', 4.4, 6, NULL, 0, 46, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 22000.00, 'Sabores autênticos da Bahia em um buffet de qualidade!', 4.5, 6, NULL, 1, 46, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 20000.00, 'Buffet saboroso e serviço excelente!', 4.4, 6, NULL, 0, 46, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/2965/3_2/320/jpeg/', 'whatsapp-image-2023-04-13-at-16-14-13-1-copia_13_372965-168312793761063', 'webp', 1, NOW(), 46);
@@ -2318,8 +2318,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 3500.00, 'Uma experiência gastronômica única com vinhos selecionados!', 4.9, 6, NULL, 1, 47, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 3200.00, 'Buffet incrível com opções de vinhos de alta qualidade!', 4.8, 6, NULL, 0, 47, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 30500.00, 'Uma experiência gastronômica única com vinhos selecionados!', 4.9, 6, NULL, 1, 47, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 30200.00, 'Buffet incrível com opções de vinhos de alta qualidade!', 4.8, 6, NULL, 0, 47, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/1238/3_2/320/jpg/', 'file-1681575424941_13_161238-168157542721698', 'webp', 1, NOW(), 47);
@@ -2354,8 +2354,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2000.00, 'Um buffet sofisticado com uma vista deslumbrante!', 4.6, 6, NULL, 1, 48, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 1800.00, 'Comida deliciosa e ambiente encantador!', 4.5, 6, NULL, 0, 48, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20000.00, 'Um buffet sofisticado com uma vista deslumbrante!', 4.6, 6, NULL, 1, 48, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 10800.00, 'Comida deliciosa e ambiente encantador!', 4.5, 6, NULL, 0, 48, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/3097/3_2/320/jpg/', 'file-1624172001252_13_273097-162417201293447', 'webp', 1, NOW(), 48);
@@ -2390,8 +2390,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2500.00, 'Um buffet com uma variedade incrível de sabores!', 4.9, 6, NULL, 1, 49, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 2200.00, 'Sabores únicos em um ambiente aconchegante!', 4.8, 6, NULL, 0, 49, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20500.00, 'Um buffet com uma variedade incrível de sabores!', 4.9, 6, NULL, 1, 49, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 22000.00, 'Sabores únicos em um ambiente aconchegante!', 4.8, 6, NULL, 0, 49, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/4467/3_2/320/jpg/', '36428584-829016263975095-6061754023659175936-n_13_2322-168560934591433', 'webp', 1, NOW(), 49);
@@ -2427,8 +2427,8 @@ INSERT INTO eventify.pagamento (is_pago_contrato, data_pago, is_pago_buffet) VAL
 (1, '2023-06-04 12:00:00', 1);
 
 INSERT INTO eventify.evento (data, preco, avaliacao, nota, status, motivo_nao_aceito, is_formulario_dinamico, id_buffet, data_criacao, id_contratante, id_pagamento) VALUES
-('2023-06-04 12:00:00', 2500.00, 'Atendimento impecável e comida deliciosa!', 4.9, 6, NULL, 1, 50, '2023-06-04 12:00:00', 163, 122),
-('2023-06-04 12:00:00', 3200.00, 'Festa dos sonhos, recomendo a todos!', 5, 6, NULL, 0, 50, '2023-06-04 12:00:00', 164, 123);
+('2023-06-04 12:00:00', 20500.00, 'Atendimento impecável e comida deliciosa!', 4.9, 6, NULL, 1, 50, '2023-06-04 12:00:00', 163, 122),
+('2023-06-04 12:00:00', 30200.00, 'Festa dos sonhos, recomendo a todos!', 5, 6, NULL, 0, 50, '2023-06-04 12:00:00', 164, 123);
 
 INSERT INTO imagem (caminho, nome, tipo, is_ativo, data_upload, id_buffet) VALUES
     ('https://cdn0.casamentos.com.br/vendor/6791/3_2/320/jpeg/', 'img-9396_13_376791-167649419675723', 'webp', 1, NOW(), 50);
@@ -3317,4 +3317,8 @@ WHERE status = 5 AND data < '2023-12-07 00:00:00';
 
 UPDATE tarefa
 SET status = 1
-WHERE staTus IS NULL;
+WHERE status IS NULL;
+
+UPDATE buffet
+SET preco_medio_diaria = preco_medio_diaria + 10000
+WHERE id BETWEEN 2 AND 50;
