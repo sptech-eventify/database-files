@@ -75,30 +75,6 @@ END //
 DELIMITER ;
 
 
-SET GLOBAL log_bin_trust_function_creators = 1;
-
-DELIMITER //
-
-CREATE FUNCTION traduz_mes(mes VARCHAR(63)) RETURNS VARCHAR(63)
-BEGIN
-    CASE mes
-        WHEN 'January' THEN RETURN 'Janeiro';
-        WHEN 'February' THEN RETURN 'Fevereiro';
-        WHEN 'March' THEN RETURN 'Março';
-        WHEN 'April' THEN RETURN 'Abril';
-        WHEN 'May' THEN RETURN 'Maio';
-        WHEN 'June' THEN RETURN 'Junho';
-        WHEN 'July' THEN RETURN 'Julho';
-        WHEN 'August' THEN RETURN 'Agosto';
-        WHEN 'September' THEN RETURN 'Setembro';
-        WHEN 'October' THEN RETURN 'Outubro';
-        WHEN 'November' THEN RETURN 'Novembro';
-        WHEN 'December' THEN RETURN 'Dezembro';
-        ELSE RETURN mes;
-    END CASE;
-END //
-
-DELIMITER ;
 
 
 DELIMITER //
@@ -469,6 +445,32 @@ JOIN buffet ON id_buffet = buffet.id
 JOIN eventify.imagem img ON img.id_buffet = buffet.id 
 GROUP BY buffet.id
 );
+
+SET GLOBAL log_bin_trust_function_creators = 1;
+
+DELIMITER //
+
+CREATE FUNCTION traduz_mes(mes VARCHAR(63)) RETURNS VARCHAR(63)
+BEGIN
+    CASE mes
+        WHEN 'January' THEN RETURN 'Janeiro';
+        WHEN 'February' THEN RETURN 'Fevereiro';
+        WHEN 'March' THEN RETURN 'Março';
+        WHEN 'April' THEN RETURN 'Abril';
+        WHEN 'May' THEN RETURN 'Maio';
+        WHEN 'June' THEN RETURN 'Junho';
+        WHEN 'July' THEN RETURN 'Julho';
+        WHEN 'August' THEN RETURN 'Agosto';
+        WHEN 'September' THEN RETURN 'Setembro';
+        WHEN 'October' THEN RETURN 'Outubro';
+        WHEN 'November' THEN RETURN 'Novembro';
+        WHEN 'December' THEN RETURN 'Dezembro';
+        ELSE RETURN mes;
+    END CASE;
+END //
+
+DELIMITER ;
+
 
 /*
 DROP PROCEDURE sp_avaliacoes_buffet;

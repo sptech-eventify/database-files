@@ -78,26 +78,6 @@ GROUP BY
 );
 
 
--- taxa contratos cancelados (calculo back)
-CREATE OR REPLACE VIEW vw_fracao_evento_cancelado_acesso AS (
-SELECT
-    b.id,
-    b.nome,
-    (
-        SELECT COUNT(*)
-        FROM evento e
-        WHERE e.id_buffet = b.id AND e.status = 4 OR e.status = 7
-    ) AS qtd_eventos_negados_e_cancelados,
-    (
-        SELECT COUNT(*)
-        FROM evento e
-        WHERE e.id_buffet = b.id AND e.status = 6 OR e.status = 5
-    ) AS qtd_eventos_realizados_e_confirmados
-FROM
-    buffet b
-);
-
-
 CREATE OR REPLACE VIEW vw_contratantes_consumo AS (
 SELECT
     u.id AS id_usuario,
