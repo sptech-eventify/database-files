@@ -22,8 +22,8 @@ FROM
 	buffet b
 JOIN
 	transacao t ON t.id_buffet = b.id
-GROUP BY b.id ORDER BY id);
-
+GROUP BY b.id ORDER BY id
+);
 
 -- buffetsSemVisitas (15) (lista)
 CREATE OR REPLACE VIEW vw_buffet_15_sem_visitas AS (
