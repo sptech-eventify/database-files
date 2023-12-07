@@ -196,3 +196,31 @@ WHERE
 	p.id = 3
 GROUP BY nome_mes, p.id
 );
+
+CREATE OR REPLACE VIEW vw_uso_formulario_dinamico AS (
+SELECT
+    SUM(CASE WHEN is_formulario_dinamico = 1 THEN 1 ELSE 0 END) AS eventos_com_formulario,
+    SUM(CASE WHEN is_formulario_dinamico = 0 THEN 1 ELSE 0 END) AS eventos_sem_formulario,
+    COUNT(*) AS total_eventos,
+    (SUM(CASE WHEN is_formulario_dinamico = 1 THEN 1 ELSE 0 END) / COUNT(*)) * 100 AS porcentagem_com_formulario
+FROM
+    evento
+);
+
+CREATE OR REPLACE VIEW vw_utilizacao_formulario AS (
+SELECT
+    COUNT(DISTINCT CASE WHEN eventos_com_formulario > 0 THEN id_contratante END) AS usuarios_com_formulario,
+    COUNT(DISTINCT CASE WHEN eventos_sem_formulario > 0 THEN id_contratante END) AS usuarios_sem_formulario,
+    COUNT(DISTINCT id_contratante) AS total_usuarios,
+    (COUNT(DISTINCT CASE WHEN eventos_com_formulario > 0 THEN id_contratante END) / COUNT(DISTINCT id_contratante)) * 100 AS porcentagem_com_formulario
+FROM (
+    SELECT
+        id_contratante,
+        MAX(is_formulario_dinamico) AS eventos_com_formulario,
+        MAX(1 - is_formulario_dinamico) AS eventos_sem_formulario
+    FROM
+        evento
+    GROUP BY
+        id_contratante
+) AS eventos_por_usuario
+);
