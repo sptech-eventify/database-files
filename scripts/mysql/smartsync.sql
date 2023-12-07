@@ -1,30 +1,16 @@
 use eventify;
 
 CREATE OR REPLACE VIEW vw_faturamento_buffet AS (
-SELECT
-    YEAR(data) AS ano,
-    MONTH(data) AS mes,
-    COUNT(CASE WHEN tipo = 'cadastro' THEN 1 END) AS cadastros,
-    COUNT(CASE WHEN tipo = 'churn' THEN 1 END) AS churn
-FROM (
-    SELECT
-        id,
-        data_criacao AS data,
-        'cadastro' AS tipo
-    FROM
-        usuario
-    UNION ALL
-    SELECT
-        id,
-        ultimo_login AS data,
-        'churn' AS tipo
-    FROM
-        usuario
-    WHERE
-        ultimo_login IS NOT NULL AND DATEDIFF(CURDATE(), ultimo_login) > 90
-) AS dados
-GROUP BY
-    ano, mes
+SELECT 
+	b.id, 
+    SUM(e.preco) faturamento_evento
+FROM
+	buffet b
+JOIN
+	evento e ON e.id_buffet = b.id
+WHERE
+	e.status = 6
+GROUP BY b.id ORDER BY id
 );
 
 
@@ -127,21 +113,32 @@ GROUP BY
 
 
 -- Uso do formulário dinâmico
-CREATE OR REPLACE VIEW vw_grafico_retencao_usuario AS (
+CREATE OR REPLACE VIEW vw_grafico AS (
 SELECT
-    traduz_mes(MONTHNAME(data_criacao)) nome_mes,
-    COUNT(*) quantidade_acessos
-FROM
-    acesso
-WHERE
-    id_pagina = 4
+    YEAR(data) AS ano,
+    MONTH(data) AS mes,
+    COUNT(CASE WHEN tipo = 'cadastro' THEN 1 END) AS cadastros,
+    COUNT(CASE WHEN tipo = 'churn' THEN 1 END) AS churn
+FROM (
+    SELECT
+        id,
+        data_criacao AS data,
+        'cadastro' AS tipo
+    FROM
+        usuario
+    UNION ALL
+    SELECT
+        id,
+        ultimo_login AS data,
+        'churn' AS tipo
+    FROM
+        usuario
+    WHERE
+        ultimo_login IS NOT NULL AND DATEDIFF(CURDATE(), ultimo_login) > 90
+) AS dados
 GROUP BY
-    nome_mes
-ORDER BY
-    MONTH(data_criacao)
+    ano, mes
 );
-
-
 
 CREATE OR REPLACE VIEW vw_ultimas_7_dias AS (
 SELECT 
