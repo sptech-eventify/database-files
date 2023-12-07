@@ -240,3 +240,5 @@ FROM (
         id_contratante
 ) AS eventos_por_usuario
 );
+
+
