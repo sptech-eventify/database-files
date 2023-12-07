@@ -98,16 +98,17 @@ FROM
 
 CREATE OR REPLACE VIEW vw_contratantes_consumo AS (
 SELECT
-	u.id,
-	u.nome,
-    COUNT(e.id) qtd_eventos
+    u.id AS id_usuario,
+    u.nome AS nome_usuario,
+    COUNT(e.id) AS quantidade_eventos
 FROM
-	usuario u
-JOIN
-	evento e ON e.id_contratante = u.id    
+    usuario u
+LEFT JOIN
+    evento e ON u.id = e.id_contratante
 WHERE
-	u.tipo_usuario = 1
-GROUP BY u.id
+    u.tipo_usuario = 1
+GROUP BY
+    u.id, u.nome
 );
 
 
@@ -180,6 +181,6 @@ WHERE
 	u.tipo_usuario = 1
 GROUP BY u.id
 HAVING
-	qtd_eventos = 1
+	qtd_eventos = 0
 );
 
