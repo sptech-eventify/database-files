@@ -29,6 +29,7 @@ GROUP BY b.id ORDER BY id);
 CREATE OR REPLACE VIEW vw_buffet_15_sem_visitas AS (
 SELECT
     b.id,
+    b.nome,
     MAX(a.data_criacao) AS data_mais_atual
 FROM
     acesso a
@@ -39,7 +40,8 @@ JOIN
 GROUP BY
     b.id
 HAVING 
-    data_mais_atual <= CURDATE() - INTERVAL 15 DAY);
+    data_mais_atual <= CURDATE() - INTERVAL 15 DAY
+);
 
 
 -- taxa conversao visitas em fracao escala  (calculo back)
@@ -117,7 +119,7 @@ CREATE OR REPLACE VIEW vw_grafico AS (
 SELECT
     YEAR(data) AS ano,
     MONTH(data) AS mes,
-    traduz_mes(MONTHNAME(MONTH(data))) mes_traduzido,
+    traduz_mes(MONTHNAME(data)) mes_traduzido,
     COUNT(CASE WHEN tipo = 'cadastro' THEN 1 END) AS cadastros,
     COUNT(CASE WHEN tipo = 'churn' THEN 1 END) AS churn
 FROM (
@@ -140,6 +142,7 @@ FROM (
 GROUP BY
     ano, mes
 );
+
 
 CREATE OR REPLACE VIEW vw_ultimas_7_dias AS (
 SELECT 
