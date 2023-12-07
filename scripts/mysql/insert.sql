@@ -3775,3 +3775,8 @@ FROM
     temp_simulacao;
 
 DROP TEMPORARY TABLE IF EXISTS temp_simulacao;
+
+
+UPDATE transacao
+SET valor = valor / 1.8
+WHERE id_buffet = 1;
