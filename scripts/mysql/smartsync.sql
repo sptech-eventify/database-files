@@ -184,3 +184,15 @@ HAVING
 	qtd_eventos = 0
 );
 
+CREATE OR REPLACE VIEW vw_formulario_dinamico_consumo AS (
+SELECT 
+	traduz_mes(MONTHNAME(data_criacao)) nome_mes,
+	COUNT(a.id)
+FROM
+	pagina p
+JOIN
+	acesso a ON a.id_pagina = p.id
+WHERE
+	p.id = 3
+GROUP BY nome_mes, p.id
+);

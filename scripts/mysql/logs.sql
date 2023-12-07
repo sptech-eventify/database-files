@@ -36967,3 +36967,11 @@ INSERT INTO acesso (data_criacao, id_pagina) VALUES
 (NOW(), 46),
 (NOW(), 49),
 (NOW(), 51);
+
+INSERT INTO eventify.acesso (data_criacao, id_pagina)
+SELECT
+    DATE_ADD('2023-06-01', INTERVAL ROUND(RAND() * DATEDIFF('2023-12-06', '2023-06-01')) DAY) AS data_criacao,
+    3 AS id_pagina
+FROM
+    information_schema.tables
+LIMIT 3500;
