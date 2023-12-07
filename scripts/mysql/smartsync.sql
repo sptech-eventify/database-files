@@ -167,4 +167,19 @@ GROUP BY
     tipo_usuario
 );
 
+CREATE OR REPLACE VIEW vw_usuarios_sem_eventos AS (
+SELECT
+	u.id,
+	u.nome,
+    COUNT(e.id) qtd_eventos
+FROM
+	usuario u
+JOIN
+	evento e ON e.id_contratante = u.id    
+WHERE
+	u.tipo_usuario = 1
+GROUP BY u.id
+HAVING
+	qtd_eventos = 1
+);
 
