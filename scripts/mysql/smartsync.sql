@@ -113,7 +113,6 @@ GROUP BY
     u.id, u.nome
 );
 
-
 -- Uso do formulário dinâmico
 CREATE OR REPLACE VIEW vw_grafico AS (
 SELECT
