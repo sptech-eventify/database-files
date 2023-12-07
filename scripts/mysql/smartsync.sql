@@ -117,6 +117,7 @@ CREATE OR REPLACE VIEW vw_grafico AS (
 SELECT
     YEAR(data) AS ano,
     MONTH(data) AS mes,
+    traduz_mes(MONTHNAME(MONTH(data))) mes_traduzido,
     COUNT(CASE WHEN tipo = 'cadastro' THEN 1 END) AS cadastros,
     COUNT(CASE WHEN tipo = 'churn' THEN 1 END) AS churn
 FROM (
